@@ -33,9 +33,13 @@
   },
   "devDependencies": {
     "@shower/cli": "^0.3.1",
+    "browser-sync": "^3.0.2",
+    "gulp": "^5.0.0",
+    "gulp-file-include": "^2.3.0",
     "path-exists-cli": "^2.0.0"
   },
   "scripts": {
+    "dev": "npx kill-port 3000 && bun run gulp -p 3000",
     "pdf": "shower pdf",
     "start": "shower serve",
     "bundle": "shower bundle --files '**' --files '!{docs,node_modules,bundled}{,/**}' --files '!*.{md,toml,json}'",
