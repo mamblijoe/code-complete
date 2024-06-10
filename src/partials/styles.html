@@ -1,0 +1,109 @@
+<style>
+    .shower {
+        --slide-ratio: calc(16 / 9);
+    }
+
+    #cover {
+        /*background-color: #801517;*/
+    }
+
+    .slide {
+        font-size: 20px;
+        padding: 0 50px;
+        &:after {
+            background: rgb(230, 0, 35);
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            left: initial;
+            right: 0;
+        }
+    }
+
+
+    .chapter-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 50px;
+        &.left {
+            justify-content: flex-start;
+        }
+        &.right {
+            justify-content: flex-end;
+        }
+        &.bottom {
+            align-items: flex-end;
+        }
+    }
+
+    .chapter-cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+        opacity: .5;
+        filter: blur(2px);
+    }
+
+    .chapter-title {
+        position: relative;
+        border: 10px solid rgb(230, 0, 35);
+        color: black;
+        font: 800 50px/100% Roboto;
+        padding: 60px;
+        text-align: center;
+        z-index: 2;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            left: -5%;
+            background-color: rgb(51, 51, 51);
+            width: 100px;
+            height: 15px;
+        }
+
+        &.top:before {
+            bottom: initial;
+            top: 15%;
+        }
+
+        &.left:before {
+            right: initial;
+            left: -5%;
+        }
+
+        &.vertical:before {
+            height: 100px;
+            width: 15px;
+            translate: 30px -100px;
+        }
+    }
+
+
+    #picture h2 {
+        color: white;
+    }
+
+    #see-more h2 {
+        font-size: 100px
+    }
+
+    #see-more img {
+        width: 0.72em;
+        height: 0.72em;
+    }
+
+
+    .slide h2.shout {
+        font-size: 100px;
+        color: white;
+    }
+
+</style>
