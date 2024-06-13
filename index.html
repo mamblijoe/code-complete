@@ -106,7 +106,6 @@
     <div class="chapter-title">Совершенный код C. Маконнела за 1 час</div>
 </section>
 
-<!------------------------------------------------>
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Разработка ПО</div>
 </section>
@@ -145,7 +144,6 @@
 
 <section class="slide">
     <h2>Подходы к разработке ПО</h2>
-    <p>Метафоры помогают понять процесс разработки ПО, сопоставляя его с другими, более знакомыми процессами.</p>
     <div class="columns two">
        <div>
            <p>Последовательный</p>
@@ -185,6 +183,7 @@
         </div>
     </div>
 </section>
+
 <section class="slide">
     <h2>Основные решения, которые приходится принимать при конструировании</h2>
     <div class="columns three">
@@ -197,6 +196,7 @@
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Проектирование при конструировании</div>
 </section>
+
 <section class="slide">
     <h2>Проектирование</h2>
     <p>Проектирование - разработка схемы преобразования спецификации в готовое приложение.</p>
@@ -214,10 +214,10 @@
         </ul>
     </div>
 </section>
+
 <section class="slide">
     <h2>
-        Методики проектирования
-    </h2>
+        Методики проектирования</h2>
     <ul>
         <li>Нисходящее (top-down) проектирование</li>
         <li>Восходящее (bottom-up) проектирование</li>
@@ -225,9 +225,11 @@
         <li>Совместное проектирование</li>
     </ul>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Управление сложностью</div>
 </section>
+
 <section class="slide">
     <h2>Главный технический императив ПО</h2>
     <div>
@@ -255,6 +257,7 @@
         </div>
     </div>
 </section>
+
 <section class="slide">
     <h2>Желательные характеристики проекта</h2>
     <div class="columns two">
@@ -275,6 +278,7 @@
         </ul>
     </div>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Сопряжение</div>
 </section>
@@ -283,10 +287,12 @@
     <h2>Критерии оценки сопряжения: Объем</h2>
     <div>Пример</div>
 </section>
+
 <section class="slide">
     <h2>Критерии оценки сопряжения: Видимость</h2>
     <div>Пример</div>
 </section>
+
 <section class="slide">
     <h2>Критерии оценки сопряжения: Гибкость</h2>
     <div>Пример</div>
@@ -295,22 +301,26 @@
 <section class="slide">
     <h2>Простое сопряжение посредством аргументов</h2>
 </section>
+
 <section class="slide">
     <h2>Простое сопряжение посредством объекта</h2>
 </section>
+
 <section class="slide">
     <h2>Сопряжение посредством объекта параметра</h2>
 </section>
+
 <section class="slide">
     <h2>Семантическое сопряжение</h2>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Классы</div>
 </section>
+
 <section class="slide">
     <h2>
-        АТД
-    </h2>
+        АТД</h2>
     <div>Абстрактный тип данных - это набор, включающий данные и выполняемые над ними операции.</div>
     <div>Преимущества использования АТД
     </div>
@@ -325,6 +335,7 @@
         <li>Возможность работы с сущностями реального мира, а не с низкоуровневыми деталями реализации</li>
     </ul>
 </section>
+
 <section class="slide">
     <h2>Хорошая абстракция</h2>
     <ul>
@@ -338,6 +349,7 @@
         <li>Рассматривайте абстракцию и связность вместе</li>
     </ul>
 </section>
+
 <section class="slide">
     <h2>Хорошая инкапсуляция</h2>
     <ul>
@@ -348,6 +360,7 @@
         <li>Остерегайтесь слишком высокого сопряжения (high coupling)</li>
     </ul>
 </section>
+
 <section class="slide">
     <h2>Разумные причины создания классов</h2>
     <div class="columns two">
@@ -371,9 +384,11 @@
     </div>
 
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Высококачественные методы</div>
 </section>
+
 <section class="slide">
     <h2>Разумные причины создания методов</h2>
     <div class="columns two">
@@ -399,9 +414,9 @@
     </div>
 
 </section>
+
 <section class="slide">
-    <h2>Удачные имена методов
-    </h2>
+    <h2>Удачные имена методов</h2>
     <ul>
         <li>Название должно описывать то что выполняет метод</li>
         <li>Не использовать неоднозначные, расплывчатые, не выразительные глаголы в названии</li>
@@ -413,9 +428,9 @@
         <li>Использовать конвенции именования</li>
     </ul>
 </section>
+
 <section class="slide">
-    <h2>Советы по использованию аргументов
-    </h2>
+    <h2>Советы по использованию аргументов</h2>
     <ul>
         <li>Если несколько методов используют одинаковые аргументы, то необходимо передавать их в одинаковом /
             согласованном порядке
@@ -428,12 +443,13 @@
         <li>Ограничивать число аргументов не более 7, иначе следует передавать их как объект</li>
     </ul>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Защитное программирование</div>
 </section>
+
 <section class="slide">
-    <h2>Утверждения (assertion)
-    </h2>
+    <h2>Утверждения (assertion)</h2>
     <div>Утверждение - код, который проверяет правильность выполнения программы.<br/>
          Утверждения не предназначены для показа ошибок в продакшн режиме, они для дев режима и разработки.
     </div>
@@ -448,9 +464,9 @@
         <li>Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте ошибки</li>
     </ul>
 </section>
+
 <section class="slide">
-    <h2>Способы обработки ошибок
-    </h2>
+    <h2>Способы обработки ошибок</h2>
     <div>
         Выбор того или иного способа обработки ошибок зависит от того что важнее, Корректность или Устойчивость
     </div>
@@ -473,6 +489,7 @@
     </div>
 
 </section>
+
 <section class="slide">
     <h2>Исключения</h2>
     <ul>
@@ -484,9 +501,9 @@
         <li>Стандартизируйте работу с исключениями на проекте</li>
     </ul>
 </section>
+
 <section class="slide">
-    <h2>Изоляция повреждений / баррикада
-    </h2>
+    <h2>Изоляция повреждений / баррикада</h2>
     <div>Публичные методы предполагают что получаемые данные небезопасны и отвечают за их проверку и исправление. Здесь
          используются обработчики ошибок.
     </div>
@@ -565,8 +582,7 @@
 </section>
 
 <section class="slide">
-    <h2>Сокращение имен переменных
-    </h2>
+    <h2>Сокращение имен переменных</h2>
     <div class="columns two">
         <ul>
             <li>Используйте стандартные аббревиатуры</li>
@@ -749,18 +765,23 @@
 <section class="slide">
     <h2>Разбивайте сложные проверки на части с помощью отдельных логических переменных</h2>
 </section>
+
 <section class="slide">
     <h2>Размещайте сложные логические проверки в функции-предикаты</h2>
 </section>
+
 <section class="slide">
     <h2>Избегать проверок через отрицание</h2>
 </section>
+
 <section class="slide">
     <h2>По возможности применять теорему Деморгана</h2>
 </section>
+
 <section class="slide">
     <h2>При сравнении чисел использовать упорядочивание с числовой прямой</h2>
 </section>
+
 <section class="slide">
     <h2>Измерение сложности метода</h2>
 </section>
@@ -768,6 +789,7 @@
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Качество ПО</div>
 </section>
+
 <section class="slide">
     <h2>Характеристики качества ПО</h2>
     <div class="columns two">
@@ -818,9 +840,11 @@
         </ul>
     </div>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Тестирование, выполняемое разработчиками</div>
 </section>
+
 <section class="slide">
     <h2>Тестирование</h2>
     <ul>
@@ -830,6 +854,7 @@
         <li>Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</li>
     </ul>
 </section>
+
 <section class="slide">
     <h2>Приемы тестирования</h2>
     <ul>
@@ -841,9 +866,11 @@
         <li>Классы хороших данных</li>
     </ul>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Отладка</div>
 </section>
+
 <section class="slide">
     <h2>Поиск дефектов</h2>
     <ul>
@@ -880,9 +907,11 @@
         </ul>
     </div>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Рефакторинг</div>
 </section>
+
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга</h2>
     <div class="columns three">
@@ -918,6 +947,7 @@
         </ul>
     </div>
 </section>
+
 <section class="slide">
     <h2>Плохие причины рефакторинга</h2>
     <ul>
@@ -925,6 +955,7 @@
         <li>Не рассматривайте рефакторинг как способ избежать переписывание кода</li>
     </ul>
 </section>
+
 <section class="slide">
     <h2>Безопасный рефакторинг</h2>
     <div class="columns two">
@@ -945,6 +976,7 @@
     </div>
 
 </section>
+
 <section class="slide">
     <h2>Стратегии рефакторинга</h2>
     <ul>
@@ -955,9 +987,11 @@
         <li>Выполняйте рефакторинг сложных модулей</li>
     </ul>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Стратегии оптимизации кода</div>
 </section>
+
 <section class="slide">
     <h2>Производительность и оптимизация кода</h2>
     <ul>
@@ -970,6 +1004,7 @@
         <li>Оптимизация кода</li>
     </ul>
 </section>
+
 <section class="slide">
     <div>Менее 4% кода обычно соответствует более чем 50% времени выполнения программы</div>
     <div>- Дональд Кнут</div>
@@ -984,9 +1019,9 @@
         <li>Быстродействие программы не менее важно чем ее корректность</li>
     </ul>
 </section>
+
 <section class="slide">
-    <h2>Алгоритм оптимизации
-    </h2>
+    <h2>Алгоритм оптимизации</h2>
     <ul>
         <li>Напишите хороший и понятный код, поддающийся легкому изменению</li>
         <li>Если производительность не устраивает
@@ -1005,39 +1040,47 @@
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Методики оптимизации кода: Логика</div>
 </section>
+
 <section class="slide">
-    <h2>Прекращение проверки сразу после получения ответа
-    </h2>
+    <h2>Прекращение проверки сразу после получения ответа</h2>
 </section>
+
 <section class="slide">
-    <h2>Упорядочивание if и case по частоте
-    </h2>
+    <h2>Упорядочивание if и case по частоте</h2>
 </section>
+
 <section class="slide">
-    <h2>Замена сложных выражений на обращение к таблице подстановки
-    </h2>
+    <h2>Замена сложных выражений на обращение к таблице подстановки</h2>
 </section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Методики оптимизации кода: Циклы</div>
 </section>
+
 <section class="slide">
     <h2>Размыкание (unswitch) цикла</h2>
 </section>
+
 <section class="slide">
     <h2>Объединение (jamming) цикла</h2>
 </section>
+
 <section class="slide">
     <h2>Развертывание (unrolling) цикла</h2>
 </section>
+
 <section class="slide">
     <h2>Минимизация объема работы, выполняемой в цикле</h2>
 </section>
+
 <section class="slide">
     <h2>Сигнальные значения</h2>
 </section>
+
 <section class="slide">
     <h2>Вложение более ресурсоемкого цикла в менее ресурсоемкий</h2>
 </section>
+
 <section class="slide">
     <h2>Снижение стоимости операций</h2>
 </section>
@@ -1045,18 +1088,23 @@
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Методики оптимизации кода: Выражения</div>
 </section>
+
 <section class="slide">
     <h2>Алгебраические тождества</h2>
 </section>
+
 <section class="slide">
     <h2>Теорема Деморгана</h2>
 </section>
+
 <section class="slide">
     <h2>Замена вызовов встроенных методов своими</h2>
 </section>
+
 <section class="slide">
     <h2>Предварительное вычисление результатов</h2>
 </section>
+
 <section class="slide">
     <h2>Вынесение часто используемых подвыражений</h2>
 </section>
