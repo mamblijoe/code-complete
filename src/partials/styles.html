@@ -9,7 +9,7 @@
 
     .slide {
         font-size: 20px;
-        padding: 0 50px;
+        padding: 10px 50px;
         &:after {
             background: rgb(230, 0, 35);
             width: 50px;
@@ -17,9 +17,31 @@
             padding: 0;
             left: initial;
             right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2 {
+            font: 800 30px/100% Roboto;
+            position: relative;
+            margin-bottom: 10px;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                background-color: rgb(230, 0, 35);
+                width: 100%;
+                height: 3px;
+            }
         }
     }
 
+    .progress {
+        &:before {
+            background-color: rgb(230, 0, 35);
+        }
+    }
 
     .chapter-wrapper {
         display: flex;
@@ -50,21 +72,22 @@
         padding: 60px;
         text-align: center;
         z-index: 2;
+    }
 
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: 25px;
-            left: -50px;
-            background-color: rgb(51, 51, 51);
-            width: 100px;
-            height: 15px;
+    .code {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-height: 100%;
+        img {
+
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
         }
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+
 
 </style>
