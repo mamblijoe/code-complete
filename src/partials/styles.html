@@ -9,7 +9,7 @@
 
     .slide {
         font-size: 20px;
-        padding: 0 50px;
+        padding: 10px 50px;
         &:after {
             background: rgb(230, 0, 35);
             width: 50px;
@@ -17,24 +17,38 @@
             padding: 0;
             left: initial;
             right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2 {
+            font: 800 30px/100% Roboto;
+            position: relative;
+            margin-bottom: 10px;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                background-color: rgb(230, 0, 35);
+                width: 100%;
+                height: 3px;
+            }
         }
     }
 
+    .progress {
+        &:before {
+            background-color: rgb(230, 0, 35);
+        }
+    }
 
     .chapter-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0 50px;
-        &.left {
-            justify-content: flex-start;
-        }
-        &.right {
-            justify-content: flex-end;
-        }
-        &.bottom {
-            align-items: flex-end;
-        }
+
     }
 
     .chapter-cover {
@@ -58,52 +72,22 @@
         padding: 60px;
         text-align: center;
         z-index: 2;
+    }
 
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: 15%;
-            left: -5%;
-            background-color: rgb(51, 51, 51);
-            width: 100px;
-            height: 15px;
-        }
+    .code {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-height: 100%;
+        img {
 
-        &.top:before {
-            bottom: initial;
-            top: 15%;
-        }
-
-        &.left:before {
-            right: initial;
-            left: -5%;
-        }
-
-        &.vertical:before {
-            height: 100px;
-            width: 15px;
-            translate: 30px -100px;
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
         }
     }
 
 
-    #picture h2 {
-        color: white;
-    }
-
-    #see-more h2 {
-        font-size: 100px
-    }
-
-    #see-more img {
-        width: 0.72em;
-        height: 0.72em;
-    }
-
-
-    .slide h2.shout {
-        font-size: 100px;
-        color: white;
-    }
 
 </style>

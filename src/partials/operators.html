@@ -1,6 +1,151 @@
 <section class="slide chapter-wrapper">
-    <div class="chapter-title"></div>
+    <div class="chapter-title">Последовательный код</div>
+</section>
+
+<section class="slide">
+    <h2>Последовательный код</h2>
+    <div class="code">
+        <div>Пример когда порядковые зависимости скрыты</div>
+        <img src="./pictures/deps-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Организуйте код так что бы зависимости были очевидными</div>
+        <img src="./pictures/deps-2.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Документируйте неявные зависимости с помощью комментариев</div>
+        <img src="./pictures/deps-3.svg" alt="">
+    </div>
 </section>
 <section class="slide">
-    <h2></h2>
+
+    <div class="code">
+        <h2>Последовательный код</h2>
+        <div class="code">
+            <div>Используйте аргументы что бы сделать зависимости очевидными</div>
+            <img src="./pictures/deps-4.svg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Последовательный код</h2>
+    <div class="code">
+        <div>Группируйте взаимосвязанные операции</div>
+        <img src="./pictures/deps-5.svg" alt="">
+    </div>
+</section>
+
+
+<section class="slide">
+    <h2>Последовательный код</h2>
+    <div class="code">
+        <div>Проверяйте зависимости с помощью утверждений или обработки ошибок</div>
+        <img src="./pictures/deps-6.svg" alt="">
+    </div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Условные операторы</div>
+</section>
+<div class="slide">
+    <h2>if</h2>
+    <ul>
+        <li>Сначала напишите код номинального хода алгоритма, затем опишите исключительные ситуации</li>
+        <li>Убедитесь, что при проверке на равенство ветвление корректно</li>
+        <li>Размещайте нормальный вариант после if, а не после else</li>
+        <li>Не делать пустой if, что бы что то прописать в else</li>
+        <li>Упрощайте сложные проверки с помощью методов</li>
+        <li>Размещайте наиболее вероятные варианты раньше остальных</li>
+        <li>Убедитесь, что все варианты учтены</li>
+    </ul>
+</div>
+
+<section class="slide">
+    <h2>case</h2>
+    <ul>
+        <li>Упорядочивайте варианты по алфавиту или числению</li>
+        <li>Поместите правильный вариант первым</li>
+        <li>Отсортируйте варианты по частоте</li>
+        <li>Сделайте обработку каждого варианта простой</li>
+        <li>Используйте вариант по умолчанию для реальной исключительной ситуации, а не для обработки последнего из вариантов</li>
+        <li>Используйте вариант по умолчанию для выявления ошибок</li>
+    </ul>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Нестадартные управляющие структуры</div>
+</section>
+
+<section class="slide">
+    <h2>Рекурсия</h2>
+    <ul>
+        <li>Рекурсия всегда должна иметь базовый случай для выхода из рекурсии</li>
+        <li>Избегайте циклических рекурсий.</li>
+        <li>Следите за производительность рекурсии</li>
+        <li>Решайте задачу итерацией вместо рекурсии если это возможно</li>
+    </ul>
+</section>
+
+
+<section class="slide">
+    <h2>Табличные методы</h2>
+    <div class="code">
+        <div>Таблицы с прямым доступом</div>
+        <img src="./pictures/table-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Таблицы с индексированным доступом</div>
+        <img src="./pictures/table-2.svg" alt="">
+    </div>
+</section>
+<section class="slide">
+    <h2>Табличные методы</h2>
+    <div class="code">
+        <div>Таблицы с ступенчатым доступом</div>
+        <img src="./pictures/table-3.svg" alt="">
+    </div>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Общие вопросы управления</div>
+</section>
+
+<section class="slide">
+    <h2>Разбивайте сложные проверки на части с помощью отдельных логических переменных</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/logic-var-bad.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Хорошо</div>
+        <img src="./pictures/logic-var-good.svg" alt="">
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Используйте функции-предикаты</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/logic-var-bad.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Хорошо</div>
+        <img src="./pictures/logic-var-predicate.svg" alt="">
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Избегать проверок через отрицание</h2>
+</section>
+
+<section class="slide">
+    <h2>По возможности применять теорему Деморгана</h2>
+</section>
+
+<section class="slide">
+    <h2>При сравнении чисел использовать упорядочивание с числовой прямой</h2>
+</section>
+
+<section class="slide">
+    <h2>Измерение сложности метода</h2>
 </section>
