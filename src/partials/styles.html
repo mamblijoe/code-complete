@@ -26,15 +26,7 @@
         align-items: center;
         justify-content: center;
         padding: 0 50px;
-        &.left {
-            justify-content: flex-start;
-        }
-        &.right {
-            justify-content: flex-end;
-        }
-        &.bottom {
-            align-items: flex-end;
-        }
+
     }
 
     .chapter-cover {
@@ -62,27 +54,11 @@
         &:before {
             content: '';
             position: absolute;
-            bottom: 15%;
-            left: -5%;
+            bottom: 25px;
+            left: -50px;
             background-color: rgb(51, 51, 51);
             width: 100px;
             height: 15px;
-        }
-
-        &.top:before {
-            bottom: initial;
-            top: 15%;
-        }
-
-        &.left:before {
-            right: initial;
-            left: -5%;
-        }
-
-        &.vertical:before {
-            height: 100px;
-            width: 15px;
-            translate: 30px -100px;
         }
     }
 
