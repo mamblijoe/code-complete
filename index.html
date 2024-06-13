@@ -5,722 +5,887 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        .shower {
-            --slide-ratio: calc(16 / 9);
-        }
+    .shower {
+        --slide-ratio: calc(16 / 9);
+    }
 
-        #cover {
-            background-color: #801517;
-        }
+    #cover {
+        /*background-color: #801517;*/
+    }
 
-        #cover h2 {
-            color: white;
-            text-align: right;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translate(-5%, -50%);
-            font-size: 50px;
-        }
-
-
-        #cover img {
-            position: absolute;
-            left: 0;
-            transform: translate(-10%, -50%);
-        }
-
-
-        #picture h2 {
-            color: white;
-        }
-
-        #see-more h2 {
-            font-size: 100px
-        }
-
-        #see-more img {
-            width: 0.72em;
-            height: 0.72em;
-        }
-
-        .slide {
-            padding: 25px 75px !important;
-        }
-
-        h2 {}
-
-        .slide h2.shout {
-            font-size: 100px;
-            color: white;
-        }
-
-        .slide:after {
-            right: 10px;
+    .slide {
+        font-size: 20px;
+        padding: 0 50px;
+        &:after {
+            background: rgb(230, 0, 35);
+            width: 50px;
+            height: 50px;
+            padding: 0;
             left: initial;
+            right: 0;
         }
-    </style>
+    }
+
+
+    .chapter-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 50px;
+        &.left {
+            justify-content: flex-start;
+        }
+        &.right {
+            justify-content: flex-end;
+        }
+        &.bottom {
+            align-items: flex-end;
+        }
+    }
+
+    .chapter-cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+        opacity: .5;
+        filter: blur(2px);
+    }
+
+    .chapter-title {
+        position: relative;
+        border: 10px solid rgb(230, 0, 35);
+        color: black;
+        font: 800 50px/100% Roboto;
+        padding: 60px;
+        text-align: center;
+        z-index: 2;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            left: -5%;
+            background-color: rgb(51, 51, 51);
+            width: 100px;
+            height: 15px;
+        }
+
+        &.top:before {
+            bottom: initial;
+            top: 15%;
+        }
+
+        &.left:before {
+            right: initial;
+            left: -5%;
+        }
+
+        &.vertical:before {
+            height: 100px;
+            width: 15px;
+            translate: 30px -100px;
+        }
+    }
+
+
+    #picture h2 {
+        color: white;
+    }
+
+    #see-more h2 {
+        font-size: 100px
+    }
+
+    #see-more img {
+        width: 0.72em;
+        height: 0.72em;
+    }
+
+
+    .slide h2.shout {
+        font-size: 100px;
+        color: white;
+    }
+
+</style>
+
 </head>
 <body class="shower list">
-
 <header class="caption">
-    <h1>Совершенный код C. Макконнела за 1 час</h1>
+    <h1>Совершенный код C. Маконнела за 1 час</h1>
     <p>... или нимношко больше</p>
 </header>
 
-<section class="slide" id="cover">
-    <h2>Совершенный код <br/> за 1 час</h2>
-    <figure>
-        <img class="cover" src="pictures/code-complete-bg.jpeg">
-    </figure>
+<section class="slide chapter-wrapper" id="cover">
+    <img class="chapter-cover" src="pictures/title-slide-bg.jpg">
+    <div class="chapter-title">Совершенный код C. Маконнела за 1 час</div>
 </section>
-<!------------------------------------------------>
-<section class="slide ">
-    <h2 class="shout">Конструирование ПО</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Конструирование ПО: Составляющие</h2>
-    <div class="columns two">
-        <ul>
-            <li>Определение проблемы</li>
-            <li>Выработка требований</li>
-            <li>Создание плана конструирования</li>
-            <li>Разработка архитектуры ПО / Высокоуровневое проектирование</li>
-            <li>Детальное проектирование</li>
-        </ul>
-        <ul>
-            <li>Кодирование и отладка</li>
-            <li>Блочное тестирование</li>
-            <li>Интеграционное тестирование</li>
-            <li>Интеграция</li>
-            <li>Тестирование системы</li>
-            <li>Корректирующее сопровождение</li>
-        </ul>
-    </div>
 
-</section>
-<section class="slide">
-    <h2>Конструирование ПО: Важность</h2>
-    <div class="columns two">
-        <ul>
-            <li>Конструирование - крупная часть процесса разработки ПО</li>
-            <li>Конструирование занимается центральное место в процессе разработки ПО</li>
-            <li>Повышенное внимание к конструированию может повысить производительность труда отдельных программистов</li>
-        </ul>
-        <ul>
-            <li>Результат конструирования - исходный код - часто является единственным верным источником описания программы</li>
-            <li>Конструирование - единственный процесс разработки ПО который выполняется всегда</li>
-        </ul>
-    </div>
-
-</section>
 <!------------------------------------------------>
-<section class="slide ">
-    <h2 class="shout">Метафоры</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Основы разработки ПО</div>
 </section>
-<section class="slide">
-    <h2>Метафоры: Цели и важность</h2>
-    <figure>
-        <blockquote>
-            <p>
-                Не стоит недооценивать важность метафор.
-                Метафоры имеют одно неоспоримое достоинство: описываемое ими поведение предсказуемо и понятно всем людям. Это сокращает
-                объем ненужной коммуникации,
-                способствует достижению взаимопонимания и ускоряет обучение. По сути метафора — это способ осмысления и абстрагирования концепций, позволяющий думать в более высокой плоскости и избегать низкоуровневых ошибок.
-            </p>
-        </blockquote>
-        <figcaption>Фернандо Дж. Корбати</figcaption>
-    </figure>
-</section>
-<section class="slide">
-    <h2>Метафоры: Литературная метафора</h2>
-</section>
-<section class="slide">
-    <h2>Метафоры: Сельскохозяйственная метафора</h2>
-</section>
-<section class="slide">
-    <h2>Метафоры: Метафора жемчужины</h2>
-</section>
-<section class="slide">
-    <h2>Метафоры: Строительная метафора</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Подготовка</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Подготовка: Цели</h2>
-    <p>Главной целью подготовки к конструированию является снижение риска. Убедитесь, что проводимая вами подготовка снижает риск, а не повышает его.</p>
-    <p>При отсутствии грамотного определения проблемы вы можете на этапе конструирования потратить силы на решение неверной проблемы.</p>
-    <p>Если не проведена адекватная выработка требований, вы можете упустить важные детали проблемы. Изменения требований после конструирования обходятся в 20–100 раз дороже, чем на предыдущих этапах, поэтому перед началом программирования обязательно убедитесь в правильности требований.</p>
-    <p>Если не проведено адекватное проектирование архитектуры, во время конструирования вы можете решать верную проблему неверным способом. По мере написания кода для неверной архитектуры цена изменений архитектуры возрастает, так что перед началом программирования вы должны проверить и правильность архитектуры</p>
-</section>
-<section class="slide">
-    <h2>Подготовка: Предварительные условия</h2>
-    <p>Необходимо перед конструированием сформулировать проблему которую система будет решать</p>
-    <p>Иначе можно решать не ту проблемы или не тем способом</p>
-    <p>Необходимо перед конструированием иметь официальные требования</p>
-    <p>При их отсутствии требования будут определяться разработчиком, а не пользователем системы</p>
-</section>
-<section class="slide">
-    <h2>Подготовка: Последовательный</h2>
-            <ul>
-                <li>Требования довольно стабильны</li>
-                <li>Проект приложения прост и относительно понятен</li>
-                <li>Разработчики знакомы с прикладной областью</li>
-                <li>Проект не связан с особым риском</li>
-                <li>Важна долговременная предсказуемость проекта</li>
-                <li>Затраты на изменения требований окажутся скорее всего высокими</li>
-            </ul>
 
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Добро пожаловать в мир конструирования ПО</div>
 </section>
+
 <section class="slide">
-    <h2>Подготовка: Итеративный</h2>
+    <h2>Разработка ПО</h2>
+    <p>Конструирование — главный этап разработки ПО, без которого не обходится ни один проект.</p>
+    <p>Основные этапы конструирования:</p>
     <ul>
-        <li>Требования относительные непонятны или нестабильны</li>
-        <li>Проект приложения сложен и не ясен</li>
-        <li>Разработчики не знакомы с прикладной областью</li>
-        <li>Проект сопряжен с высоким риском</li>
-        <li>Долговременная предсказуемость проекта не играет особой роли</li>
-        <li>Затраты на изменения требований, скорее всего, будут низкими</li>
+    <li>детальное проектирование</li>
+    <li>кодирование</li>
+    <li>отладка</li>
+    <li>интеграция и тестирование приложения разработчиками (блочное тестирование и интеграционное тестирование).</li>
     </ul>
 </section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Метафоры, позволяющие лучше понять разработку ПО</div>
+</section>
+
 <section class="slide">
-    <h2>Подготовка: Программирование с и на языке</h2>
+    <h2>Метафоры</h2>
+    <p>Метафоры помогают понять процесс разработки ПО, сопоставляя его с другими, более знакомыми процессами.</p>
+    <p>Виды:</p>
+    <ul>
+        <li>Литературная метафора: написание кода</li>
+        <li>Сельскохозяйственная метафора: приращение системы</li>
+        <li>Метафора жемчужины: медленное приращение системы (аккреция ПО)</li>
+        <li>Строительная метафора: построение ПО</li>
+    </ul>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Семь раз отмерь, один раз отрежь, предварительные условия</div>
+</section>
+
+<section class="slide">
+    <h2>Подходы к разработке ПО</h2>
+    <p>Метафоры помогают понять процесс разработки ПО, сопоставляя его с другими, более знакомыми процессами.</p>
     <div class="columns two">
+       <div>
+           <p>Последовательный</p>
+           <ul>
+               <li>Требования довольно стабильны</li>
+               <li>Проект приложения прост и относительно понятен</li>
+               <li>Разработчики знакомы с прикладной областью</li>
+               <li>Проект не связан с особым риском</li>
+               <li>Важна долговременная предсказуемость проекта</li>
+               <li>Затраты на изменения требований окажутся скорее всего высокими</li>
+           </ul>
+       </div>
+        <div>
+            <p>Итеративный</p>
+            <ul>
+                <li>Требования относительные непонятны или нестабильны</li>
+                <li>Проект приложения сложен и не ясен</li>
+                <li>Разработчики не знакомы с прикладной областью</li>
+                <li>Проект сопряжен с высоким риском</li>
+                <li>Долговременная предсказуемость проекта не играет особой роли</li>
+                <li>Затраты на изменения требований, скорее всего, будут низкими</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Предварительные условия</h2>
+    <div class="columns two">
+        <div>
+            <p>Необходимо перед конструированием сформулировать проблему которую система будет решать</p>
+            <p>Иначе можно решать не ту проблемы или не тем способом</p>
+        </div>
+        <div>
+            <p>Необходимо перед конструированием иметь официальные требования</p>
+            <p>При их отсутствии требования будут определяться разработчиком, а не пользователем системы</p>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <h2>Основные решения, которые приходится принимать при конструировании</h2>
+    <div class="columns three">
         <div>Программирование на языке / фреймворке</div>
         <div>Программирование с использованием языка / фреймворка</div>
+        <div>Конвенции</div>
     </div>
 </section>
-<section class="slide">
-    <h2>Подготовка: Конвенции и соглашения</h2>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Высококачественный код</div>
 </section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Проектирование</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Проектирование при конструировании</div>
 </section>
 <section class="slide">
-    <h2>Проектирование: Тезисы</h2>
-    <ul>
-        <li>Проектирование - "грязная проблема"</li>
-        <li>Проектирование - неряшливый процесс</li>
-        <li>Проектирование - определение компромиссов и приоритетов</li>
-        <li>Проектирование - ограничение возможностей</li>
-        <li>Проектирование - недетерминированный процесс</li>
-        <li>Проектирование - эвристический процесс</li>
-        <li>Проектирование - постепенные процесс</li>
-    </ul>
-</section>
-<section class="slide">
-    <h2>Проектирование: Нисходящее (top-down) проектирование</h2>
-</section>
-<section class="slide">
-    <h2>Проектирование: Восходящее (bottom-up) проектирование</h2>
-</section>
-<section class="slide">
-    <h2>Проектирование: Экспериментальное прототипирование</h2>
-</section>
-<section class="slide">
-    <h2>Проектирование: Совместное проектирование</h2>
-</section>
-<section class="slide">
-    <h2>Проектирование: Главный Технический Императив ПО</h2>
-    <figure>
-        <blockquote>
-            <p>
-                Не следует пытаться охватить всю программу сразу. Вместо этого мы должны попытаться организовывать программы так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.
-            </p>
-        </blockquote>
-        <figcaption>Эдсгер Дейкстра</figcaption>
-    </figure>
-</section>
-<section class="slide">
-    <h2>Проектирование: Желательные характеристики проекта</h2>
-    <ul>
-        <li>Минимальная сложность</li>
-        <li>Простота сопровождения</li>
-        <li>Слабое сопряжение</li>
-        <li>Расширяемость</li>
-        <li>Возможность повторного использования</li>
-        <li>Высокий коэффициент объединения по входу </li>
-        <li>Низкий или средний коэффициент разветвления по выходу</li>
-        <li>Портируемость</li>
-        <li>Минимальная, но полная функциональность</li>
-        <li>Стратификация - возможность изучить систему на разных уровнях декомпозиции</li>
-        <li>Соответствие практикам, соглашениями и методикам</li>
-    </ul>
-</section>
-<section class="slide">
-    <h2>Проектирование: Изменения</h2>
-    <ul>
-        <li>Бизнес-правила</li>
-        <li>Зависимости от оборудования</li>
-        <li>Ввод-вывод</li>
-        <li>Нестандартные возможности языка</li>
-        <li>Сложные аспекты проектирования и конструирования</li>
-        <li>Переменные статуса</li>
-        <li>Размеры и требования структур данных</li>
-    </ul>
-</section>
-<section class="slide">
-    <h2>Проектирование: Сопряжение</h2>
+    <h2>Проектирование</h2>
+    <p>Проектирование - разработка схемы преобразования спецификации в готовое приложение.</p>
     <div class="columns two">
-        <div>Критерии
         <ul>
-            <li>Объем</li>
-            <li>Видимость</li>
-            <li>Гибкость</li>
-        </ul></div>
-        <div>Виды
+            <li>Проектирование - "грязная проблема"</li>
+            <li>Проектирование - неряшливый процесс</li>
+            <li>Проектирование - определение компромиссов и приоритетов</li>
+            <li>Проектирование - ограничение возможностей</li>
+        </ul>
         <ul>
-            <li>Простое сопряжение посредством аргументов</li>
-            <li>Простое сопряжение посредством объекта</li>
-            <li>Сопряжение посредством объекта параметра</li>
-            <li>Семантическое сопряжение</li>
-        </ul></div>
+            <li>Проектирование - недетерминированный процесс</li>
+            <li>Проектирование - эвристический процесс</li>
+            <li>Проектирование - постепенные процесс</li>
+        </ul>
     </div>
 </section>
-<!------------------------------------------------>
 <section class="slide">
-    <h2 class="shout">Классы</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Классы: АТД</h2>
-</section>
-<section class="slide">
-    <h2>Классы: Интерфейсы</h2>
-</section>
-<section class="slide">
-    <h2>Классы: Методы</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Защитное программирование</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Защитное программирование: Определение</h2>
-</section>
-<section class="slide">
-    <h2>Защитное программирование: Способы обработки ошибок</h2>
-</section>
-<section class="slide">
-    <h2>Защитное программирование: Утверждения</h2>
-</section>
-<section class="slide">
-    <h2>Защитное программирование: Исключения</h2>
-</section>
-<section class="slide">
-    <h2>Защитное программирование: Изоляция повреждения / баррикада</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Переменные</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Переменные: Интервал использования, время жизни, окно уязвимости, интеллектуальная управляемость</h2>
-</section>
-<section class="slide">
-    <h2>Переменные: Единственность цели переменной</h2>
-</section>
-<section class="slide">
-    <h2>Переменные: советы, спецификаторы, антонимы, конвенции, сокращение, неудачные имена переменных</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Последовательный код</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Последовательный код: Явные и не явные зависимости</h2>
-</section>
-<section class="slide">
-    <h2>Последовательный код: Определенный и произвольный порядок</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Условные операторы</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Условные операторы: if</h2>
-</section>
-<section class="slide">
-    <h2>Условные операторы: case</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Нестандартные управляющие структуры</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Нестандартные управляющие структуры: Множественные выходы</h2>
-</section>
-<section class="slide">
-    <h2>Нестандартные управляющие структуры: Рекурсия</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Таблицы подстановки</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Таблицы подстановки: Таблицы с прямым доступом</h2>
-</section>
-<section class="slide">
-    <h2>Таблицы подстановки: Таблицы с индексированным доступом</h2>
-</section>
-<section class="slide">
-    <h2>Таблицы подстановки: Таблицы со ступенчатым доступом</h2>
-</section>
-
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Общие вопросы управления</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Общие вопросы управления: Упрощение сложных выражений</h2>
-</section>
-<section class="slide">
-    <h2>Общие вопросы управления: Уменьшение глубины вложенности</h2>
-</section>
-<section class="slide">
-    <h2>Общие вопросы управления: Измерение сложности метода</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Качество ПО</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Качество ПО: Внешние характеристики</h2>
-</section>
-<section class="slide">
-    <h2>Качество ПО: Внутренние характеристики</h2>
-</section>
-<section class="slide">
-    <h2>Качество ПО: Методики повышения качества и их эффективность</h2>
-</section>
-<section class="slide">
-    <h2>Качество ПО: Главный Закон Контроля Качества ПО</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Тестирование выполняемое разработчиками</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Тестирование выполняемое разработчиками: Подходы</h2>
-</section>
-<section class="slide">
-    <h2>Тестирование выполняемое разработчиками: Приемы</h2>
-</section>
-<section class="slide">
-    <h2>Тестирование выполняемое разработчиками: Ошибки</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Отладка</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Отладка: Поиск дефекта</h2>
-</section>
-<section class="slide">
-    <h2>Отладка: Устранение дефекта</h2>
-</section>
-<section class="slide">
-    <h2>Отладка: Психологические аспекты</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Рефакторинг</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Рефакторинг: Определение</h2>
-</section>
-<section class="slide">
-    <h2>Рефакторинг: Причины для рефакторинга</h2>
-</section>
-<section class="slide">
-    <h2>Рефакторинг: Безопасный рефакторинг</h2>
-</section>
-<section class="slide">
-    <h2>Рефакторинг: Стратегии рефакторинга</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Оптимизация</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Оптимизация: Производительность и оптимизация</h2>
-</section>
-<section class="slide">
-    <h2>Оптимизация: Мифы</h2>
-</section>
-<section class="slide">
-    <h2>Оптимизация: Алгоритм оптимизации</h2>
-</section>
-<section class="slide">
-    <h2>Оптимизация: Преждевременная оптимизация</h2>
-</section>
-<section class="slide">
-    <h2>Оптимизация</h2>
-    <figure>
-        <blockquote>
-            <p>Менее 4% кода обычно соответствуют более чем 50% времени выполнения программы.</p>
-        </blockquote>
-        <figcaption>Дональд Кнут</figcaption>
-    </figure>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Интеграция</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Интеграция: Цели</h2>
-</section>
-<section class="slide">
-    <h2>Интеграция: Виды</h2>
-</section>
-<section class="slide">
-    <h2>Интеграция: Стратегии</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Code-style</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Code-style: Цель</h2>
-</section>
-<section class="slide">
-    <h2>Code-style: Советы</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Комментарии</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Комментарии: Виды</h2>
-</section>
-<section class="slide">
-    <h2>Комментарии: Советы</h2>
-</section>
-<!------------------------------------------------>
-<section class="slide">
-    <h2 class="shout">Итоги</h2>
-    <figure>
-        <img class="cover" src="pictures/slide-2.jpg">
-    </figure>
-</section>
-<section class="slide">
-    <h2>Итоги</h2>
-    <ul>
-        <li>Боритесь со сложностью</li>
-        <li>Анализируйте процесса разработки</li>
-        <li>Пишите программы в первую очередь для людей</li>
-        <li>Программируйте с использованием языка, а не на языке</li>
-        <li>Концентрируйте внимание с помощью соглашений / конвенций</li>
-        <li>Программируйте в терминах проблемной области</li>
-    </ul>
-</section>
-<!------------------------------------------------>
-<hr>
-<section class="slide">
-    <h2>Shower key features</h2>
-    <ol>
-        <li>Built on HTML, CSS and JavaScript</li>
-        <li>Works in all modern browsers</li>
-        <li>Themes are separated from engine</li>
-        <li>Fully keyboard accessible</li>
-        <li>Printable to PDF</li>
-    </ol>
-    <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-</section>
-
-<section class="slide">
-    <h2>Plain text on your slides</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum
-        <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-</section>
-
-<section class="slide">
-    <h2>Two columns if you like</h2>
-    <div class="columns two">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-    </div>
-</section>
-
-<section class="slide">
-    <h2>All kind of lists</h2>
-    <ol>
-        <li>Simple lists are marked with bullets</li>
-        <li>Ordered lists begin with a number</li>
-        <li>You can even nest lists one inside another
-            <ul>
-                <li>Or mix their types</li>
-                <li>But do not go too far</li>
-                <li>Otherwise audience will be bored</li>
-            </ul>
-        </li>
-        <li>Look, seven rows exactly!</li>
-    </ol>
-</section>
-
-<section class="slide">
-    <h2>Serious citations</h2>
-    <figure>
-        <blockquote>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        </blockquote>
-        <figcaption>Marcus Tullius Cicero</figcaption>
-    </figure>
-</section>
-
-<section class="slide">
-    <h2>Code samples</h2>
-    <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
-</section>
-
-<section class="slide">
-    <h2>Even tables</h2>
-    <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-    </table>
-    <p>It’s good to have information organized.</p>
-</section>
-
-<section class="slide" id="picture">
-    <h2>Pictures</h2>
-    <figure>
-        <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-        <figcaption class="copyright right white">
-            <a href="https://fiftyfootshadows.net">© John Carey</a>
-        </figcaption>
-    </figure>
-</section>
-
-<section class="slide">
-    <h2 class="shout shrink">You can even shout this way</h2>
-</section>
-
-<section class="slide">
-    <h2>Inner navigation</h2>
-    <ol>
-        <li>Lets you reveal list items one by one</li>
-        <li class="next">To keep some key points</li>
-        <li class="next">In secret from audience</li>
-        <li class="next">But it will work only once</li>
-        <li class="next">Nobody wants to see the same joke twice</li>
-    </ol>
-</section>
-
-<section class="slide" id="see-more">
-    <h2 class="shout">
-        <figure>
-            <img class="cover" src="pictures/slide-2.jpg">
-        </figure>
-        <img src="pictures/logo.svg" alt="Shower logo">
-        <a href="https://github.com/shower/shower">See more on GitHub</a>
+    <h2>
+        Методики проектирования
     </h2>
-
+    <ul>
+        <li>Нисходящее (top-down) проектирование</li>
+        <li>Восходящее (bottom-up) проектирование</li>
+        <li>Экспериментальное прототипирование</li>
+        <li>Совместное проектирование</li>
+    </ul>
 </section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Управление сложностью</div>
+</section>
+<section class="slide">
+    <h2>Главный технический императив ПО</h2>
+    <div>
+        Не следует пытаться охватить всю программу сразу. Вместо этого мы должны попытаться организовывать программы
+        так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.
+        <p>Дийкстра, 1972</p>
+    </div>
+    <div class="columns two">
+        <div>
+            Причины усложнения:
+            <ul>
+                <li>Сложное решение простой проблемы</li>
+                <li>Простое, но неверное решение сложной проблемы</li>
+                <li>Неадекватное сложное решение сложной проблемы</li>
+            </ul>
+        </div>
+        <div>
+            Подходы к управлению сложностью:
+            <ul>
+                <li>Старайтесь свести к минимуму объем существенной сложности, с которым придется работать в каждый
+                    конкретный момент времени
+                </li>
+                <li>Сдерживайте необязательный рост несущественный сложности</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <h2>Желательные характеристики проекта</h2>
+    <div class="columns two">
+        <ul>
+            <li>Минимальная сложность</li>
+            <li>Простота сопровождения</li>
+            <li>Слабое сопряжение</li>
+            <li>Расширяемость</li>
+            <li>Возможность повторного использования</li>
+            <li>Портируемость</li>
+            <li>Высокий коэффициент объединения по входу (fan-in - к конкретному классу обращается большое число других
+                классов - система предусматривает интенсивное использование вспомогательных низкоуровневых классов)
+            </li>
+        </ul>
+        <ul>
+            <li>Низкий или средний коэффициент разветвления по выходу (fan-out (более 7) - конкретный класс обращается к
+                малому или среднему числу других классов - класс не используется большое количество других классов и не
+                усложняет себя)
+            </li>
+            <li>Минимальная, но полная функциональность</li>
+            <li>Стратификация - возможность изучить систему на разных уровнях декомпозиции (разделение системы на четко
+                выделенные уровни)
+            </li>
+            <li>Соответствие практикам, соглашениями и методикам</li>
+        </ul>
+    </div>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Сопряжение</div>
+</section>
+
+<section class="slide">
+    <h2>Критерии оценки сопряжения: Объем</h2>
+    <div>Пример</div>
+</section>
+<section class="slide">
+    <h2>Критерии оценки сопряжения: Видимость</h2>
+    <div>Пример</div>
+</section>
+<section class="slide">
+    <h2>Критерии оценки сопряжения: Гибкость</h2>
+    <div>Пример</div>
+</section>
+
+<section class="slide">
+    <h2>Простое сопряжение посредством аргументов</h2>
+</section>
+<section class="slide">
+    <h2>Простое сопряжение посредством объекта</h2>
+</section>
+<section class="slide">
+    <h2>Сопряжение посредством объекта параметра</h2>
+</section>
+<section class="slide">
+    <h2>Семантическое сопряжение</h2>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Классы</div>
+</section>
+<section class="slide">
+    <h2>
+        АТД
+    </h2>
+    <div>Абстрактный тип данных - это набор, включающий данные и выполняемые над ними операции.</div>
+    <div>Преимущества использования АТД
+    </div>
+    <ul>
+        <li>Возможность сокрытия деталей реализации</li>
+        <li>Ограничение области изменений</li>
+        <li>Более высокая информативность интерфейса</li>
+        <li>Легкость оптимизации кода</li>
+        <li>Легкость проверки кода</li>
+        <li>Удобочитаемость и понятность кода</li>
+        <li>Ограничение области использования данных</li>
+        <li>Возможность работы с сущностями реального мира, а не с низкоуровневыми деталями реализации</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Хорошая абстракция</h2>
+    <ul>
+        <li>Выражайте в интерфейсе класса согласованный уровень абстракции</li>
+        <li>Убедитесь что понимаете, реализацией какой абстракции является класс</li>
+        <li>Предоставляйте методы вместе с противоположными им методами</li>
+        <li>Убирайте постороннюю информацию в другие классы</li>
+        <li>Делайте интерфейсы программными, а не семантическими</li>
+        <li>Опасайтесь нарушения целостности интерфейса при изменении класса</li>
+        <li>Не добавляйте публичные свойства которые не согласуются с абстракцией интерфейса</li>
+        <li>Рассматривайте абстракцию и связность вместе</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Хорошая инкапсуляция</h2>
+    <ul>
+        <li>Минимизируйте публичные методы и свойства</li>
+        <li>Не делайте предположений о клиентах класса</li>
+        <li>Цените легкость чтения кода выше, чем удобство написания</li>
+        <li>Очень, очень настороженно относитесь к семантическим нарушениям инкапсуляции</li>
+        <li>Остерегайтесь слишком высокого сопряжения (high coupling)</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Разумные причины создания классов</h2>
+    <ul>
+        <li>Моделирование объектов реального мира</li>
+        <li>Моделирование абстрактных объектов</li>
+        <li>Снижение сложности</li>
+        <li>Изоляция сложности</li>
+        <li>Сокрытие деталей реализации</li>
+        <li>Ограничение влияния изменений</li>
+        <li>Упрощение передачи параметров в методы</li>
+        <li>Создание центральных точек управления</li>
+        <li>Облегчение повторного использования кода</li>
+        <li>Планирование создания семейств</li>
+        <li>Упаковка родственных операций / команд</li>
+        <li>Выполнение специфического вида рефакторинга</li>
+    </ul>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Высококачественные методы</div>
+</section>
+<section class="slide">
+    <h2>Разумные причины создания методов</h2>
+    <ul>
+        <li>Снижение сложности</li>
+        <li>Формирование понятной промежуточной абстракции</li>
+        <li>Предотвращение дублирования кода</li>
+        <li>Поддержка наследования</li>
+        <li>Сокрытие очередности действий</li>
+        <li>Упрощение сложных булевых проверок</li>
+        <li>Повышение быстродействия</li>
+        <li>Изоляция сложности</li>
+        <li>Сокрытие деталей реализации</li>
+        <li>Ограничение влияния изменений</li>
+        <li>Сокрытие глобальных данных</li>
+        <li>Создание центральных точек управления</li>
+        <li>Облегчение повторного использования кода</li>
+        <li>Выполнение специфического рефакторинга</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Удачные имена методов
+    </h2>
+    <ul>
+        <li>Название должно описывать то что выполняет метод</li>
+        <li>Не использовать неоднозначные, расплывчатые, не выразительные глаголы в названии</li>
+        <li>Не использовать номера в названии методов для дифференциации / разделению на шаги</li>
+        <li>Не ограничивать длину метода искусственно</li>
+        <li>Для названия метода можно использовать описание возвращаемого значения</li>
+        <li>Метод можно именовать по схеме глагол + имя данных с которыми работает метод</li>
+        <li>Дисциплинированно использовать антонимы</li>
+        <li>Использовать конвенции именования</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Советы по использованию аргументов
+    </h2>
+    <ul>
+        <li>Если несколько методов используют одинаковые аргументы, то необходимо передавать их в одинаковом /
+            согласованном порядке
+        </li>
+        <li>Не передавать не используемые аргументы</li>
+        <li>Переменные статуса или ошибки передавать последними, так как они второстепенны по отношению к главной цели
+            метода
+        </li>
+        <li>Не изменять входные параметры и не переприсваивать</li>
+        <li>Ограничивать число аргументов не более 7, иначе следует передавать их как объект</li>
+    </ul>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Защитное программирование</div>
+</section>
+<section class="slide">
+    <h2>Утверждения (assertion)
+    </h2>
+    <div>Утверждение - код, который проверяет правильность выполнения программы.<br/>
+        Утверждения не предназначены для показа ошибок в продакшн режиме, они для дев режима и разработки.
+    </div>
+    <div>Общие принципы использования утверждений
+    </div>
+    <ul>
+        <li>Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий, которые происходить
+            не должны
+        </li>
+        <li>Старайтесь не помещать выполняемый код в утверждения</li>
+        <li>Используйте утверждения для документирования пред- и постусловий</li>
+        <li>Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте ошибки</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Способы обработки ошибок
+    </h2>
+    <div>
+        Выбор того или иного способа обработки ошибок зависит от того что важнее, Корректность или Устойчивость
+    </div>
+    <ul>
+        <li>Вернуть нейтральное значение</li>
+        <li>Заменить следующий корректным блоком данных</li>
+        <li>Вернуть последний успешный результат</li>
+        <li>Подставить ближайшее допустимое значение</li>
+        <li>Записать лог ошибки</li>
+        <li>Вернуть код ошибки</li>
+        <li>Вызвать обработчик ошибок</li>
+        <li>Показать сообщение об ошибке</li>
+        <li>Обработать ошибку в месте возникновения</li>
+        <li>Прекратить выполнение программы</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Исключения</h2>
+    <ul>
+        <li>Используйте исключения для оповещения других частей программы об ошибках</li>
+        <li>Генерируйте исключения для действительно исключительных ситуаций и не используйте исключения по мелочам</li>
+        <li>Избегайте выкидывание исключение в конструкторах</li>
+        <li>Исключение должно содержать все необходимую информацию о причинах исключения</li>
+        <li>Избегать пустых блоков catch</li>
+        <li>Стандартизируйте работу с исключениями на проекте</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Изоляция повреждений / баррикада
+    </h2>
+    <div>Публичные методы предполагают что получаемые данные небезопасны и отвечают за их проверку и исправление. Здесь
+        используются обработчики ошибок.
+    </div>
+    <div>Приватные методы предполагают что полученные данные прошли проверку в публичном методе и безопасны. Здесь
+        используются утверждения
+    </div>
+</section>
+
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Переменные</div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Общие принципы использования переменных</div>
+</section>
+
+<section class="slide">
+    <h2>Интервал использования переменной - пример кода</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Время жизни переменной - пример кода</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Окно уязвимости - пример кода</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Единственность цели каждой переменной</div>
+</section>
+
+<section class="slide">
+    <h2>Используйте каждую переменную только с одной целью</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Избегайте переменных имеющих скрытый смысл</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Не оставлять не используемые переменные</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Сила имен переменных</div>
+</section>
+
+<section class="slide">
+    <h2>Имена переменных</h2>
+    <ul>
+        <li>Название переменной должно ориентироваться на проблему - пример кода</li>
+        <li>Оптимальная длина имени переменной - 10-16 символов</li>
+    </ul>
+    <div class="columns two">
+        <div>
+            Спецификаторы вычисляемых значений - пример кода
+            <ul>
+                <li>Пример 1</li>
+                <li>Пример 2</li>
+                <li>Пример 3</li>
+            </ul>
+        </div>
+        <div>
+            Антонимы - пример кода
+            <ul>
+                <li>Пример 1</li>
+                <li>Пример 2</li>
+                <li>Пример 3</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Сокращение имен переменных
+    </h2>
+    <div class="columns two">
+        <ul>
+            <li>Используйте стандартные аббревиатуры</li>
+            <li>Удаляйте все гласные, не являющиеся первыми буквами имен</li>
+            <li>Удаляйте артикли и союзы (and, or, the)</li>
+            <li>Обрезайте слова согласованно: после первой, второй или третьей буквы</li>
+            <li>Сохраняйте первую и последнюю букву каждого слова</li>
+            <li>Сохраняйте до 3 выразительных слов</li>
+            <li>Сохраняйте наиболее выразительные звук каждого слова</li>
+        </ul>
+        <ul>
+            <li>Проверяйте что бы в ходе сокращения смысл имени переменной не искажался</li>
+            <li>Не сокращайте слова только на один символ</li>
+            <li>Сокращайте имена согласованно</li>
+            <li>Сокращайте имена так что бы их можно было произнести</li>
+            <li>Избегайте комбинаций допускающих неверное прочтение</li>
+            <li>Используйте словарь для разрешения конфликтных имен и поиска синонимов</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Конвенции именования</div>
+</section>
+
+<section class="slide">
+    <h2>Зачем нужны конвенции</h2>
+    <ul>
+        <li>Они позволяют больше принимать как данное</li>
+        <li>Они помогают использовать знания полученные при работе над прошлыми проектами</li>
+        <li>Они ускоряют изучение кода нового проекта</li>
+        <li>Подавляют размножение похожих имен (totalRecords и recordsTotal)</li>
+        <li>Они могут компенсировать слабости языка (можно имитировать функционал который язык не поддерживает)</li>
+        <li>Они поддерживают связи между данными (recordId и recordName)</li>
+    </ul>
+</section>
+
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title"></div>
+</section>
+<section class="slide">
+    <h2></h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Операторы</div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Последовательный код</div>
+</section>
+
+<section class="slide">
+    <h2>Организуйте код так что бы зависимости были очевидными</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Используйте аргументы что бы сделать зависимости очевидными</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Документируйте неявные зависимости с помощью комментариев</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Проверяйте зависимости с помощью утверждений или обработки ошибок</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide">
+    <h2>Группируйте взаимосвязанные операции</h2>
+    <div>Пример кода</div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Условные операторы: if</div>
+</section>
+
+<section class="slide">
+    <h2>Сначала напишите код номинального хода алгоритма, затем опишите исключительные ситуации</h2>
+</section>
+
+<section class="slide">
+    <h2>Убедитесь, что при проверке на равенство ветвление корректно</h2>
+</section>
+
+<section class="slide">
+    <h2>Размещайте нормальный вариант после if, а не после else</h2>
+</section>
+
+<section class="slide">
+    <h2>Не делать пустой if, что бы что то прописать в else</h2>
+</section>
+
+<section class="slide">
+    <h2>Упрощайте сложные проверки с помощью методов</h2>
+</section>
+
+<section class="slide">
+    <h2>Размещайте наиболее вероятные варианты раньше остальных</h2>
+</section>
+
+<section class="slide">
+    <h2>Убедитесь, что все варианты учтены</h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Условные операторы: case</div>
+</section>
+
+<section class="slide">
+    <h2>Упорядочивайте варианты по алфавиту или числению</h2>
+</section>
+
+<section class="slide">
+    <h2>Поместите правильный вариант первым</h2>
+</section>
+
+<section class="slide">
+    <h2>Отсортируйте варианты по частоте</h2>
+</section>
+
+<section class="slide">
+    <h2>Сделайте обработку каждого варианта простой</h2>
+</section>
+
+<section class="slide">
+    <h2>Используйте вариант по умолчанию для реальной исключительной ситуации, а не для обработки последнего из вариантов</h2>
+</section>
+
+<section class="slide">
+    <h2>Используйте вариант по умолчанию для выявления ошибок</h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Нестадартные управляющие структуры</div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Ранний выход</div>
+</section>
+
+<section class="slide">
+    <h2>Используйте ранний выход так как это улучшает читабельность</h2>
+</section>
+
+<section class="slide">
+    <h2>Минимизируйте число возвратов из каждого метода</h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Рекурсия</div>
+</section>
+
+<section class="slide">
+    <h2>Рекурсия всегда должна иметь базовый случай для выхода из рекурсии</h2>
+</section>
+
+<section class="slide">
+    <h2>Избегайте циклических рекурсий.</h2>
+</section>
+
+<section class="slide">
+    <h2>Следите за производительность рекурсии</h2>
+</section>
+
+<section class="slide">
+    <h2>Решайте задачу итерацией вместо рекурсии если это возможно</h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Табличные методы</div>
+</section>
+
+<section class="slide">
+    <h2>Таблицы с прямым доступом</h2>
+</section>
+
+<section class="slide">
+    <h2>Таблицы с индексированным доступом</h2>
+</section>
+
+<section class="slide">
+    <h2>Таблицы с ступенчатым доступом</h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Общие вопросы управления</div>
+</section>
+
+<section class="slide">
+    <h2>Разбивайте сложные проверки на части с помощью отдельных логических переменных</h2>
+</section>
+<section class="slide">
+    <h2>Размещайте сложные логические проверки в функции-предикаты</h2>
+</section>
+<section class="slide">
+    <h2>Избегать проверок через отрицание</h2>
+</section>
+<section class="slide">
+    <h2>По возможности применять теорему Деморгана</h2>
+</section>
+<section class="slide">
+    <h2>При сравнении чисел использовать упорядочивание с числовой прямой</h2>
+</section>
+<section class="slide">
+    <h2>Измерение сложности метода</h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title"></div>
+</section>
+<section class="slide">
+    <h2></h2>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Усовершенствование кода</div>
+</section>
+<section class="slide chapter-wrapper">
+    <div class="chapter-title">Качество ПО</div>
+</section>
+<section class="slide">
+    <h2>Характеристики качества ПО</h2>
+    <div class="columns two">
+        <div>
+            <div>Внешние характеристики (на которые ориентируется пользователь)</div>
+            <ul>
+                <li>Корректность</li>
+                <li>Практичность</li>
+                <li>Эффективность</li>
+                <li>Надежность</li>
+                <li>Целостность</li>
+                <li>Адаптируемость</li>
+                <li>Правильность</li>
+                <li>Живучесть</li>
+            </ul>
+        </div>
+        <div>
+            <div>Внутренние характеристики (на которые ориентируется разработчик)</div>
+            <ul>
+                <li>Удобство сопровождения</li>
+                <li>Гибкость</li>
+                <li>Портируемость</li>
+                <li>Возможность повторного использования</li>
+                <li>Удобочитаемость</li>
+                <li>Тестируемость</li>
+                <li>Понятность</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Методики повышения качества ПО</h2>
+    <div class="columns two">
+        <ul>
+            <li>Целевые характеристики</li>
+            <li>Явный контроль качества</li>
+            <li>Стратегия тестирования</li>
+            <li>Принципы разработки ПО</li>
+            <li>Неформальные технические обзоры</li>
+        </ul>
+        <ul>
+            <li>Формальные технические обзоры</li>
+            <li>Внешний аудит</li>
+            <li>Процедуры контроля изменений требований</li>
+            <li>Оценка результатов</li>
+            <li>Прототипирование</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title"></div>
+</section>
+<section class="slide">
+    <h2></h2>
+</section>
+
+<section class="slide chapter-wrapper">
+    <div class="chapter-title"></div>
+</section>
+<section class="slide">
+    <h2></h2>
+</section>
+
 
 <div class="progress"></div>
-
 <script src="node_modules/@shower/core/dist/shower.js"></script>
-
 </body>
 </html>
+
+
