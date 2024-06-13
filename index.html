@@ -34,7 +34,7 @@
         h2 {
             font: 800 30px/100% Roboto;
             position: relative;
-            margin-bottom: 10px;
+            margin: 10px 0;
             &:before {
                 content: '';
                 position: absolute;
@@ -242,7 +242,7 @@
     <h2>Главный технический императив ПО</h2>
     <blockquote>
         <p>Не следует пытаться охватить всю программу сразу. Вместо этого мы должны попытаться организовывать программы
-           так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.</p>
+            так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.</p>
         <p>Дийкстра, 1972</p>
     </blockquote>
     <div class="columns two">
@@ -257,8 +257,9 @@
         <div>
             Подходы к управлению сложностью:
             <ul>
-                <li class="next">Старайтесь свести к минимуму объем существенной сложности, с которым придется работать в каждый
-                                 конкретный момент времени
+                <li class="next">Старайтесь свести к минимуму объем существенной сложности, с которым придется работать
+                    в каждый
+                    конкретный момент времени
                 </li>
                 <li class="next">Сдерживайте необязательный рост несущественный сложности</li>
             </ul>
@@ -298,6 +299,7 @@
         <img src="./pictures/coupling-volume-high.svg" alt="">
     </div>
 </section>
+
 <section class="slide">
     <h2>Критерии оценки сопряжения: Объем</h2>
     <div class="code">
@@ -305,6 +307,7 @@
         <img src="./pictures/coupling-volume-low.svg" alt="">
     </div>
 </section>
+
 <section class="slide">
     <h2>Критерии оценки сопряжения: Видимость</h2>
     <div class="code">
@@ -351,6 +354,7 @@
         <img src="./pictures/semantic-coupling-1.svg" alt="">
     </div>
 </section>
+
 <section class="slide">
     <div class="code">
         <img src="./pictures/semantic-coupling-2.svg" alt="">
@@ -437,7 +441,6 @@
             <li class="next">Выполнение специфического вида рефакторинга</li>
         </ul>
     </div>
-
 </section>
 
 <section class="slide chapter-wrapper">
@@ -467,7 +470,6 @@
             <li class="next">Выполнение специфического рефакторинга</li>
         </ul>
     </div>
-
 </section>
 
 <section class="slide">
@@ -487,12 +489,14 @@
 <section class="slide">
     <h2>Советы по использованию аргументов</h2>
     <ul>
-        <li class="next">Если несколько методов используют одинаковые аргументы, то необходимо передавать их в одинаковом /
-                         согласованном порядке
+        <li class="next">Если несколько методов используют одинаковые аргументы, то необходимо передавать их в
+            одинаковом /
+            согласованном порядке
         </li>
         <li class="next">Не передавать не используемые аргументы</li>
-        <li class="next">Переменные статуса или ошибки передавать последними, так как они второстепенны по отношению к главной цели
-                         метода
+        <li class="next">Переменные статуса или ошибки передавать последними, так как они второстепенны по отношению к
+            главной цели
+            метода
         </li>
         <li class="next">Не изменять входные параметры и не переприсваивать</li>
         <li class="next">Ограничивать число аргументов не более 7, иначе следует передавать их как объект</li>
@@ -506,13 +510,14 @@
 <section class="slide">
     <h2>Утверждения (assertion)</h2>
     <div>Утверждение - код, который проверяет правильность выполнения программы.<br/>
-         Утверждения не предназначены для показа ошибок в продакшн режиме, они для дев режима и разработки.
+        Утверждения не предназначены для показа ошибок в продакшн режиме, они для дев режима и разработки.
     </div>
     <div>Общие принципы использования утверждений
     </div>
     <ul>
-        <li class="next">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий, которые происходить
-                         не должны
+        <li class="next">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий, которые
+            происходить
+            не должны
         </li>
         <li class="next">Старайтесь не помещать выполняемый код в утверждения</li>
         <li class="next">Используйте утверждения для документирования пред- и постусловий</li>
@@ -532,7 +537,6 @@
             <li class="next">Вернуть последний успешный результат</li>
             <li class="next">Подставить ближайшее допустимое значение</li>
             <li class="next">Записать лог ошибки</li>
-
         </ul>
         <ul>
             <li class="next">Вернуть код ошибки</li>
@@ -549,7 +553,9 @@
     <h2>Исключения</h2>
     <ul>
         <li class="next">Используйте исключения для оповещения других частей программы об ошибках</li>
-        <li class="next">Генерируйте исключения для действительно исключительных ситуаций и не используйте исключения по мелочам</li>
+        <li class="next">Генерируйте исключения для действительно исключительных ситуаций и не используйте исключения по
+            мелочам
+        </li>
         <li class="next">Избегайте выкидывание исключение в конструкторах</li>
         <li class="next">Исключение должно содержать все необходимую информацию о причинах исключения</li>
         <li class="next">Избегать пустых блоков catch</li>
@@ -560,10 +566,13 @@
 <section class="slide">
     <h2>Изоляция повреждений / баррикада</h2>
     <div>Публичные методы предполагают что получаемые данные небезопасны и отвечают за их проверку и исправление. Здесь
-         используются обработчики ошибок.
+        используются обработчики ошибок.
     </div>
     <div>Приватные методы предполагают что полученные данные прошли проверку в публичном методе и безопасны. Здесь
-         используются утверждения
+        используются утверждения
+    </div>
+    <div class="code">
+        <img src="./pictures/barricade.svg" alt="">
     </div>
 </section>
 
@@ -750,7 +759,9 @@
         <li>Поместите правильный вариант первым</li>
         <li>Отсортируйте варианты по частоте</li>
         <li>Сделайте обработку каждого варианта простой</li>
-        <li>Используйте вариант по умолчанию для реальной исключительной ситуации, а не для обработки последнего из вариантов</li>
+        <li>Используйте вариант по умолчанию для реальной исключительной ситуации, а не для обработки последнего из
+            вариантов
+        </li>
         <li>Используйте вариант по умолчанию для выявления ошибок</li>
     </ul>
 </section>
@@ -793,7 +804,7 @@
 </section>
 
 <section class="slide">
-    <h2>Разбивайте сложные проверки на части с помощью отдельных логических переменных</h2>
+    <h2>Используйте отдельные логические переменные</h2>
     <div class="code">
         <div>Плохо</div>
         <img src="./pictures/logic-var-bad.svg" alt="">
@@ -817,19 +828,36 @@
 </section>
 
 <section class="slide">
-    <h2>Избегать проверок через отрицание</h2>
-</section>
-
-<section class="slide">
-    <h2>По возможности применять теорему Деморгана</h2>
-</section>
-
-<section class="slide">
-    <h2>При сравнении чисел использовать упорядочивание с числовой прямой</h2>
+    <h2>Избегайте проверок через отрицание</h2>
+    <div class="code">
+        <img src="./pictures/control-1.svg" alt="">
+    </div>
+    <h2>По возможности применяйте теорему Деморгана</h2>
+    <div class="code">
+        <img src="./pictures/control-2.svg" alt="">
+    </div>
+    <h2>При сравнении чисел используйте числовую прямую</h2>
+    <div class="code">
+        <img src="./pictures/control-3.svg" alt="">
+    </div>
 </section>
 
 <section class="slide">
     <h2>Измерение сложности метода</h2>
+    <div>
+        <div>
+            <div>0-5</div>
+            <div>Метод, возможно, в порядке</div>
+        </div>
+        <div>
+            <div>6-10</div>
+            <div>Пора начать думать над упрощением</div>
+        </div>
+        <div>
+            <div>10+</div>
+            <div>Пора делать рефакторинг</div>
+        </div>
+    </div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -1090,15 +1118,29 @@
 </section>
 
 <section class="slide">
-    <h2>Прекращение проверки сразу после получения ответа</h2>
+    <div class="code">
+        <h2>Прекращение проверки сразу после получения ответа</h2>
+        <img src="./pictures/control-3.svg" alt="">
+    </div>
+    <div class="code">
+        <h2>Упорядочивание if и case по частоте</h2>
+        <img src="./pictures/optimization-1.svg" alt="">
+    </div>
 </section>
 
 <section class="slide">
-    <h2>Упорядочивание if и case по частоте</h2>
 </section>
 
 <section class="slide">
     <h2>Замена сложных выражений на обращение к таблице подстановки</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/optimization-2.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Лучше</div>
+        <img src="./pictures/optimization-3.svg" alt="">
+    </div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -1107,30 +1149,62 @@
 
 <section class="slide">
     <h2>Размыкание (unswitch) цикла</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/cycle-unswitch-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Лучше</div>
+        <img src="./pictures/cycle-unswitch-2.svg" alt="">
+    </div>
 </section>
 
 <section class="slide">
     <h2>Объединение (jamming) цикла</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/cycle-jamming-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Лучше</div>
+        <img src="./pictures/cycle-jamming-2.svg" alt="">
+    </div>
 </section>
 
 <section class="slide">
     <h2>Развертывание (unrolling) цикла</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/cycle-unrolling-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Лучше</div>
+        <img src="./pictures/cycle-unrolling-2.svg" alt="">
+    </div>
 </section>
 
 <section class="slide">
     <h2>Минимизация объема работы, выполняемой в цикле</h2>
-</section>
-
-<section class="slide">
-    <h2>Сигнальные значения</h2>
+    <div class="code">
+        <div>Плохо</div>
+        <img src="./pictures/cycle-min-work-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Лучше</div>
+        <img src="./pictures/cycle-min-work-2.svg" alt="">
+    </div>
 </section>
 
 <section class="slide">
     <h2>Вложение более ресурсоемкого цикла в менее ресурсоемкий</h2>
-</section>
-
-<section class="slide">
-    <h2>Снижение стоимости операций</h2>
+    <div class="code">
+        <div>Плохо (600 итераций)</div>
+        <img src="./pictures/cycle-inner-1.svg" alt="">
+    </div>
+    <div class="code">
+        <div>Лучше (505 итераций)</div>
+        <img src="./pictures/cycle-inner-2.svg" alt="">
+    </div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -1156,7 +1230,6 @@
 <section class="slide">
     <h2>Вынесение часто используемых подвыражений</h2>
 </section>
-
 
 
 <div class="progress"></div>
