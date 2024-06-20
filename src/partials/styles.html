@@ -90,7 +90,6 @@
         align-items: flex-start;
         justify-content: center;
         max-height: 100%;
-        height: 47vh;
         img {
             max-width: 100%;
             width: 100%;
@@ -99,7 +98,7 @@
         }
     }
 
-    .definition {
+    .def {
         display: inline-block;
         background-color: #f3f3f3;
         padding: 0 5px;
@@ -131,6 +130,11 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        width: 100%;
+
+        & .column {
+            padding-left: 50px;
+        }
 
         & > div {
             font-size: inherit;
@@ -183,16 +187,40 @@
     }
 
     .tip,
+    .warning,
     .danger {
         color: white;
         border-radius: 5px;
-        padding: 5px;
+        padding: 5px 5px 5px 10px;
+        margin-bottom: 5px;
+        position: relative;
+        &:after {
+            display: none;
+        }
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+        }
     }
     .tip {
         background-color: rgb(0, 230, 35);
+        &:before {
+        }
+    }
+
+    .warning {
+        background-color: rgb(230, 192, 0);
+        &:before {
+        }
     }
 
     .danger {
         background-color: rgb(230, 0, 35);
+        &:before {
+        }
     }
 </style>

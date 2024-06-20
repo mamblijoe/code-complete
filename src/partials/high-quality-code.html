@@ -4,25 +4,27 @@
 
 <section class="slide">
     <h2>Проектирование</h2>
-    <p><span class="definition">Проектирование</span> - разработка схемы преобразования спецификации в готовое
-        приложение.</p>
-    <div class="row" style="font-size: 25px;">
-        <div class="half border">Проектирование - "грязная проблема"</div>
-        <div class="half border">Проектирование - неряшливый процесс</div>
-        <div class="half border">Проектирование - недетерминированный процесс</div>
-        <div class="half border">Проектирование - эвристический процесс</div>
-        <div class="half border">Проектирование - постепенные процесс</div>
-        <div class="half border">Проектирование - определение компромиссов и приоритетов</div>
-        <div class="half border">Проектирование - ограничение возможностей</div>
+    <div><span class="def">Проектирование</span> - разработка схемы преобразования спецификации в готовое
+        приложение.
+    </div>
+    <h3>Тезисы</h3>
+    <div class="column">
+        <div class="full border"><span class="def">Проектирование</span> - "грязная проблема"</div>
+        <div class="full border"><span class="def">Проектирование</span> - неряшливый процесс</div>
+        <div class="full border"><span class="def">Проектирование</span> - недетерминированный процесс</div>
+        <div class="full border"><span class="def">Проектирование</span> - эвристический процесс</div>
+        <div class="full border"><span class="def">Проектирование</span> - постепенные процесс</div>
+        <div class="full border"><span class="def">Проектирование</span> - определение компромиссов и приоритетов</div>
+        <div class="full border"><span class="def">Проектирование</span> - ограничение возможностей</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>
         Методики проектирования</h2>
-    <div class="column" style="font-size: 30px;">
-        <div class="full border">Нисходящее (top-down) проектирование</div>
-        <div class="full border">Восходящее (bottom-up) проектирование</div>
+    <div class="column">
+        <div class="full border">Нисходящее (<span class="def">top-down</span>) проектирование</div>
+        <div class="full border">Восходящее (<span class="def">bottom-up</span>) проектирование</div>
         <div class="full border">Экспериментальное прототипирование</div>
         <div class="full border">Совместное проектирование</div>
     </div>
@@ -39,25 +41,26 @@
             программы
             так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.
         </div>
-        <div class="definition">Дийкстра, 1972</div>
+        <div class="def">Дийкстра, 1972</div>
     </blockquote>
     <div class="columns two">
         <div>
             <h3>Причины усложнения:</h3>
-            <div class="danger column" style="font-size: 18.5px;">
-                <div>Сложное решение простой проблемы</div>
-                <div>Простое, но неверное решение сложной проблемы</div>
-                <div>Неадекватное сложное решение сложной проблемы</div>
+            <div class="column">
+                <div class="full danger">Сложное решение простой проблемы</div>
+                <div class="full danger">Простое, но неверное решение сложной проблемы</div>
+                <div class="full danger">Неадекватное сложное решение сложной проблемы</div>
             </div>
         </div>
         <div>
             <h3>Подходы к управлению сложностью:</h3>
-            <div class="tip column" style="font-size: 19px;">
-                <div>Старайтесь свести к минимуму объем существенной сложности, с которым придется работать
+            <div class="column">
+                <div class="full tip">Старайтесь свести к минимуму объем существенной сложности, с которым придется
+                    работать
                     в каждый
                     конкретный момент времени
                 </div>
-                <div>Сдерживайте необязательный рост несущественный сложности</div>
+                <div class="full tip">Сдерживайте необязательный рост несущественный сложности</div>
             </div>
         </div>
     </div>
@@ -87,7 +90,7 @@
 <section class="slide">
     <h2>Критерии оценки сопряжения: Объем</h2>
     <div class="code">
-        <div>Высокое число соединений</div>
+        <h3>Высокое число соединений</h3>
         <img src="./pictures/coupling-volume-high.svg" alt="">
     </div>
 </section>
@@ -95,7 +98,7 @@
 <section class="slide">
     <h2>Критерии оценки сопряжения: Объем</h2>
     <div class="code">
-        <div>Низкое число соединений</div>
+        <h3>Низкое число соединений</h3>
         <img src="./pictures/coupling-volume-low.svg" alt="">
     </div>
 </section>
@@ -103,11 +106,11 @@
 <section class="slide">
     <h2>Критерии оценки сопряжения: Видимость</h2>
     <div class="code">
-        <div>Не очевидная связь</div>
+        <h3>Не очевидная связь</h3>
         <img src="./pictures/coupling-visibility-bad.svg" alt="">
     </div>
     <div class="code">
-        <div>Очевидная связь</div>
+        <h3>Очевидная связь</h3>
         <img src="./pictures/coupling-visibility-good.svg" alt="">
     </div>
 </section>
@@ -174,11 +177,11 @@
 
 <section class="slide">
     <h2>АТД</h2>
-    <div><span class="definition">Абстрактный тип данных</span> - это набор, включающий данные и выполняемые над ними
+    <div><span class="def">Абстрактный тип данных</span> - это набор, включающий данные и выполняемые над ними
         операции.
     </div>
-    <h2>Преимущества использования АТД</h2>
-    <div class="column" style="font-size: 15px;">
+    <h3>Преимущества использования АТД</h3>
+    <div class="column">
         <div class="full border">Возможность сокрытия деталей реализации</div>
         <div class="full border">Ограничение области изменений</div>
         <div class="full border">Более высокая информативность интерфейса</div>
@@ -219,19 +222,19 @@
 
 <section class="slide">
     <h2>Разумные причины создания классов</h2>
-    <div class="row" style="font-size: 25px;">
-            <div class="half border">Моделирование объектов реального мира</div>
-            <div class="half border">Моделирование абстрактных объектов</div>
-            <div class="half border">Снижение сложности</div>
-            <div class="half border">Изоляция сложности</div>
-            <div class="half border">Сокрытие деталей реализации</div>
-            <div class="half border">Ограничение влияния изменений</div>
-            <div class="half border">Упрощение передачи параметров в методы</div>
-            <div class="half border">Создание центральных точек управления</div>
-            <div class="half border">Облегчение повторного использования кода</div>
-            <div class="half border">Планирование создания семейств</div>
-            <div class="half border">Упаковка родственных операций / команд</div>
-            <div class="half border">Выполнение специфического вида рефакторинга</div>
+    <div class="row">
+        <div class="half border">Моделирование объектов реального мира</div>
+        <div class="half border">Моделирование абстрактных объектов</div>
+        <div class="half border">Снижение сложности</div>
+        <div class="half border">Изоляция сложности</div>
+        <div class="half border">Сокрытие деталей реализации</div>
+        <div class="half border">Ограничение влияния изменений</div>
+        <div class="half border">Упрощение передачи параметров в методы</div>
+        <div class="half border">Создание центральных точек управления</div>
+        <div class="half border">Облегчение повторного использования кода</div>
+        <div class="half border">Планирование создания семейств</div>
+        <div class="half border">Упаковка родственных операций / команд</div>
+        <div class="half border">Выполнение специфического вида рефакторинга</div>
     </div>
 </section>
 
@@ -242,20 +245,20 @@
 <section class="slide">
     <h2>Разумные причины создания методов</h2>
     <div class="row">
-            <div class="half border">Снижение сложности</div>
-            <div class="half border">Формирование понятной промежуточной абстракции</div>
-            <div class="half border">Предотвращение дублирования кода</div>
-            <div class="half border">Поддержка наследования</div>
-            <div class="half border">Сокрытие очередности действий</div>
-            <div class="half border">Упрощение сложных булевых проверок</div>
-            <div class="half border">Повышение быстродействия</div>
-            <div class="half border">Изоляция сложности</div>
-            <div class="half border">Сокрытие деталей реализации</div>
-            <div class="half border">Ограничение влияния изменений</div>
-            <div class="half border">Сокрытие глобальных данных</div>
-            <div class="half border">Создание центральных точек управления</div>
-            <div class="half border">Облегчение повторного использования кода</div>
-            <div class="half border">Выполнение специфического рефакторинга</div>
+        <div class="half border">Снижение сложности</div>
+        <div class="half border">Формирование понятной промежуточной абстракции</div>
+        <div class="half border">Предотвращение дублирования кода</div>
+        <div class="half border">Поддержка наследования</div>
+        <div class="half border">Сокрытие очередности действий</div>
+        <div class="half border">Упрощение сложных булевых проверок</div>
+        <div class="half border">Повышение быстродействия</div>
+        <div class="half border">Изоляция сложности</div>
+        <div class="half border">Сокрытие деталей реализации</div>
+        <div class="half border">Ограничение влияния изменений</div>
+        <div class="half border">Сокрытие глобальных данных</div>
+        <div class="half border">Создание центральных точек управления</div>
+        <div class="half border">Облегчение повторного использования кода</div>
+        <div class="half border">Выполнение специфического рефакторинга</div>
     </div>
 </section>
 
@@ -281,7 +284,8 @@
             согласованном порядке
         </div>
         <div class="full border">Не передавать не используемые аргументы</div>
-        <div class="full border">Переменные статуса или ошибки передавать последними, так как они второстепенны по отношению к
+        <div class="full border">Переменные статуса или ошибки передавать последними, так как они второстепенны по
+            отношению к
             главной цели
             метода
         </div>
@@ -296,25 +300,29 @@
 
 <section class="slide">
     <h2>Утверждения (assertion)</h2>
-    <div><span class="definition">Утверждение</span> - код, который проверяет правильность выполнения программы.<br/>
-        Утверждения не предназначены для показа ошибок в продакшн режиме, они для дев режима и разработки.
+    <div><span class="def">Утверждение</span> - код, который проверяет правильность выполнения программы.<br/>
+        <span class="def">Утверждение</span> не предназначены для показа ошибок в продакшн режиме, они для дев режима и
+        разработки.
     </div>
-    <h2>Общие принципы использования утверждений</h2>
+    <h3>Общие принципы использования утверждений</h3>
     <div class="row">
-        <div class="half border">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий, которые
+        <div class="half tip">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий,
+            которые
             происходить
             не должны
         </div>
-        <div class="half border">Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте ошибки</div>
-        <div class="half border">Старайтесь не помещать выполняемый код в утверждения</div>
-        <div class="half border">Используйте утверждения для документирования пред- и постусловий</div>
+        <div class="half tip">Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте
+            ошибки
+        </div>
+        <div class="half warning">Старайтесь не помещать выполняемый код в утверждения</div>
+        <div class="half tip">Используйте утверждения для документирования пред- и постусловий</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Способы обработки ошибок</h2>
     <div>
-        Выбор того или иного способа обработки ошибок зависит от того что важнее, <span class="definition">Корректность</span> или <span class="definition">Устойчивость</span>
+        Выбор того или иного способа обработки ошибок зависит от того что важнее, Корректность или Устойчивость
     </div>
     <h3>Способы</h3>
     <div class="columns two">
@@ -340,7 +348,8 @@
     <h2>Исключения</h2>
     <div class="column">
         <div class="full tip">Используйте исключения для оповещения других частей программы об ошибках</div>
-        <div class="full tip">Генерируйте исключения для действительно исключительных ситуаций и не используйте исключения по
+        <div class="full tip">Генерируйте исключения для действительно исключительных ситуаций и не используйте
+            исключения по
             мелочам
         </div>
         <div class="full tip">Избегайте выкидывание исключение в конструкторах</div>
@@ -352,12 +361,17 @@
 
 <section class="slide">
     <h2>Изоляция повреждений / баррикада</h2>
-    <div><span class="definition">Публичные методы</span> предполагают что получаемые данные небезопасны и отвечают за их проверку и исправление. Здесь
+    <div><span class="def">Публичные методы</span> предполагают что получаемые данные небезопасны и отвечают за их
+        проверку и исправление.
+    </div>
+    <div class="tip">Здесь
         используются обработчики ошибок.
     </div>
-    <div><span class="definition">Приватные методы</span> предполагают что полученные данные прошли проверку в публичном методе и безопасны. Здесь
-        используются утверждения
+    <div><span class="def">Приватные методы</span> предполагают что полученные данные прошли проверку в публичном методе
+        и безопасны.
     </div>
+    <div class="tip">Здесь
+        используются утверждения</div>
 </section>
 
 <section class="slide">
