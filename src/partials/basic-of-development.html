@@ -5,7 +5,7 @@
 <section class="slide">
     <h2>Разработка ПО</h2>
     <div><span class="def">Конструирование</span> — главный этап разработки ПО, без которого не обходится ни один
-        проект.
+                                                  проект.
     </div>
     <h3>Основные этапы конструирования:</h3>
     <div class="row start">
@@ -14,10 +14,8 @@
         <div class="half border">Создание плана конструирования</div>
         <div class="half border filled">Детальное проектирование</div>
         <div class="half border filled">Кодирование и отладка</div>
-        <div class="half border filled">Блочное тестирование</div>
-        <div class="half border filled">Интеграционное тестирование</div>
         <div class="half border filled">Интеграция</div>
-        <div class="half border filled">Тестирование системы</div>
+        <div class="half border filled">Тестирование (интеграционное, блочное) системы</div>
         <div class="half border">Корректирующее сопровождение</div>
         <div class="half border">Разработка архитектуры ПО / Высокоуровневое проектирование</div>
     </div>
@@ -30,13 +28,13 @@
 <section class="slide">
     <h2>Метафоры</h2>
     <p><span class="def">Метафоры</span> помогают понять процесс разработки ПО, сопоставляя его с другими, более
-        знакомыми процессами.</p>
+                                         знакомыми процессами.</p>
     <h3>Виды:</h3>
     <div class="row">
-        <div class="half circle" data-number="1">Литературная метафора</div>
-        <div class="half circle" data-number="2">Сельскохозяйственная метафора</div>
-        <div class="half circle" data-number="3">Метафора жемчужины</div>
-        <div class="half circle" data-number="4">Строительная метафора</div>
+        <div class="half border">Литературная метафора</div>
+        <div class="half border">Сельскохозяйственная метафора</div>
+        <div class="half border">Метафора жемчужины</div>
+        <div class="half border">Строительная метафора</div>
     </div>
 </section>
 
@@ -46,46 +44,57 @@
 
 <section class="slide">
     <h2>Подходы к разработке ПО</h2>
-    <h3>Последовательный</h3>
-    <div class="column start">
-        <div class="full border">Требования довольно стабильны</div>
-        <div class="full border">Проект приложения прост и относительно понятен</div>
-        <div class="full border">Разработчики знакомы с прикладной областью</div>
-        <div class="full border">Проект не связан с особым риском</div>
-        <div class="full border">Важна долговременная предсказуемость проекта</div>
-        <div class="full border">Затраты на изменения требований окажутся скорее всего высокими</div>
-    </div>
-</section>
+    <table>
+        <tr style="background: #f3f3f3">
+            <th scope="col">Последовательный</th>
+            <th scope="col">Итеративный</th>
+        </tr>
+        <tr>
+            <td>Требования стабильны</td>
+            <td>Требования непонятны или нестабильны</td>
+        </tr>
+        <tr>
+            <td>Проект прост и относительно понятен</td>
+            <td>Проект сложен и не ясен</td>
+        </tr>
 
-<section class="slide">
-    <h2>Подходы к разработке ПО</h2>
-    <h3>Итеративный</h3>
-    <div class="column">
-        <div class="full border">Требования относительные непонятны или нестабильны</div>
-        <div class="full border">Проект приложения сложен и не ясен</div>
-        <div class="full border">Разработчики не знакомы с прикладной областью</div>
-        <div class="full border">Проект сопряжен с высоким риском</div>
-        <div class="full border">Долговременная предсказуемость проекта не играет особой роли</div>
-        <div class="full border">Затраты на изменения требований, скорее всего, будут низкими</div>
-    </div>
+        <tr>
+            <td>Разработчики знакомы с прикладной областью</td>
+            <td>Разработчики не знакомы с прикладной областью</td>
+        </tr>
+        <tr>
+            <td>Проект не связан с особым риском</td>
+            <td>Проект сопряжен с высоким риском</td>
+        </tr>
+        <tr>
+            <td>Важна долговременная предсказуемость проекта</td>
+            <td>Долговременная предсказуемость проекта не играет особой роли</td>
+        </tr>
+        <tr>
+            <td>Затраты на изменения требований окажутся высокими</td>
+            <td>Затраты на изменения требований будут низкими</td>
+        </tr>
+    </table>
 </section>
 
 <section class="slide">
     <h2>Предварительные условия</h2>
-    <div class="columns two">
-        <div class="column">
-            <div class="full tip">Необходимо перед конструированием сформулировать проблему которую система будет
-                решать
-            </div>
-            <div class="full danger">Иначе можно решать не ту проблемы или не тем способом</div>
-        </div>
-        <div class="column">
-            <div class="full tip">Необходимо перед конструированием иметь официальные требования</div>
-            <div class="full danger">При их отсутствии требования будут определяться разработчиком, а не пользователем
-                системы
-            </div>
-        </div>
-    </div>
+
+    <table>
+        <tr>
+            <td class="tip">Необходимо перед конструированием сформулировать проблему которую система будет
+                            решать
+            </td>
+            <td class="tip">Необходимо перед конструированием иметь официальные требования</td>
+        </tr>
+        <tr style="height: 30px"></tr>
+        <tr>
+            <td class="warning">Иначе можно решать не ту проблемы или не тем способом</td>
+            <td class="warning">При их отсутствии требования будут определяться разработчиком, а не пользователем
+                                системы
+            </td>
+        </tr>
+    </table>
 </section>
 
 <section class="slide">
