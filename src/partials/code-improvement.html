@@ -4,30 +4,53 @@
 
 <section class="slide">
     <h2>Характеристики качества ПО</h2>
+
+
+    <table>
+        <tr>
+            <td><h3>Внешние характеристики</h3></td>
+            <td><h3>Внутренние характеристики</h3></td>
+
+        <tr>
+            <td>Корректность</td>
+            <td>Удобство сопровождения</td>
+        </tr>
+        <tr>
+            <td>Практичность</td>
+            <td>Гибкость</td>
+        </tr>
+        <tr>
+            <td>Эффективность</td>
+            <td>Портируемость</td>
+        </tr>
+        <tr>
+            <td>Надежность</td>
+            <td>Возможность повторного использования</td>
+        </tr>
+        <tr>
+            <td>Целостность</td>
+            <td>Удобочитаемость</td>
+        </tr>
+        <tr>
+            <td>Адаптируемость</td>
+            <td>Тестируемость</td>
+        </tr>
+        <tr>
+            <td>Правильность</td>
+            <td>Понятность</td>
+        </tr>
+        <tr>
+            <td>Живучесть</td>
+            <td></td>
+        </tr>
+    </table>
     <div class="columns two">
         <div>
-            <h3>Внешние характеристики</h3>
             <div class="column">
-                <div class="full border">Корректность</div>
-                <div class="full border">Практичность</div>
-                <div class="full border">Эффективность</div>
-                <div class="full border">Надежность</div>
-                <div class="full border">Целостность</div>
-                <div class="full border">Адаптируемость</div>
-                <div class="full border">Правильность</div>
-                <div class="full border">Живучесть</div>
             </div>
         </div>
         <div>
-            <h3>Внутренние характеристики</h3>
             <div class="column">
-                <div class="full border">Удобство сопровождения</div>
-                <div class="full border">Гибкость</div>
-                <div class="full border">Портируемость</div>
-                <div class="full border">Возможность повторного использования</div>
-                <div class="full border">Удобочитаемость</div>
-                <div class="full border">Тестируемость</div>
-                <div class="full border">Понятность</div>
             </div>
         </div>
     </div>
@@ -127,47 +150,55 @@
 </section>
 
 <section class="slide">
-    <h2>Разумные причины выполнения рефакторинга</h2>
-    <div class="columns three">
-        <div class="column">
-            <div class="full border">Код повторяется</div>
-            <div class="full border">Метод слишком велик</div>
-            <div class="full border">Цикл слишком велик или имеет глубокую вложенность</div>
-            <div class="full border">Класс имеет плохую связность</div>
-            <div class="full border">Интерфейс класса не формирует согласованную абстракцию</div>
-            <div class="full border">Метод принимает слишком много параметров</div>
-            <div class="full border">Отдельные части класса меняет независимо от других частей</div>
-            <div class="full border">При изменении программы приходится параллельно менять несколько классов</div>
-        </div>
-        <div class="column">
-            <div class="full border">Приходится менять параллельно несколько иерархий наследования</div>
-            <div class="full border">Приходится менять параллельно несколько блоков case</div>
-            <div class="full border">Родственные элементы данных, используемые вместе, не организован в классы</div>
-            <div class="full border">Метод использует больше параметра чужого класса, чем своего</div>
-            <div class="full border">Элементарный тип данных перегружен</div>
-            <div class="full border">Класс имеет слишком ограниченную функциональность</div>
-            <div class="full border">По цепи методов передаются бродячие данные</div>
-            <div class="full border">Прокси-объект ничего не делает</div>
-        </div>
-        <div class="column">
-            <div class="full border">Один класс слишком много знает о другом</div>
-            <div class="full border">Метод имеет не удачное имя</div>
-            <div class="full border">Лишние публичные методы и свойства</div>
-            <div class="full border">Подкласс использует мало методов или свойств от наследования</div>
-            <div class="full border">Сложный код объясняется с помощью комментариев</div>
-            <div class="full border">Код содержит глобальные переменные</div>
-            <div class="full border">Перед вызовом метода выполняется подготовительный код</div>
-            <div class="full border">Программа содержит код который когда-нибудь может понадобиться</div>
-        </div>
+    <h2>Разумные причины выполнения рефакторинга: Общее</h2>
+    <div class="column">
+        <div class="full border">Код повторяется</div>
+        <div class="full border">Цикл слишком велик или имеет глубокую вложенность</div>
+        <div class="full border">Приходится менять параллельно несколько блоков case</div>
+        <div class="full border">Элементарный тип данных перегружен</div>
+        <div class="full border">Прокси-объект ничего не делает</div>
+        <div class="full border">Сложный код объясняется с помощью комментариев</div>
+        <div class="full border">Код содержит глобальные переменные</div>
+        <div class="full border">Программа содержит код который когда-нибудь может понадобиться</div>
     </div>
 </section>
-
+<section class="slide">
+    <h2>Разумные причины выполнения рефакторинга: Методы</h2>
+    <div class="column">
+        <div class="full border">Метод слишком велик</div>
+        <div class="full border">Метод принимает слишком много параметров</div>
+        <div class="full border">По цепи методов передаются бродячие данные</div>
+        <div class="full border">Метод имеет не удачное имя</div>
+        <div class="full border">Лишние публичные методы и свойства</div>
+        <div class="full border">Перед вызовом метода выполняется подготовительный код</div>
+        <div class="full border">Подкласс использует мало методов или свойств от наследования</div>
+        <div class="full border">Метод использует больше параметра чужого класса, чем своего</div>
+    </div>
+</section>
+<section class="slide">
+    <h2>Разумные причины выполнения рефакторинга: Классы</h2>
+    <div class="column">
+        <div class="full border">Класс имеет плохую связность</div>
+        <div class="full border">Интерфейс класса не формирует согласованную абстракцию</div>
+        <div class="full border">Отдельные части класса меняет независимо от других частей</div>
+        <div class="full border">При изменении программы приходится параллельно менять несколько классов</div>
+        <div class="full border">Приходится менять параллельно несколько иерархий наследования</div>
+        <div class="full border">Родственные элементы данных, используемые вместе, не организован в классы</div>
+        <div class="full border">Класс имеет слишком ограниченную функциональность</div>
+        <div class="full border">Один класс слишком много знает о другом</div>
+    </div>
+</section>
 <section class="slide">
     <h2>Плохие причины рефакторинга</h2>
-    <div class="danger">Не рассматривайте рефакторинг как оправдание написание плохого кода с намерением исправить его
-        позднее
+    <div class="row h-center">
+        <div class="danger full">Не рассматривайте рефакторинг как оправдание написание плохого кода с намерением
+            исправить
+            его
+            позднее
+        </div>
+        <div class="danger full">Не рассматривайте рефакторинг как способ избежать переписывание кода</div>
+        <img src="./pictures/no.gif" alt="">
     </div>
-    <div class="danger">Не рассматривайте рефакторинг как способ избежать переписывание кода</div>
 </section>
 
 <section class="slide">
@@ -222,25 +253,23 @@
 </section>
 
 <section class="slide">
-    <div class="columns two">
-        <blockquote>
-            <div>Менее 4% кода обычно соответствует более чем 50% времени выполнения программы</div>
-            <div class="def">- Дональд Кнут</div>
-        </blockquote>
-        <div>
-            Image
+    <h2>Оптимизация</h2>
+    <div class="row">
+        <div class="col half">
+            <blockquote>
+                <div>Менее 4% кода обычно соответствует более чем 50% времени выполнения программы</div>
+                <div class="def">- Дональд Кнут</div>
+            </blockquote>
+            <h3>Мифы оптимизации</h3>
+            <div class="column">
+                <div class="border">Сокращение числа строк высокоуровневого кода повышает быстродействие</div>
+                <div class="border">Оптимизацию следует выполнять по мере написания кода</div>
+                <div class="border">Быстродействие программы не менее важно чем ее корректность</div>
+            </div>
         </div>
-    </div>
-
-</section>
-
-<section class="slide">
-    <h2>Мифы оптимизации</h2>
-    <div class="column">
-        <div class="warning">Сокращение числа строк высокоуровневого кода повышает быстродействие</div>
-        <div class="warning">Одни операции, вероятно, выполняются быстрее других</div>
-        <div class="warning">Оптимизацию следует выполнять по мере написания кода</div>
-        <div class="warning">Быстродействие программы не менее важно чем ее корректность</div>
+        <div class="half">
+            <img src="./pictures/knut.jpg" alt="">
+        </div>
     </div>
 </section>
 
@@ -255,9 +284,9 @@
                 <div class="full border">Определите чем обусловлена низкая производительность</div>
                 <div class="full border">Оптимизируйте проблемное место</div>
                 <div class="full border">Оцените каждую оптимизацию по одной за раз</div>
-                <div class="full border">Если оптимизация не привела к улучшению, повторите все заново</div>
             </div>
         </div>
+        <div class="full border">Если оптимизация не привела к улучшению, повторите все заново</div>
     </div>
 </section>
 

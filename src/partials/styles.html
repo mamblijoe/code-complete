@@ -112,7 +112,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
-
+        width: 100%;
         & > div {
             font-size: inherit;
         }
@@ -123,6 +123,15 @@
 
         &.center {
             align-items: center;
+        }
+        &.around {
+            justify-content: space-around;
+        }
+        &.start {
+            justify-content: flex-start;
+        }
+        &.h-center {
+            justify-content: center;
         }
     }
 
