@@ -54,6 +54,7 @@
 
         h3 {
             font-size: 20px;
+            display: inline-block;
         }
     }
 
@@ -100,7 +101,6 @@
         align-items: flex-start;
         justify-content: center;
         max-height: 100%;
-        height: 47vh;
         img {
             max-width: 100%;
             width: 100%;
@@ -109,7 +109,7 @@
         }
     }
 
-    .definition {
+    .def {
         display: inline-block;
         background-color: #f3f3f3;
         padding: 0 5px;
@@ -122,7 +122,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
-
+        width: 100%;
         & > div {
             font-size: inherit;
         }
@@ -134,6 +134,15 @@
         &.center {
             align-items: center;
         }
+        &.around {
+            justify-content: space-around;
+        }
+        &.start {
+            justify-content: flex-start;
+        }
+        &.h-center {
+            justify-content: center;
+        }
     }
 
     .column {
@@ -141,6 +150,11 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        width: 100%;
+
+        & .column {
+            padding-left: 50px;
+        }
 
         & > div {
             font-size: inherit;
@@ -166,7 +180,6 @@
         color: white;
     }
 
-    .half,
     .border {
         position: relative;
         overflow: hidden;
@@ -184,6 +197,27 @@
         }
     }
 
+    .circle {
+        text-align: center;
+        padding-top: 50px;
+        position: relative;
+        &:before {
+            content: attr(data-number) " ";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(230, 0, 35);
+            color: white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     .half {
         width: calc(50% - 10px);
     }
@@ -193,30 +227,58 @@
     }
 
     .tip,
+    .warning,
     .danger {
         color: white;
         border-radius: 5px;
-        padding: 5px;
+        padding: 5px 5px 5px 10px;
+        margin-bottom: 5px;
+        position: relative;
+        &:after {
+            display: none;
+        }
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+        }
     }
     .tip {
-        background-color: rgb(0, 230, 35);
+        background-color: #269926;
+        &:before {
+        }
+    }
+
+    .warning {
+        background-color: rgb(230, 192, 0);
+        &:before {
+        }
     }
 
     .danger {
-        background-color: rgb(230, 0, 35);
+        background-color: #BF3030;
+        &:before {
+        }
+    }
+
+    td {
+        padding: 5px 5px 5px 10px;
     }
 </style>
 
 </head>
 <body class="shower list">
 <header class="caption">
-    <h1>Совершенный код C. Маконнела за 1 час</h1>
+    <h1>Совершенный код C. Макконнела за 1 час</h1>
     <p>... или нимношко больше</p>
 </header>
 
 <section class="slide chapter-wrapper" id="cover">
     <img class="chapter-cover" src="pictures/title-slide-bg.jpg">
-    <div class="chapter-title">Совершенный код C. Маконнела за 1 час</div>
+    <div class="chapter-title">Совершенный код C. Макконнела за 1 час</div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -225,7 +287,9 @@
 
 <section class="slide">
     <h2>Разработка ПО</h2>
-    <div><span class="definition">Конструирование</span> — главный этап разработки ПО, без которого не обходится ни один проект.</div>
+    <div><span class="def">Конструирование</span> — главный этап разработки ПО, без которого не обходится ни один
+        проект.
+    </div>
     <h3>Основные этапы конструирования:</h3>
     <div class="row start">
         <div class="half border">Определение проблемы</div>
@@ -233,10 +297,8 @@
         <div class="half border">Создание плана конструирования</div>
         <div class="half border filled">Детальное проектирование</div>
         <div class="half border filled">Кодирование и отладка</div>
-        <div class="half border filled">Блочное тестирование</div>
-        <div class="half border filled">Интеграционное тестирование</div>
         <div class="half border filled">Интеграция</div>
-        <div class="half border filled">Тестирование системы</div>
+        <div class="half border filled">Тестирование (интеграционное, блочное) системы</div>
         <div class="half border">Корректирующее сопровождение</div>
         <div class="half border">Разработка архитектуры ПО / Высокоуровневое проектирование</div>
     </div>
@@ -248,14 +310,21 @@
 
 <section class="slide">
     <h2>Метафоры</h2>
-    <p><span class="definition">Метафоры</span> помогают понять процесс разработки ПО, сопоставляя его с другими, более знакомыми процессами.</p>
+    <p><span class="def">Метафоры</span> помогают понять процесс разработки ПО, сопоставляя его с другими, более
+        знакомыми процессами.</p>
     <h3>Виды:</h3>
-    <div class="column" style="font-size: 25px">
-        <div class="full border">Литературная метафора: написание кода</div>
-        <div class="full border">Сельскохозяйственная метафора: приращение системы</div>
-        <div class="full border">Метафора жемчужины: медленное приращение системы (аккреция ПО)</div>
-        <div class="full border">Строительная метафора: построение ПО</div>
+    <div class="row">
+        <div class="column half">
+            <div class="full border">Литературная метафора</div>
+            <div class="full border">Сельскохозяйственная метафора</div>
+            <div class="full border">Метафора жемчужины</div>
+            <div class="full border">Строительная метафора</div>
+        </div>
+        <div class="column half" style="align-items: flex-end">
+            <img src="./pictures/metafora.jpeg" alt="">
+        </div>
     </div>
+
 </section>
 
 <section class="slide chapter-wrapper">
@@ -264,52 +333,66 @@
 
 <section class="slide">
     <h2>Подходы к разработке ПО</h2>
-    <div class="columns two">
-        <div>
-            <span class="definition">Последовательный</span>
-            <div class="column start" style="font-size: 19px">
-                <div class="full border">Требования довольно стабильны</div>
-                <div class="full border">Проект приложения прост и относительно понятен</div>
-                <div class="full border">Разработчики знакомы с прикладной областью</div>
-                <div class="full border">Проект не связан с особым риском</div>
-                <div class="full border">Важна долговременная предсказуемость проекта</div>
-                <div class="full border">Затраты на изменения требований окажутся скорее всего высокими</div>
-            </div>
-        </div>
-        <div>
-            <span class="definition">Итеративный</span>
-            <div class="column" style="font-size: 17px">
-                <div class="full border">Требования относительные непонятны или нестабильны</div>
-                <div class="full border">Проект приложения сложен и не ясен</div>
-                <div class="full border">Разработчики не знакомы с прикладной областью</div>
-                <div class="full border">Проект сопряжен с высоким риском</div>
-                <div class="full border">Долговременная предсказуемость проекта не играет особой роли</div>
-                <div class="full border">Затраты на изменения требований, скорее всего, будут низкими</div>
-            </div>
-        </div>
-    </div>
+    <table>
+        <tr style="background: #f3f3f3">
+            <th scope="col">Последовательный</th>
+            <th scope="col">Итеративный</th>
+        </tr>
+        <tr>
+            <td>Требования стабильны</td>
+            <td>Требования непонятны или нестабильны</td>
+        </tr>
+        <tr>
+            <td>Проект прост и относительно понятен</td>
+            <td>Проект сложен и не ясен</td>
+        </tr>
+
+        <tr>
+            <td>Разработчики знакомы с прикладной областью</td>
+            <td>Разработчики не знакомы с прикладной областью</td>
+        </tr>
+        <tr>
+            <td>Проект не связан с особым риском</td>
+            <td>Проект сопряжен с высоким риском</td>
+        </tr>
+        <tr>
+            <td>Важна долговременная предсказуемость проекта</td>
+            <td>Долговременная предсказуемость проекта не играет особой роли</td>
+        </tr>
+        <tr>
+            <td>Затраты на изменения требований окажутся высокими</td>
+            <td>Затраты на изменения требований будут низкими</td>
+        </tr>
+    </table>
 </section>
 
 <section class="slide">
     <h2>Предварительные условия</h2>
-    <div class="columns two">
-        <div class="column">
-            <div class="full tip">Необходимо перед конструированием сформулировать проблему которую система будет решать</div>
-            <div class="full danger">Иначе можно решать не ту проблемы или не тем способом</div>
+    <div class="row">
+        <div class="half tip">Необходимо перед конструированием сформулировать проблему которую система будет
+            решать
         </div>
-        <div class="column">
-            <div class="full tip">Необходимо перед конструированием иметь официальные требования</div>
-            <div class="full danger">При их отсутствии требования будут определяться разработчиком, а не пользователем системы</div>
+        <div class="half tip">Необходимо перед конструированием иметь официальные требования</div>
+    </div>
+    <div class="row">
+        <div class="half warning">Иначе можно решать не ту проблемы или не тем способом</div>
+        <div class="half warning">При их отсутствии требования будут определяться разработчиком, а не пользователем
+            системы
         </div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Основные решения, которые приходится принимать при конструировании</h2>
-    <div class="column" style="font-size: 30px;">
-        <div class="full filled border">Программирование на языке / фреймворке</div>
-        <div class="full filled border">Программирование с использованием языка / фреймворка</div>
-        <div class="full filled border">Конвенции</div>
+    <div class="row">
+        <div class="column half">
+            <div class="full filled border">Программирование на языке / фреймворке</div>
+            <div class="full filled border">Программирование с использованием языка / фреймворка</div>
+            <div class="full filled border">Конвенции</div>
+        </div>
+        <div class="col half">
+            <img src="./pictures/decision.jpg" alt="" style="width: 100%;height: 100%;">
+        </div>
     </div>
 </section>
 
@@ -319,25 +402,24 @@
 
 <section class="slide">
     <h2>Проектирование</h2>
-    <p><span class="definition">Проектирование</span> - разработка схемы преобразования спецификации в готовое
-        приложение.</p>
-    <div class="row" style="font-size: 25px;">
-        <div class="half border">Проектирование - "грязная проблема"</div>
-        <div class="half border">Проектирование - неряшливый процесс</div>
-        <div class="half border">Проектирование - недетерминированный процесс</div>
-        <div class="half border">Проектирование - эвристический процесс</div>
-        <div class="half border">Проектирование - постепенные процесс</div>
-        <div class="half border">Проектирование - определение компромиссов и приоритетов</div>
-        <div class="half border">Проектирование - ограничение возможностей</div>
+    <div><span class="def">Проектирование</span> - разработка схемы преобразования спецификации в готовое
+        приложение.
+    </div>
+    <h3>Тезисы</h3>
+    <div class="column">
+        <div class="full border">грязный и неряшливый процесс</div>
+        <div class="full border">недетерминированный и эвристический процесс</div>
+        <div class="full border">постепенный процесс</div>
+        <div class="full border">определение компромиссов и приоритетов, ограничение возможностей</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>
         Методики проектирования</h2>
-    <div class="column" style="font-size: 30px;">
-        <div class="full border">Нисходящее (top-down) проектирование</div>
-        <div class="full border">Восходящее (bottom-up) проектирование</div>
+    <div class="column">
+        <div class="full border">Нисходящее (<span class="def">top-down</span>) проектирование</div>
+        <div class="full border">Восходящее (<span class="def">bottom-up</span>) проектирование</div>
         <div class="full border">Экспериментальное прототипирование</div>
         <div class="full border">Совместное проектирование</div>
     </div>
@@ -349,49 +431,55 @@
 
 <section class="slide">
     <h2>Главный технический императив ПО</h2>
-    <blockquote>
-        <div>Не следует пытаться охватить всю программу сразу. Вместо этого мы должны попытаться организовывать
-            программы
-            так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.
-        </div>
-        <div class="definition">Дийкстра, 1972</div>
-    </blockquote>
-    <div class="columns two">
-        <div>
-            <h3>Причины усложнения:</h3>
-            <div class="danger column" style="font-size: 18.5px;">
-                <div>Сложное решение простой проблемы</div>
-                <div>Простое, но неверное решение сложной проблемы</div>
-                <div>Неадекватное сложное решение сложной проблемы</div>
+    <div class="row">
+        <blockquote class="half">
+            <div>Не следует пытаться охватить всю программу сразу. Вместо этого мы должны попытаться организовывать
+                программы
+                так, что бы можно было безопасно работать с их отдельными фрагментами по очереди.
             </div>
-        </div>
-        <div>
-            <h3>Подходы к управлению сложностью:</h3>
-            <div class="tip column" style="font-size: 19px;">
-                <div>Старайтесь свести к минимуму объем существенной сложности, с которым придется работать
-                    в каждый
-                    конкретный момент времени
-                </div>
-                <div>Сдерживайте необязательный рост несущественный сложности</div>
-            </div>
+            <div class="def">Дийкстра, 1972</div>
+        </blockquote>
+        <div class="half">
+            <img src="./pictures/sage.jpg" alt="">
         </div>
     </div>
 </section>
+<section class="slide">
+    <h2>Управление сложностью</h2>
+    <table>
+        <tr style="width: 50%">
+            <td><h3>Причины усложнения</h3></td>
+            <td><h3>Подходы к управлению сложностью</h3></td>
+        </tr>
+        <tr>
+            <td class="danger">Сложное решение простой проблемы</td>
+            <td>Старайтесь свести к минимуму объем существенной сложности, с которым придется работать в каждый
+                конкретный момент времени
+            </td>
+        </tr>
+        <tr>
+            <td class="danger">Простое, но неверное решение сложной проблемы</td>
+            <td rowspan="2">Сдерживайте необязательный рост несущественный сложности</td>
 
+        </tr>
+        <tr>
+            <td class="danger">Неадекватное сложное решение сложной проблемы</td>
+            <td></td>
+        </tr>
+    </table>
+</section>
 <section class="slide">
     <h2>Желательные характеристики проекта</h2>
     <div class="row">
-        <div class="half border">Минимальная сложность</div>
-        <div class="half border">Простота сопровождения</div>
-        <div class="half border">Слабое сопряжение</div>
-        <div class="half border">Расширяемость</div>
-        <div class="half border">Возможность повторного использования</div>
-        <div class="half border">Портируемость</div>
-        <div class="half border">Высокий коэффициент объединения по входу</div>
-        <div class="half border">Низкий или средний коэффициент разветвления по выходу</div>
-        <div class="half border">Минимальная, но полная функциональность</div>
-        <div class="half border">Стратификация</div>
-        <div class="half border">Соответствие практикам, соглашениями и методикам</div>
+        <div class="column half">
+            <div class="full border">Минимальная сложность</div>
+            <div class="full border">Простота сопровождения</div>
+            <div class="full border">Слабое сопряжение</div>
+            <div class="full border">Расширяемость</div>
+            <div class="full border">Возможность повторного использования</div>
+            <div class="full border">Минимальная, но полная функциональность</div>
+            <div class="full border">Соответствие практикам, соглашениями и методикам</div>
+        </div>
     </div>
 </section>
 
@@ -402,7 +490,7 @@
 <section class="slide">
     <h2>Критерии оценки сопряжения: Объем</h2>
     <div class="code">
-        <div>Высокое число соединений</div>
+        <h3>Высокое число соединений</h3>
         <img src="./pictures/coupling-volume-high.svg" alt="">
     </div>
 </section>
@@ -410,7 +498,7 @@
 <section class="slide">
     <h2>Критерии оценки сопряжения: Объем</h2>
     <div class="code">
-        <div>Низкое число соединений</div>
+        <h3>Низкое число соединений</h3>
         <img src="./pictures/coupling-volume-low.svg" alt="">
     </div>
 </section>
@@ -418,11 +506,11 @@
 <section class="slide">
     <h2>Критерии оценки сопряжения: Видимость</h2>
     <div class="code">
-        <div>Не очевидная связь</div>
+        <h3>Не очевидная связь</h3>
         <img src="./pictures/coupling-visibility-bad.svg" alt="">
     </div>
     <div class="code">
-        <div>Очевидная связь</div>
+        <h3>Очевидная связь</h3>
         <img src="./pictures/coupling-visibility-good.svg" alt="">
     </div>
 </section>
@@ -489,21 +577,17 @@
 
 <section class="slide">
     <h2>АТД</h2>
-    <div><span class="definition">Абстрактный тип данных</span> - это набор, включающий данные и выполняемые над ними
+    <div><span class="def">Абстрактный тип данных</span> - это набор, включающий данные и выполняемые над ними
         операции.
     </div>
-    <h2>Преимущества использования АТД</h2>
-    <div class="column" style="font-size: 15px;">
+    <h3>Преимущества использования АТД</h3>
+    <div class="column">
         <div class="full border">Возможность сокрытия деталей реализации</div>
         <div class="full border">Ограничение области изменений</div>
-        <div class="full border">Более высокая информативность интерфейса</div>
-        <div class="full border">Легкость оптимизации кода</div>
-        <div class="full border">Легкость проверки кода</div>
+        <div class="full border">Легкость оптимизации и проверки кода</div>
         <div class="full border">Удобочитаемость и понятность кода</div>
         <div class="full border">Ограничение области использования данных</div>
-        <div class="full border">Возможность работы с сущностями реального мира, а не с низкоуровневыми деталями
-            реализации
-        </div>
+        <div class="full border">Возможность работы абстракцией, а реализацией</div>
     </div>
 </section>
 
@@ -527,26 +611,24 @@
         <div class="full border">Минимизируйте публичные методы и свойства</div>
         <div class="full border">Не делайте предположений о клиентах класса</div>
         <div class="full border">Цените легкость чтения кода выше, чем удобство написания</div>
-        <div class="full border">Очень, очень настороженно относитесь к семантическим нарушениям инкапсуляции</div>
+        <div class="full border">Настороженно относитесь к семантическим нарушениям инкапсуляции</div>
         <div class="full border">Остерегайтесь слишком высокого сопряжения (high coupling)</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Разумные причины создания классов</h2>
-    <div class="row" style="font-size: 25px;">
-            <div class="half border">Моделирование объектов реального мира</div>
-            <div class="half border">Моделирование абстрактных объектов</div>
-            <div class="half border">Снижение сложности</div>
-            <div class="half border">Изоляция сложности</div>
-            <div class="half border">Сокрытие деталей реализации</div>
-            <div class="half border">Ограничение влияния изменений</div>
-            <div class="half border">Упрощение передачи параметров в методы</div>
-            <div class="half border">Создание центральных точек управления</div>
-            <div class="half border">Облегчение повторного использования кода</div>
-            <div class="half border">Планирование создания семейств</div>
-            <div class="half border">Упаковка родственных операций / команд</div>
-            <div class="half border">Выполнение специфического вида рефакторинга</div>
+    <div class="row">
+        <div class="half border">Моделирование объектов реального мира и абстрактных объектов</div>
+        <div class="half border">Снижение и изоляция сложности</div>
+        <div class="half border">Сокрытие деталей реализации</div>
+        <div class="half border">Ограничение влияния изменений</div>
+        <div class="half border">Упрощение передачи параметров в методы</div>
+        <div class="half border">Создание центральных точек управления</div>
+        <div class="half border">Облегчение повторного использования кода</div>
+        <div class="half border">Планирование создания семейств</div>
+        <div class="half border">Упаковка родственных операций / команд</div>
+        <div class="half border">Выполнение специфического вида рефакторинга</div>
     </div>
 </section>
 
@@ -557,20 +639,17 @@
 <section class="slide">
     <h2>Разумные причины создания методов</h2>
     <div class="row">
-            <div class="half border">Снижение сложности</div>
-            <div class="half border">Формирование понятной промежуточной абстракции</div>
-            <div class="half border">Предотвращение дублирования кода</div>
-            <div class="half border">Поддержка наследования</div>
-            <div class="half border">Сокрытие очередности действий</div>
-            <div class="half border">Упрощение сложных булевых проверок</div>
-            <div class="half border">Повышение быстродействия</div>
-            <div class="half border">Изоляция сложности</div>
-            <div class="half border">Сокрытие деталей реализации</div>
-            <div class="half border">Ограничение влияния изменений</div>
-            <div class="half border">Сокрытие глобальных данных</div>
-            <div class="half border">Создание центральных точек управления</div>
-            <div class="half border">Облегчение повторного использования кода</div>
-            <div class="half border">Выполнение специфического рефакторинга</div>
+        <div class="half border">Снижение сложности</div>
+        <div class="half border">Формирование понятной промежуточной абстракции</div>
+        <div class="half border">Предотвращение дублирования кода</div>
+        <div class="half border">Поддержка наследования</div>
+        <div class="half border">Сокрытие очередности действий</div>
+        <div class="half border">Упрощение сложных булевых проверок</div>
+        <div class="half border">Изоляция сложности</div>
+        <div class="half border">Сокрытие деталей реализации</div>
+        <div class="half border">Ограничение влияния изменений</div>
+        <div class="half border">Создание центральных точек управления</div>
+        <div class="half border">Выполнение специфического рефакторинга</div>
     </div>
 </section>
 
@@ -596,7 +675,8 @@
             согласованном порядке
         </div>
         <div class="full border">Не передавать не используемые аргументы</div>
-        <div class="full border">Переменные статуса или ошибки передавать последними, так как они второстепенны по отношению к
+        <div class="full border">Переменные статуса или ошибки передавать последними, так как они второстепенны по
+            отношению к
             главной цели
             метода
         </div>
@@ -611,25 +691,29 @@
 
 <section class="slide">
     <h2>Утверждения (assertion)</h2>
-    <div><span class="definition">Утверждение</span> - код, который проверяет правильность выполнения программы.<br/>
-        Утверждения не предназначены для показа ошибок в продакшн режиме, они для дев режима и разработки.
+    <div><span class="def">Утверждение</span> - код, который проверяет правильность выполнения программы.<br/>
+        <span class="def">Утверждение</span> не предназначены для показа ошибок в продакшн режиме, они для дев режима и
+        разработки.
     </div>
-    <h2>Общие принципы использования утверждений</h2>
+    <h3>Общие принципы использования утверждений</h3>
     <div class="row">
-        <div class="half border">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий, которые
+        <div class="half tip">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий,
+            которые
             происходить
             не должны
         </div>
-        <div class="half border">Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте ошибки</div>
-        <div class="half border">Старайтесь не помещать выполняемый код в утверждения</div>
-        <div class="half border">Используйте утверждения для документирования пред- и постусловий</div>
+        <div class="half tip">Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте
+            ошибки
+        </div>
+        <div class="half warning">Старайтесь не помещать выполняемый код в утверждения</div>
+        <div class="half tip">Используйте утверждения для документирования пред- и постусловий</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Способы обработки ошибок</h2>
     <div>
-        Выбор того или иного способа обработки ошибок зависит от того что важнее, <span class="definition">Корректность</span> или <span class="definition">Устойчивость</span>
+        Выбор того или иного способа обработки ошибок зависит от того что важнее, Корректность или Устойчивость
     </div>
     <h3>Способы</h3>
     <div class="columns two">
@@ -655,7 +739,8 @@
     <h2>Исключения</h2>
     <div class="column">
         <div class="full tip">Используйте исключения для оповещения других частей программы об ошибках</div>
-        <div class="full tip">Генерируйте исключения для действительно исключительных ситуаций и не используйте исключения по
+        <div class="full tip">Генерируйте исключения для действительно исключительных ситуаций и не используйте
+            исключения по
             мелочам
         </div>
         <div class="full tip">Избегайте выкидывание исключение в конструкторах</div>
@@ -667,10 +752,18 @@
 
 <section class="slide">
     <h2>Изоляция повреждений / баррикада</h2>
-    <div><span class="definition">Публичные методы</span> предполагают что получаемые данные небезопасны и отвечают за их проверку и исправление. Здесь
+    <h3>Публичные методы</h3>
+    <div><span class="def">Публичные методы</span> предполагают что получаемые данные небезопасны и отвечают за их
+        проверку и исправление.
+    </div>
+    <div class="tip">Здесь
         используются обработчики ошибок.
     </div>
-    <div><span class="definition">Приватные методы</span> предполагают что полученные данные прошли проверку в публичном методе и безопасны. Здесь
+    <h3>Приватные методы</h3>
+    <div><span class="def">Приватные методы</span> предполагают что полученные данные прошли проверку в публичном методе
+        и безопасны.
+    </div>
+    <div class="tip">Здесь
         используются утверждения
     </div>
 </section>
@@ -710,10 +803,10 @@
 <section class="slide">
     <h2>Единственность цели каждой переменной</h2>
 
-    <div>
-        <div>Используйте каждую переменную только с одной целью</div>
-        <div>Избегайте переменных имеющих скрытый смысл</div>
-        <div>Не оставлять не используемые переменные</div>
+    <div class="column">
+        <div class="full danger">Используйте каждую переменную только с одной целью</div>
+        <div class="full tip">Избегайте переменных имеющих скрытый смысл</div>
+        <div class="full warning">Не оставлять не используемые переменные</div>
     </div>
 </section>
 
@@ -723,58 +816,58 @@
 
 <section class="slide">
     <h2>Имена переменных</h2>
-    <div>
-        <div>Название переменной должно ориентироваться на проблему</div>
-        <div>Оптимальная длина имени переменной - 10-16 символов</div>
-    </div>
+    <div>Название переменной должно ориентироваться на проблему</div>
+    <div>Оптимальная длина имени переменной - 10-16 символов</div>
     <div class="columns two">
         <div>
-            Спецификаторы вычисляемых значений
-            <div>
-                <div>total</div>
-                <div>sum</div>
-                <div>average</div>
-                <div>record</div>
-                <div>string</div>
+            <h3>Спецификаторы вычисляемых значений</h3>
+            <div class="column">
+                <div class="full border">total</div>
+                <div class="full border">sum</div>
+                <div class="full border">average</div>
+                <div class="full border">record</div>
+                <div class="full border">string</div>
             </div>
         </div>
-        <div>
-            Антонимы
-            <div>
-                <div>first/last</div>
-                <div>locked/unlocked</div>
-                <div>min/max</div>
-                <div>next/previous</div>
-                <div>old/new</div>
-                <div>opened/closed</div>
-                <div>source/target</div>
-                <div>up/down</div>
+        <divx>
+            <h3>Антонимы</h3>
+            <div class="column">
+                <div class="full border">first/last</div>
+                <div class="full border">locked/unlocked</div>
+                <div class="full border">min/max</div>
+                <div class="full border">next/previous</div>
+                <div class="full border">old/new</div>
+                <div class="full border">opened/closed</div>
             </div>
-        </div>
+        </divx>
     </div>
 </section>
 
 <section class="slide">
     <h2>Сокращение имен переменных</h2>
-    <div class="columns two">
-        <div>
-            <div>Используйте стандартные аббревиатуры</div>
-            <div>Удаляйте все гласные, не являющиеся первыми буквами имен</div>
-            <div>Удаляйте артикли и союзы (and, or, the)</div>
-            <div>Обрезайте слова согласованно: после первой, второй или третьей буквы</div>
-            <div>Сохраняйте первую и последнюю букву каждого слова</div>
-            <div>Сохраняйте до 3 выразительных слов</div>
-            <div>Сохраняйте наиболее выразительные звук каждого слова</div>
-        </div>
-        <div>
-            <div>Проверяйте что бы в ходе сокращения смысл имени переменной не искажался</div>
-            <div>Не сокращайте слова только на один символ</div>
-            <div>Сокращайте имена согласованно</div>
-            <div>Сокращайте имена так что бы их можно было произнести</div>
-            <div>Избегайте комбинаций допускающих неверное прочтение</div>
-            <div>Используйте словарь для разрешения конфликтных имен и поиска синонимов</div>
-        </div>
-    </div>
+    <table>
+
+        <tr>
+            <td>Используйте стандартные аббревиатуры</td>
+            <td>Удаляйте все гласные, не являющиеся первыми буквами имен</td>
+        </tr>
+        <tr>
+            <td>Обрезайте слова согласованно: после первой, второй или третьей буквы</td>
+            <td>Проверяйте что бы в ходе сокращения смысл имени переменной не искажался</td>
+        </tr>
+        <tr>
+            <td>Сохраняйте первую и последнюю букву каждого слова</td>
+            <td>Используйте словарь для разрешения конфликтных имен и поиска синонимов</td>
+        </tr>
+        <tr>
+            <td>Не сокращайте слова только на один символ</td>
+            <td>Сокращайте имена согласованно</td>
+        </tr>
+        <tr>
+            <td>Сокращайте имена так что бы их можно было произнести</td>
+            <td>Избегайте комбинаций допускающих неверное прочтение</td>
+        </tr>
+    </table>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -783,13 +876,19 @@
 
 <section class="slide">
     <h2>Зачем нужны конвенции</h2>
-    <div>
-        <div>Они позволяют больше принимать как данное</div>
-        <div>Они помогают использовать знания полученные при работе над прошлыми проектами</div>
-        <div>Они ускоряют изучение кода нового проекта</div>
-        <div>Подавляют размножение похожих имен (totalRecords и recordsTotal)</div>
-        <div>Они могут компенсировать слабости языка (можно имитировать функционал который язык не поддерживает)</div>
-        <div>Они поддерживают связи между данными (recordId и recordName)</div>
+    <div class='column'>
+        <div class="full border">Они позволяют больше принимать как данное</div>
+        <div class="full border">Они помогают использовать знания полученные при работе над прошлыми проектами</div>
+        <div class="full border">Они ускоряют изучение кода нового проекта</div>
+        <div class="full border">Подавляют размножение похожих имен (<span class="def">totalRecords</span> и <span
+            class="def">recordsTotal</span>)
+        </div>
+        <div class="full border">Они могут компенсировать слабости языка (можно имитировать функционал который язык не
+            поддерживает)
+        </div>
+        <div class="full border">Они поддерживают связи между данными (<span class="def">recordId</span> и <span
+            class="def">recordName</span>)
+        </div>
     </div>
 </section>
 
@@ -801,33 +900,30 @@
 <section class="slide">
     <h2>Последовательный код</h2>
     <div class="code">
-        <div>Пример когда порядковые зависимости скрыты</div>
+        <h3>Пример когда порядковые зависимости скрыты</h3>
         <img src="./pictures/deps-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Организуйте код так что бы зависимости были очевидными</div>
+        <h3>Организуйте код так что бы зависимости были очевидными</h3>
         <img src="./pictures/deps-2.svg" alt="">
     </div>
     <div class="code">
-        <div>Документируйте неявные зависимости с помощью комментариев</div>
+        <h3>Документируйте неявные зависимости с помощью комментариев</h3>
         <img src="./pictures/deps-3.svg" alt="">
     </div>
 </section>
 <section class="slide">
-
+    <h2>Последовательный код</h2>
     <div class="code">
-        <h2>Последовательный код</h2>
-        <div class="code">
-            <div>Используйте аргументы что бы сделать зависимости очевидными</div>
-            <img src="./pictures/deps-4.svg" alt="">
-        </div>
+        <h3>Используйте аргументы что бы сделать зависимости очевидными</h3>
+        <img src="./pictures/deps-4.svg" alt="">
     </div>
 </section>
 
 <section class="slide">
     <h2>Последовательный код</h2>
     <div class="code">
-        <div>Группируйте взаимосвязанные операции</div>
+        <h3>Группируйте взаимосвязанные операции</h3>
         <img src="./pictures/deps-5.svg" alt="">
     </div>
 </section>
@@ -836,7 +932,7 @@
 <section class="slide">
     <h2>Последовательный код</h2>
     <div class="code">
-        <div>Проверяйте зависимости с помощью утверждений или обработки ошибок</div>
+        <h3>Проверяйте зависимости с помощью утверждений или обработки ошибок</h3>
         <img src="./pictures/deps-6.svg" alt="">
     </div>
 </section>
@@ -846,28 +942,31 @@
 </section>
 <div class="slide">
     <h2>if</h2>
-    <div>
-        <div>Сначала напишите код номинального хода алгоритма, затем опишите исключительные ситуации</div>
-        <div>Убедитесь, что при проверке на равенство ветвление корректно</div>
-        <div>Размещайте нормальный вариант после if, а не после else</div>
-        <div>Не делать пустой if, что бы что то прописать в else</div>
-        <div>Упрощайте сложные проверки с помощью методов</div>
-        <div>Размещайте наиболее вероятные варианты раньше остальных</div>
-        <div>Убедитесь, что все варианты учтены</div>
+    <div class="column">
+        <div class="full border">Сначала напишите код номинального хода алгоритма, затем опишите исключительные
+            ситуации
+        </div>
+        <div class="full border">Убедитесь, что при проверке на равенство ветвление корректно</div>
+        <div class="full border">Размещайте нормальный вариант после if, а не после else</div>
+        <div class="full border">Не делать пустой if, что бы что то прописать в else</div>
+        <div class="full border">Упрощайте сложные проверки с помощью методов</div>
+        <div class="full border">Размещайте наиболее вероятные варианты раньше остальных</div>
+        <div class="full border">Убедитесь, что все варианты учтены</div>
     </div>
 </div>
 
 <section class="slide">
     <h2>case</h2>
-    <div>
-        <div>Упорядочивайте варианты по алфавиту или числению</div>
-        <div>Поместите правильный вариант первым</div>
-        <div>Отсортируйте варианты по частоте</div>
-        <div>Сделайте обработку каждого варианта простой</div>
-        <div>Используйте вариант по умолчанию для реальной исключительной ситуации, а не для обработки последнего из
+    <div class="column">
+        <div class="full border">Упорядочивайте варианты по алфавиту или числению</div>
+        <div class="full border">Поместите правильный вариант первым</div>
+        <div class="full border">Отсортируйте варианты по частоте</div>
+        <div class="full border">Сделайте обработку каждого варианта простой</div>
+        <div class="full border">Используйте вариант по умолчанию для реальной исключительной ситуации, а не для
+            обработки последнего из
             вариантов
         </div>
-        <div>Используйте вариант по умолчанию для выявления ошибок</div>
+        <div class="full border">Используйте вариант по умолчанию для выявления ошибок</div>
     </div>
 </section>
 
@@ -877,11 +976,11 @@
 
 <section class="slide">
     <h2>Рекурсия</h2>
-    <div>
-        <div>Рекурсия всегда должна иметь базовый случай для выхода из рекурсии</div>
-        <div>Избегайте циклических рекурсий.</div>
-        <div>Следите за производительность рекурсии</div>
-        <div>Решайте задачу итерацией вместо рекурсии если это возможно</div>
+    <div class="column">
+        <div class="full border">Рекурсия всегда должна иметь базовый случай для выхода из рекурсии</div>
+        <div class="full border">Избегайте циклических рекурсий.</div>
+        <div class="full border">Следите за производительность рекурсии</div>
+        <div class="full border">Решайте задачу итерацией вместо рекурсии если это возможно</div>
     </div>
 </section>
 
@@ -889,18 +988,18 @@
 <section class="slide">
     <h2>Табличные методы</h2>
     <div class="code">
-        <div>Таблицы с прямым доступом</div>
+        <h3>Таблицы с прямым доступом</h3>
         <img src="./pictures/table-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Таблицы с индексированным доступом</div>
+        <h3>Таблицы с индексированным доступом</h3>
         <img src="./pictures/table-2.svg" alt="">
     </div>
 </section>
 <section class="slide">
     <h2>Табличные методы</h2>
     <div class="code">
-        <div>Таблицы с ступенчатым доступом</div>
+        <h3>Таблицы с ступенчатым доступом</h3>
         <img src="./pictures/table-3.svg" alt="">
     </div>
 </section>
@@ -911,11 +1010,11 @@
 <section class="slide">
     <h2>Используйте отдельные логические переменные</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/logic-var-bad.svg" alt="">
     </div>
     <div class="code">
-        <div>Хорошо</div>
+        <h3>Хорошо</h3>
         <img src="./pictures/logic-var-good.svg" alt="">
     </div>
 </section>
@@ -923,25 +1022,25 @@
 <section class="slide">
     <h2>Используйте функции-предикаты</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/logic-var-bad.svg" alt="">
     </div>
     <div class="code">
-        <div>Хорошо</div>
+        <h3>Хорошо</h3>
         <img src="./pictures/logic-var-predicate.svg" alt="">
     </div>
 </section>
 
 <section class="slide">
-    <h2>Избегайте проверок через отрицание</h2>
+    <h3>Избегайте проверок через отрицание</h3>
     <div class="code">
         <img src="./pictures/control-1.svg" alt="">
     </div>
-    <h2>По возможности применяйте теорему Деморгана</h2>
+    <h3>По возможности применяйте теорему Деморгана</h3>
     <div class="code">
         <img src="./pictures/control-2.svg" alt="">
     </div>
-    <h2>При сравнении чисел используйте числовую прямую</h2>
+    <h3>При сравнении чисел используйте числовую прямую</h3>
     <div class="code">
         <img src="./pictures/control-3.svg" alt="">
     </div>
@@ -949,18 +1048,34 @@
 
 <section class="slide">
     <h2>Измерение сложности метода</h2>
-    <div>
-        <div>
-            <div>0-5</div>
-            <div>Метод, возможно, в порядке</div>
+
+    <div class="column">
+        <div class="row h-center">
+            <div class="tip half">
+                <div>0-5</div>
+                <div>Метод, возможно, в порядке</div>
+            </div>
+            <div class="half">
+                <img src="./pictures/mr-incredible-green.jpg" alt="" style="object-fit: contain; width: 100%; height: 100%; max-height: 150px">
+            </div>
         </div>
-        <div>
-            <div>6-10</div>
-            <div>Пора начать думать над упрощением</div>
+        <div class="row h-center">
+            <div class="warning half">
+                <div>6-10</div>
+                <div>Пора начать думать над упрощением</div>
+            </div>
+            <div class="half">
+                <img src="./pictures/mr-incredible-yellow.jpg" alt="" style="object-fit: contain; width: 100%; height: 100%; max-height: 150px">
+            </div>
         </div>
-        <div>
-            <div>10+</div>
-            <div>Пора делать рефакторинг</div>
+        <div class="row h-center">
+            <div class="danger half">
+                <div>10+</div>
+                <div>Пора делать рефакторинг</div>
+            </div>
+            <div class="half">
+                <img src="./pictures/mr-incredible-red.jpg" alt="" style="object-fit: contain; width: 100%; height: 100%; max-height: 150px">
+            </div>
         </div>
     </div>
 </section>
@@ -971,30 +1086,53 @@
 
 <section class="slide">
     <h2>Характеристики качества ПО</h2>
+
+
+    <table>
+        <tr>
+            <td><h3>Внешние характеристики</h3></td>
+            <td><h3>Внутренние характеристики</h3></td>
+
+        <tr>
+            <td>Корректность</td>
+            <td>Удобство сопровождения</td>
+        </tr>
+        <tr>
+            <td>Практичность</td>
+            <td>Гибкость</td>
+        </tr>
+        <tr>
+            <td>Эффективность</td>
+            <td>Портируемость</td>
+        </tr>
+        <tr>
+            <td>Надежность</td>
+            <td>Возможность повторного использования</td>
+        </tr>
+        <tr>
+            <td>Целостность</td>
+            <td>Удобочитаемость</td>
+        </tr>
+        <tr>
+            <td>Адаптируемость</td>
+            <td>Тестируемость</td>
+        </tr>
+        <tr>
+            <td>Правильность</td>
+            <td>Понятность</td>
+        </tr>
+        <tr>
+            <td>Живучесть</td>
+            <td></td>
+        </tr>
+    </table>
     <div class="columns two">
         <div>
-            <div>Внешние характеристики (на которые ориентируется пользователь)</div>
-            <div>
-                <div>Корректность</div>
-                <div>Практичность</div>
-                <div>Эффективность</div>
-                <div>Надежность</div>
-                <div>Целостность</div>
-                <div>Адаптируемость</div>
-                <div>Правильность</div>
-                <div>Живучесть</div>
+            <div class="column">
             </div>
         </div>
         <div>
-            <div>Внутренние характеристики (на которые ориентируется разработчик)</div>
-            <div>
-                <div>Удобство сопровождения</div>
-                <div>Гибкость</div>
-                <div>Портируемость</div>
-                <div>Возможность повторного использования</div>
-                <div>Удобочитаемость</div>
-                <div>Тестируемость</div>
-                <div>Понятность</div>
+            <div class="column">
             </div>
         </div>
     </div>
@@ -1003,19 +1141,19 @@
 <section class="slide">
     <h2>Методики повышения качества ПО</h2>
     <div class="columns two">
-        <div>
-            <div>Целевые характеристики</div>
-            <div>Явный контроль качества</div>
-            <div>Стратегия тестирования</div>
-            <div>Принципы разработки ПО</div>
-            <div>Неформальные технические обзоры</div>
+        <div class="column">
+            <div class="full border">Целевые характеристики</div>
+            <div class="full border">Явный контроль качества</div>
+            <div class="full border">Стратегия тестирования</div>
+            <div class="full border">Принципы разработки ПО</div>
+            <div class="full border">Неформальные технические обзоры</div>
         </div>
-        <div>
-            <div>Формальные технические обзоры</div>
-            <div>Внешний аудит</div>
-            <div>Процедуры контроля изменений требований</div>
-            <div>Оценка результатов</div>
-            <div>Прототипирование</div>
+        <div class="column">
+            <div class="full border">Формальные технические обзоры</div>
+            <div class="full border">Внешний аудит</div>
+            <div class="full border">Процедуры контроля изменений требований</div>
+            <div class="full border">Оценка результатов</div>
+            <div class="full border">Прототипирование</div>
         </div>
     </div>
 </section>
@@ -1026,23 +1164,23 @@
 
 <section class="slide">
     <h2>Тестирование</h2>
-    <div>
-        <div>Цель тестирования противоположна целям других этапов разработки.</div>
-        <div>Тестирование никогда не доказывает отсутствие ошибок</div>
-        <div>Тестирование не повышает качество ПО</div>
-        <div>Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</div>
+    <div class="column">
+        <div class="warning">Цель тестирования противоположна целям других этапов разработки.</div>
+        <div class="warning">Тестирование никогда не доказывает отсутствие ошибок</div>
+        <div class="danger">Тестирование не повышает качество ПО</div>
+        <div class="tip">Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Приемы тестирования</h2>
-    <div>
-        <div>Неполное тестирование</div>
-        <div>Структурированное базисное тестирование</div>
-        <div>Угадывание ошибок</div>
-        <div>Анализ граничных значений</div>
-        <div>Классы плохих данных</div>
-        <div>Классы хороших данных</div>
+    <div class="column">
+        <div class="full border">Неполное тестирование</div>
+        <div class="full border">Структурированное базисное тестирование</div>
+        <div class="full border">Угадывание ошибок</div>
+        <div class="full border">Анализ граничных значений</div>
+        <div class="full border">Классы плохих данных</div>
+        <div class="full border">Классы хороших данных</div>
     </div>
 </section>
 
@@ -1052,39 +1190,39 @@
 
 <section class="slide">
     <h2>Поиск дефектов</h2>
-    <div>
-        <div>Стабилизация ошибки</div>
-        <div> Определение источника ошибки
-            <div>
-                <div>Сбор данных, приводящих к дефекту</div>
-                <div>Анализ собранных данных и формулирование гипотезы, объясняющей баг</div>
-                <div>Определение способа подтверждения или опровержения гипотезы, основанного на
+    <div class="column">
+        <div class="full border">Стабилизация ошибки</div>
+        <div class="full border">Определение источника ошибки
+            <div class="column">
+                <div class="full border">Сбор данных, приводящих к дефекту</div>
+                <div class="full border">Анализ собранных данных и формулирование гипотезы, объясняющей баг</div>
+                <div class="full border">Определение способа подтверждения или опровержения гипотезы, основанного на
                     тестировании или изучении программы
                 </div>
             </div>
         </div>
-        <div>Фикс бага</div>
-        <div>Тестирование фикса</div>
-        <div>Поиск похожих багов</div>
+        <div class="full border">Фикс бага</div>
+        <div class="full border">Тестирование фикса</div>
+        <div class="full border">Поиск похожих багов</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Советы по поиску причин багов</h2>
     <div class="columns two">
-        <div>
-            <div>Формулируя гипотезу используйте все имеющиеся данные</div>
-            <div>Воспроизведите ошибку несколькими способами</div>
-            <div>Используйте результаты отрицательных тестов для отсеивания гипотез</div>
-            <div>Используйте мозговой штурм</div>
-            <div>Сократите подозрительную область, где может быть баг</div>
+        <div class="column">
+            <div class="full border">Формулируя гипотезу используйте все имеющиеся данные</div>
+            <div class="full border">Воспроизведите ошибку несколькими способами</div>
+            <div class="full border">Используйте результаты отрицательных тестов для отсеивания гипотез</div>
+            <div class="full border">Используйте мозговой штурм</div>
+            <div class="full border">Сократите подозрительную область, где может быть баг</div>
         </div>
-        <div>
-            <div>Поищите баг в функционале в котором уже встречались баги</div>
-            <div>Проверьте код который был изменен недавно</div>
-            <div>Расширьте подозрительный фрагмент кода</div>
-            <div>Обсудите баг с кем то</div>
-            <div>Установите лимит времени для быстрой и грязной отладки.</div>
+        <div class="column">
+            <div class="full border">Поищите баг в функционале в котором уже встречались баги</div>
+            <div class="full border">Проверьте код который был изменен недавно</div>
+            <div class="full border">Расширьте подозрительный фрагмент кода</div>
+            <div class="full border">Обсудите баг с кем то</div>
+            <div class="full border">Установите лимит времени для быстрой и грязной отладки.</div>
         </div>
     </div>
 </section>
@@ -1094,67 +1232,73 @@
 </section>
 
 <section class="slide">
-    <h2>Разумные причины выполнения рефакторинга</h2>
-    <div class="columns three">
-        <div>
-            <div>Код повторяется</div>
-            <div>Метод слишком велик</div>
-            <div>Цикл слишком велик или имеет глубокую вложенность</div>
-            <div>Класс имеет плохую связность</div>
-            <div>Интерфейс класса не формирует согласованную абстракцию</div>
-            <div>Метод принимает слишком много параметров</div>
-            <div>Отдельные части класса меняет независимо от других частей</div>
-            <div>При изменении программы приходится параллельно менять несколько классов</div>
-        </div>
-        <div>
-            <div>Приходится менять параллельно несколько иерархий наследования</div>
-            <div>Приходится менять параллельно несколько блоков case</div>
-            <div>Родственные элементы данных, используемые вместе, не организован в классы</div>
-            <div>Метод использует больше параметра чужого класса, чем своего</div>
-            <div>Элементарный тип данных перегружен</div>
-            <div>Класс имеет слишком ограниченную функциональность</div>
-            <div>По цепи методов передаются бродячие данные</div>
-            <div>Прокси-объект ничего не делает</div>
-        </div>
-        <div>
-            <div>Один класс слишком много знает о другом</div>
-            <div>Метод имеет не удачное имя</div>
-            <div>Лишние публичные методы и свойства</div>
-            <div>Подкласс использует мало методов или свойств от наследования</div>
-            <div>Сложный код объясняется с помощью комментариев</div>
-            <div>Код содержит глобальные переменные</div>
-            <div>Перед вызовом метода выполняется подготовительный код</div>
-            <div>Программа содержит код который когда-нибудь может понадобиться</div>
-        </div>
+    <h2>Разумные причины выполнения рефакторинга: Общее</h2>
+    <div class="column">
+        <div class="full border">Код повторяется</div>
+        <div class="full border">Цикл слишком велик или имеет глубокую вложенность</div>
+        <div class="full border">Приходится менять параллельно несколько блоков case</div>
+        <div class="full border">Элементарный тип данных перегружен</div>
+        <div class="full border">Прокси-объект ничего не делает</div>
+        <div class="full border">Сложный код объясняется с помощью комментариев</div>
+        <div class="full border">Код содержит глобальные переменные</div>
+        <div class="full border">Программа содержит код который когда-нибудь может понадобиться</div>
     </div>
 </section>
-
+<section class="slide">
+    <h2>Разумные причины выполнения рефакторинга: Методы</h2>
+    <div class="column">
+        <div class="full border">Метод слишком велик</div>
+        <div class="full border">Метод принимает слишком много параметров</div>
+        <div class="full border">По цепи методов передаются бродячие данные</div>
+        <div class="full border">Метод имеет не удачное имя</div>
+        <div class="full border">Лишние публичные методы и свойства</div>
+        <div class="full border">Перед вызовом метода выполняется подготовительный код</div>
+        <div class="full border">Подкласс использует мало методов или свойств от наследования</div>
+        <div class="full border">Метод использует больше параметра чужого класса, чем своего</div>
+    </div>
+</section>
+<section class="slide">
+    <h2>Разумные причины выполнения рефакторинга: Классы</h2>
+    <div class="column">
+        <div class="full border">Класс имеет плохую связность</div>
+        <div class="full border">Интерфейс класса не формирует согласованную абстракцию</div>
+        <div class="full border">Отдельные части класса меняет независимо от других частей</div>
+        <div class="full border">При изменении программы приходится параллельно менять несколько классов</div>
+        <div class="full border">Приходится менять параллельно несколько иерархий наследования</div>
+        <div class="full border">Родственные элементы данных, используемые вместе, не организован в классы</div>
+        <div class="full border">Класс имеет слишком ограниченную функциональность</div>
+        <div class="full border">Один класс слишком много знает о другом</div>
+    </div>
+</section>
 <section class="slide">
     <h2>Плохие причины рефакторинга</h2>
-    <div>
-        <div>Не рассматривайте рефакторинг как оправдание написание плохого кода с намерением исправить его
+    <div class="row h-center">
+        <div class="danger full">Не рассматривайте рефакторинг как оправдание написание плохого кода с намерением
+            исправить
+            его
             позднее
         </div>
-        <div>Не рассматривайте рефакторинг как способ избежать переписывание кода</div>
+        <div class="danger full">Не рассматривайте рефакторинг как способ избежать переписывание кода</div>
+        <img src="./pictures/no.gif" alt="">
     </div>
 </section>
 
 <section class="slide">
     <h2>Безопасный рефакторинг</h2>
     <div class="columns two">
-        <div>
-            <div>Сохраняйте первоначальный код</div>
-            <div>Ограничивайте объем отдельных видов рефакторинга</div>
-            <div>Выполняйте отдельные виды рефакторинга по одному за раз</div>
-            <div>Составьте список действий которые хотите предпринять</div>
-            <div>Составьте список видов рефакторинга которые следует выполнить позже</div>
+        <div class="column">
+            <div class="full border">Сохраняйте первоначальный код</div>
+            <div class="full border">Ограничивайте объем отдельных видов рефакторинга</div>
+            <div class="full border">Выполняйте отдельные виды рефакторинга по одному за раз</div>
+            <div class="full border">Составьте список действий которые хотите предпринять</div>
+            <div class="full border">Составьте список видов рефакторинга которые следует выполнить позже</div>
         </div>
-        <div>
-            <div>Часто создавайте контрольные точки</div>
-            <div>Выполняйте регрессивное-тестирование</div>
-            <div>Создавайте дополнительные тесты</div>
-            <div>Выполняйте обзоры измненеий</div>
-            <div>Изменяйте подход в зависимости от рискованности рефакторинга</div>
+        <div class="column">
+            <div class="full border">Часто создавайте контрольные точки</div>
+            <div class="full border">Выполняйте регрессивное-тестирование</div>
+            <div class="full border">Создавайте дополнительные тесты</div>
+            <div class="full border">Выполняйте обзоры измненеий</div>
+            <div class="full border">Изменяйте подход в зависимости от рискованности рефакторинга</div>
         </div>
     </div>
 
@@ -1162,12 +1306,12 @@
 
 <section class="slide">
     <h2>Стратегии рефакторинга</h2>
-    <div>
-        <div>Выполняйте рефакторинг при создании новых методов</div>
-        <div>Выполняйте рефакторинг при создании новых классов</div>
-        <div>Выполняйте рефакторинг при исправлении дефектов</div>
-        <div>Выполняйте рефакторинг модулей подтверженных ошибках</div>
-        <div>Выполняйте рефакторинг сложных модулей</div>
+    <div class="column">
+        <div class="tip">Выполняйте рефакторинг при создании новых методов</div>
+        <div class="tip">Выполняйте рефакторинг при создании новых классов</div>
+        <div class="tip">Выполняйте рефакторинг при исправлении дефектов</div>
+        <div class="tip">Выполняйте рефакторинг модулей подтверженных ошибках</div>
+        <div class="tip">Выполняйте рефакторинг сложных модулей</div>
     </div>
 </section>
 
@@ -1177,50 +1321,54 @@
 
 <section class="slide">
     <h2>Производительность и оптимизация кода</h2>
-    <div>
-        <div>Требования к программе</div>
-        <div>Проект программы</div>
-        <div>На этапе проектирование можно рассмотреть альтернативные варианты которые будут
+    <div class="column">
+        <div class="full border">Требования к программе</div>
+        <div class="full border">Проект программы</div>
+        <div class="full border">На этапе проектирование можно рассмотреть альтернативные варианты которые будут
             производительнее изначально
         </div>
-        <div>Проекты классов и методов</div>
-        <div>Взаимодействие программы с ОС</div>
-        <div>Оборудование</div>
-        <div>Оптимизация кода</div>
+        <div class="full border">Проекты классов и методов</div>
+        <div class="full border">Взаимодействие программы с ОС</div>
+        <div class="full border">Оборудование</div>
+        <div class="full border">Оптимизация кода</div>
     </div>
 </section>
 
 <section class="slide">
-    <blockquote>
-        <p>Менее 4% кода обычно соответствует более чем 50% времени выполнения программы</p>
-        <p>- Дональд Кнут</p>
-    </blockquote>
-</section>
-
-<section class="slide">
-    <h2>Мифы оптимизации</h2>
-    <div>
-        <div>Сокращение числа строк высокоуровневого кода повышает быстродействие</div>
-        <div>Одни операции, вероятно, выполняются быстрее других</div>
-        <div>Оптимизацию следует выполнять по мере написания кода</div>
-        <div>Быстродействие программы не менее важно чем ее корректность</div>
+    <h2>Оптимизация</h2>
+    <div class="row">
+        <div class="col half">
+            <blockquote>
+                <div>Менее 4% кода обычно соответствует более чем 50% времени выполнения программы</div>
+                <div class="def">- Дональд Кнут</div>
+            </blockquote>
+            <h3>Мифы оптимизации</h3>
+            <div class="column">
+                <div class="border">Сокращение числа строк высокоуровневого кода повышает быстродействие</div>
+                <div class="border">Оптимизацию следует выполнять по мере написания кода</div>
+                <div class="border">Быстродействие программы не менее важно чем ее корректность</div>
+            </div>
+        </div>
+        <div class="half">
+            <img src="./pictures/knut.jpg" alt="">
+        </div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Алгоритм оптимизации</h2>
-    <div>
-        <div>Напишите хороший и понятный код, поддающийся легкому изменению</div>
-        <div>Если производительность не устраивает
-            <div>
-                <div>Закоммитьте рабочий код</div>
-                <div>Оцените производительность системы и найдите горячие точки</div>
-                <div>Определите чем обусловлена низкая производительность</div>
-                <div>Оптимизируйте проблемное место</div>
-                <div>Оцените каждую оптимизацию по одной за раз</div>
-                <div>Если оптимизация не привела к улучшению, повторите все заново</div>
+    <div class="column">
+        <div class="full border">Напишите хороший и понятный код, поддающийся легкому изменению</div>
+        <div class="full border">Если производительность не устраивает
+            <div class="column">
+                <div class="full border">Закоммитьте рабочий код</div>
+                <div class="full border">Оцените производительность системы и найдите горячие точки</div>
+                <div class="full border">Определите чем обусловлена низкая производительность</div>
+                <div class="full border">Оптимизируйте проблемное место</div>
+                <div class="full border">Оцените каждую оптимизацию по одной за раз</div>
             </div>
         </div>
+        <div class="full border">Если оптимизация не привела к улучшению, повторите все заново</div>
     </div>
 </section>
 
@@ -1230,26 +1378,23 @@
 
 <section class="slide">
     <div class="code">
-        <h2>Прекращение проверки сразу после получения ответа</h2>
+        <h3>Прекращение проверки сразу после получения ответа</h3>
         <img src="./pictures/control-3.svg" alt="">
     </div>
     <div class="code">
-        <h2>Упорядочивание if и case по частоте</h2>
+        <h3>Упорядочивание if и case по частоте</h3>
         <img src="./pictures/optimization-1.svg" alt="">
     </div>
 </section>
 
 <section class="slide">
-</section>
-
-<section class="slide">
     <h2>Замена сложных выражений на обращение к таблице подстановки</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/optimization-2.svg" alt="">
     </div>
     <div class="code">
-        <div>Лучше</div>
+        <h3>Лучше</h3>
         <img src="./pictures/optimization-3.svg" alt="">
     </div>
 </section>
@@ -1261,11 +1406,11 @@
 <section class="slide">
     <h2>Размыкание (unswitch) цикла</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/cycle-unswitch-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Лучше</div>
+        <h3>Лучше</h3>
         <img src="./pictures/cycle-unswitch-2.svg" alt="">
     </div>
 </section>
@@ -1273,11 +1418,11 @@
 <section class="slide">
     <h2>Объединение (jamming) цикла</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/cycle-jamming-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Лучше</div>
+        <h3>Лучше</h3>
         <img src="./pictures/cycle-jamming-2.svg" alt="">
     </div>
 </section>
@@ -1285,11 +1430,11 @@
 <section class="slide">
     <h2>Развертывание (unrolling) цикла</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/cycle-unrolling-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Лучше</div>
+        <h3>Лучше</h3>
         <img src="./pictures/cycle-unrolling-2.svg" alt="">
     </div>
 </section>
@@ -1297,11 +1442,11 @@
 <section class="slide">
     <h2>Минимизация объема работы, выполняемой в цикле</h2>
     <div class="code">
-        <div>Плохо</div>
+        <h3>Плохо</h3>
         <img src="./pictures/cycle-min-work-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Лучше</div>
+        <h3>Лучше</h3>
         <img src="./pictures/cycle-min-work-2.svg" alt="">
     </div>
 </section>
@@ -1309,11 +1454,11 @@
 <section class="slide">
     <h2>Вложение более ресурсоемкого цикла в менее ресурсоемкий</h2>
     <div class="code">
-        <div>Плохо (600 итераций)</div>
+        <h3>Плохо (600 итераций)</h3>
         <img src="./pictures/cycle-inner-1.svg" alt="">
     </div>
     <div class="code">
-        <div>Лучше (505 итераций)</div>
+        <h3>Лучше (505 итераций)</h3>
         <img src="./pictures/cycle-inner-2.svg" alt="">
     </div>
 </section>
@@ -1363,11 +1508,11 @@
 
 <section class="slide">
     <h2>Остальные методы</h2>
-  <div>
-      <div>Замена вызовов встроенных методов своими</div>
-      <div>Предварительное вычисление результатов</div>
-      <div>Вынесение часто используемых подвыражений</div>
-  </div>
+    <div class="column">
+        <div class="full border">Замена вызовов встроенных методов своими</div>
+        <div class="full border">Предварительное вычисление результатов</div>
+        <div class="full border">Вынесение часто используемых подвыражений</div>
+    </div>
 </section>
 
 
