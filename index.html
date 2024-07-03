@@ -54,6 +54,7 @@
 
         h3 {
             font-size: 20px;
+            display: inline-block;
         }
     }
 
@@ -170,7 +171,6 @@
         color: white;
     }
 
-    .half,
     .border {
         position: relative;
         overflow: hidden;
@@ -185,6 +185,27 @@
             border-width: 0 0 10px 10px;
             border-color: transparent transparent rgb(230, 0, 35) transparent;
             transform: rotate(0deg);
+        }
+    }
+
+    .circle {
+        text-align: center;
+        padding-top: 50px;
+        position: relative;
+        &:before {
+            content: attr(data-number) " ";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(230, 0, 35);
+            color: white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
@@ -281,11 +302,11 @@
     <p><span class="def">Метафоры</span> помогают понять процесс разработки ПО, сопоставляя его с другими, более
         знакомыми процессами.</p>
     <h3>Виды:</h3>
-    <div class="column">
-        <div class="full border">Литературная метафора: написание кода</div>
-        <div class="full border">Сельскохозяйственная метафора: приращение системы</div>
-        <div class="full border">Метафора жемчужины: медленное приращение системы (аккреция ПО)</div>
-        <div class="full border">Строительная метафора: построение ПО</div>
+    <div class="row">
+        <div class="half circle" data-number="1">Литературная метафора</div>
+        <div class="half circle" data-number="2">Сельскохозяйственная метафора</div>
+        <div class="half circle" data-number="3">Метафора жемчужины</div>
+        <div class="half circle" data-number="4">Строительная метафора</div>
     </div>
 </section>
 
@@ -295,29 +316,27 @@
 
 <section class="slide">
     <h2>Подходы к разработке ПО</h2>
-    <div class="columns two">
-        <div>
-            <span class="def">Последовательный</span>
-            <div class="column start">
-                <div class="full border">Требования довольно стабильны</div>
-                <div class="full border">Проект приложения прост и относительно понятен</div>
-                <div class="full border">Разработчики знакомы с прикладной областью</div>
-                <div class="full border">Проект не связан с особым риском</div>
-                <div class="full border">Важна долговременная предсказуемость проекта</div>
-                <div class="full border">Затраты на изменения требований окажутся скорее всего высокими</div>
-            </div>
-        </div>
-        <div>
-            <span class="def">Итеративный</span>
-            <div class="column">
-                <div class="full border">Требования относительные непонятны или нестабильны</div>
-                <div class="full border">Проект приложения сложен и не ясен</div>
-                <div class="full border">Разработчики не знакомы с прикладной областью</div>
-                <div class="full border">Проект сопряжен с высоким риском</div>
-                <div class="full border">Долговременная предсказуемость проекта не играет особой роли</div>
-                <div class="full border">Затраты на изменения требований, скорее всего, будут низкими</div>
-            </div>
-        </div>
+    <h3>Последовательный</h3>
+    <div class="column start">
+        <div class="full border">Требования довольно стабильны</div>
+        <div class="full border">Проект приложения прост и относительно понятен</div>
+        <div class="full border">Разработчики знакомы с прикладной областью</div>
+        <div class="full border">Проект не связан с особым риском</div>
+        <div class="full border">Важна долговременная предсказуемость проекта</div>
+        <div class="full border">Затраты на изменения требований окажутся скорее всего высокими</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Подходы к разработке ПО</h2>
+    <h3>Итеративный</h3>
+    <div class="column">
+        <div class="full border">Требования относительные непонятны или нестабильны</div>
+        <div class="full border">Проект приложения сложен и не ясен</div>
+        <div class="full border">Разработчики не знакомы с прикладной областью</div>
+        <div class="full border">Проект сопряжен с высоким риском</div>
+        <div class="full border">Долговременная предсказуемость проекта не играет особой роли</div>
+        <div class="full border">Затраты на изменения требований, скорее всего, будут низкими</div>
     </div>
 </section>
 
@@ -711,12 +730,14 @@
 
 <section class="slide">
     <h2>Изоляция повреждений / баррикада</h2>
+    <h3>Публичные методы</h3>
     <div><span class="def">Публичные методы</span> предполагают что получаемые данные небезопасны и отвечают за их
         проверку и исправление.
     </div>
     <div class="tip">Здесь
         используются обработчики ошибок.
     </div>
+    <h3>Приватные методы</h3>
     <div><span class="def">Приватные методы</span> предполагают что полученные данные прошли проверку в публичном методе
         и безопасны.
     </div>
@@ -760,9 +781,9 @@
     <h2>Единственность цели каждой переменной</h2>
 
     <div class="column">
-        <div class="full border">Используйте каждую переменную только с одной целью</div>
-        <div class="full border">Избегайте переменных имеющих скрытый смысл</div>
-        <div class="full border">Не оставлять не используемые переменные</div>
+        <div class="full danger">Используйте каждую переменную только с одной целью</div>
+        <div class="full tip">Избегайте переменных имеющих скрытый смысл</div>
+        <div class="full warning">Не оставлять не используемые переменные</div>
     </div>
 </section>
 
