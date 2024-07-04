@@ -21,12 +21,14 @@
         box-sizing: border-box;
     }
 
+
+
     .slide {
         font-size: 20px;
         padding: 10px 50px;
 
         &:after {
-            background: rgb(230, 0, 35);
+            background: #BF3030;
             width: 50px;
             height: 50px;
             padding: 0;
@@ -46,7 +48,7 @@
                 position: absolute;
                 bottom: -5px;
                 left: 0;
-                background-color: rgb(230, 0, 35);
+                background-color: #BF3030;
                 width: 100%;
                 height: 3px;
             }
@@ -54,13 +56,12 @@
 
         h3 {
             font-size: 20px;
-            display: inline-block;
         }
     }
 
     .progress {
         &:before {
-            background-color: rgb(230, 0, 35);
+            background-color: #BF3030;
         }
     }
 
@@ -87,7 +88,7 @@
 
     .chapter-title {
         position: relative;
-        border: 10px solid rgb(230, 0, 35);
+        border: 10px solid #BF3030;
         color: black;
         font: 800 50px/100% Roboto;
         padding: 60px;
@@ -170,13 +171,13 @@
     }
 
     .border {
-        border: 1px solid rgb(230, 0, 35);
+        border: 1px solid #BF3030;
         border-radius: 5px;
         padding: 5px;
     }
 
     .filled {
-        background-color: rgb(230, 0, 35);
+        background-color: #BF3030;
         color: white;
     }
 
@@ -192,7 +193,7 @@
             height: 0;
             border-style: solid;
             border-width: 0 0 10px 10px;
-            border-color: transparent transparent rgb(230, 0, 35) transparent;
+            border-color: transparent transparent #BF3030 transparent;
             transform: rotate(0deg);
         }
     }
@@ -208,7 +209,7 @@
             left: 50%;
             width: 50px;
             height: 50px;
-            background-color: rgb(230, 0, 35);
+            background-color: #BF3030;
             color: white;
             border-radius: 50%;
             transform: translateX(-50%);
@@ -335,33 +336,40 @@
     <h2>Подходы к разработке ПО</h2>
     <table>
         <tr style="background: #f3f3f3">
+            <th scope="col"></th>
             <th scope="col">Последовательный</th>
             <th scope="col">Итеративный</th>
         </tr>
         <tr>
-            <td>Требования стабильны</td>
-            <td>Требования непонятны или нестабильны</td>
+            <td style="font-weight:bold;">Требования</td>
+            <td>Понятные и стабильны</td>
+            <td>Непонятны или нестабильны</td>
         </tr>
         <tr>
-            <td>Проект прост и относительно понятен</td>
-            <td>Проект сложен и не ясен</td>
+            <td style="font-weight:bold;">Сложность проекта</td>
+            <td>Прост и понятен</td>
+            <td>Сложен и не ясен</td>
         </tr>
 
         <tr>
-            <td>Разработчики знакомы с прикладной областью</td>
-            <td>Разработчики не знакомы с прикладной областью</td>
+            <td style="font-weight:bold;">Предметной области</td>
+            <td>Разработчики знакомы с ней</td>
+            <td>Разработчики не знакомы с ней</td>
         </tr>
         <tr>
-            <td>Проект не связан с особым риском</td>
-            <td>Проект сопряжен с высоким риском</td>
+            <td style="font-weight:bold;">Потенциальные риски</td>
+            <td>Минимальные риски</td>
+            <td>Высокие риски</td>
         </tr>
         <tr>
-            <td>Важна долговременная предсказуемость проекта</td>
-            <td>Долговременная предсказуемость проекта не играет особой роли</td>
+            <td style="font-weight:bold;">Долговременная предсказуемость</td>
+            <td>Важна</td>
+            <td>Не играет особой роли</td>
         </tr>
         <tr>
-            <td>Затраты на изменения требований окажутся высокими</td>
-            <td>Затраты на изменения требований будут низкими</td>
+            <td style="font-weight:bold;">Затраты на изменения требований</td>
+            <td>Высокими</td>
+            <td>Низкие</td>
         </tr>
     </table>
 </section>
@@ -369,15 +377,17 @@
 <section class="slide">
     <h2>Предварительные условия</h2>
     <div class="row">
-        <div class="half tip">Необходимо перед конструированием сформулировать проблему которую система будет
-            решать
+        <div class="column half">
+            <div class="full">Необходимо перед конструированием сформулировать проблему которую система будет
+                решать
+            </div>
+            <div class="full">Иначе можно решать не ту проблемы или не тем способом</div>
         </div>
-        <div class="half tip">Необходимо перед конструированием иметь официальные требования</div>
-    </div>
-    <div class="row">
-        <div class="half warning">Иначе можно решать не ту проблемы или не тем способом</div>
-        <div class="half warning">При их отсутствии требования будут определяться разработчиком, а не пользователем
-            системы
+        <div class="column half">
+            <div class="full">Необходимо перед конструированием иметь официальные требования</div>
+            <div class="full">При их отсутствии требования будут определяться разработчиком, а не пользователем
+                системы
+            </div>
         </div>
     </div>
 </section>
@@ -406,23 +416,36 @@
         приложение.
     </div>
     <h3>Тезисы</h3>
-    <div class="column">
-        <div class="full border">грязный и неряшливый процесс</div>
-        <div class="full border">недетерминированный и эвристический процесс</div>
-        <div class="full border">постепенный процесс</div>
-        <div class="full border">определение компромиссов и приоритетов, ограничение возможностей</div>
+    <div class="row">
+        <div class="column half" style="flex-grow: 1">
+            <div class="full border">Грязный и неряшливый процесс</div>
+            <div class="full border">Недетерминированный и эвристический процесс</div>
+            <div class="full border">Постепенный процесс</div>
+            <div class="full border">Определение компромиссов и приоритетов, ограничение возможностей</div>
+        </div>
+        <div class="half" style="text-align: right">
+            <img src="./pictures/proektirovanie.gif" alt="" style="height: 100%;width: auto;">
+        </div>
     </div>
 </section>
 
 <section class="slide">
-    <h2>
-        Методики проектирования</h2>
-    <div class="column">
-        <div class="full border">Нисходящее (<span class="def">top-down</span>) проектирование</div>
-        <div class="full border">Восходящее (<span class="def">bottom-up</span>) проектирование</div>
-        <div class="full border">Экспериментальное прототипирование</div>
-        <div class="full border">Совместное проектирование</div>
+    <h2>Методики проектирования</h2>
+    <h3>Нисходящее (<span class="def">top-down</span>) проектирование</h3>
+    <div class="tip">
+        Начинается на высоком уровне абстракции, постепенно повышается уровень детальности и уменьшению уровня
+        абстракции.
     </div>
+    <h3>Восходящее (<span class="def">bottom-up</span>) проектирование</h3>
+    <div class="tip">
+        Начинается со специфики и уходит к более общему.
+    </div>
+    <h3>Экспериментальное прототипирование</h3>
+    <div class="tip">
+        Написание прототипа для проверки, который потом будет выкидываться
+    </div>
+    <h3>Совместное проектирование</h3>
+    <div class="tip">Проектирование несколькими людьми одновременно</div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -446,41 +469,35 @@
 </section>
 <section class="slide">
     <h2>Управление сложностью</h2>
-    <table>
-        <tr style="width: 50%">
-            <td><h3>Причины усложнения</h3></td>
-            <td><h3>Подходы к управлению сложностью</h3></td>
-        </tr>
-        <tr>
-            <td class="danger">Сложное решение простой проблемы</td>
-            <td>Старайтесь свести к минимуму объем существенной сложности, с которым придется работать в каждый
-                конкретный момент времени
-            </td>
-        </tr>
-        <tr>
-            <td class="danger">Простое, но неверное решение сложной проблемы</td>
-            <td rowspan="2">Сдерживайте необязательный рост несущественный сложности</td>
-
-        </tr>
-        <tr>
-            <td class="danger">Неадекватное сложное решение сложной проблемы</td>
-            <td></td>
-        </tr>
-    </table>
+    <h3>Причины усложнения:</h3>
+    <div class="column">
+        <div class="full danger">Сложное решение простой проблемы</div>
+        <div class="full danger">Простое, но неверное решение сложной проблемы</div>
+        <div class="full danger">Неадекватное сложное решение сложной проблемы</div>
+    </div>
+    <h3>Подходы к управлению сложностью:</h3>
+    <div class="column">
+        <div class="full tip">Старайтесь свести к минимуму объем существенной сложности, с которым придется работать в
+            каждый конкретный момент времени
+        </div>
+        <div class="full tip">Сдерживайте необязательный рост несущественный сложности</div>
+    </div>
+    </div>
 </section>
 <section class="slide">
     <h2>Желательные характеристики проекта</h2>
-    <div class="row">
-        <div class="column half">
-            <div class="full border">Минимальная сложность</div>
-            <div class="full border">Простота сопровождения</div>
-            <div class="full border">Слабое сопряжение</div>
-            <div class="full border">Расширяемость</div>
-            <div class="full border">Возможность повторного использования</div>
-            <div class="full border">Минимальная, но полная функциональность</div>
-            <div class="full border">Соответствие практикам, соглашениями и методикам</div>
-        </div>
-    </div>
+    <h3>Минимальная сложность</h3>
+    <div>Избегайте создания «хитроумных» проектов: как правило, их трудно понять</div>
+    <h3>Простота сопровождения</h3>
+    <div>Проектируя приложение, не забывайте о программистах, которые будут его сопровождать</div>
+    <h3>Слабое сопряжение</h3>
+    <div>Слабое сопряжение предполагает сведение к минимуму числа соединений между модулями</div>
+    <h3>Расширяемость</h3>
+    <div>Изменение одного фрагмента системы не должно влиять на ее другие фрагменты</div>
+    <h3>Минимальная, но полная функциональность</h3>
+    <div>Этот аспект подразумевает отсутствие в системе лишних частей</div>
+    <h3>Соответствие практикам, соглашениями и методикам</h3>
+    <div>Чем экзотичнее система, тем сложнее будет другим программистам понять ее</div>
 </section>
 
 <section class="slide chapter-wrapper">
