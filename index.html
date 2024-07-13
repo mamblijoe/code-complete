@@ -268,6 +268,11 @@
     td {
         padding: 5px 5px 5px 10px;
     }
+
+    .imp {
+        font-weight: 600;
+        text-decoration: underline;
+    }
 </style>
 
 </head>
@@ -417,35 +422,45 @@
     </div>
     <h3>Тезисы</h3>
     <div class="row">
-        <div class="column half" style="flex-grow: 1">
-            <div class="full border">Грязный и неряшливый процесс</div>
-            <div class="full border">Недетерминированный и эвристический процесс</div>
-            <div class="full border">Постепенный процесс</div>
-            <div class="full border">Определение компромиссов и приоритетов, ограничение возможностей</div>
-        </div>
-        <div class="half" style="text-align: right">
-            <img src="./pictures/proektirovanie.gif" alt="" style="height: 100%;width: auto;">
+        <div class="row start" style="flex-grow: 1">
+            <div class="border">Грязный и неряшливый процесс</div>
+            <div class="border">Постепенный процесс</div>
+            <div class="border">Компромиссы, приоритеты, ограничения</div>
+            <div class="border">Недетерминированный и эвристический процесс</div>
         </div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Методики проектирования</h2>
-    <h3>Нисходящее (<span class="def">top-down</span>) проектирование</h3>
-    <div class="tip">
-        Начинается на высоком уровне абстракции, постепенно повышается уровень детальности и уменьшению уровня
-        абстракции.
+    <br>
+    <div class="row">
+        <div class="half">
+            <h3>Нисходящее (<span class="def">top-down</span>) проектирование</h3>
+            <div class="tip">Начинается на высоком уровне абстракции, постепенно повышается уровень детальности и
+                уменьшению уровня абстракции.
+            </div>
+        </div>
+        <div class="half">
+            <h3>Восходящее (<span class="def">bottom-up</span>) проектирование</h3>
+            <div class="tip">
+                Начинается со специфики и уходит к более общему.
+            </div>
+        </div>
     </div>
-    <h3>Восходящее (<span class="def">bottom-up</span>) проектирование</h3>
-    <div class="tip">
-        Начинается со специфики и уходит к более общему.
+    <br>
+    <div class="row">
+        <div class="half">
+            <h3>Экспериментальное прототипирование</h3>
+            <div class="tip">
+                Написание прототипа для проверки, который потом будет выкидываться
+            </div>
+        </div>
+        <div class="half">
+            <h3>Совместное проектирование</h3>
+            <div class="tip">Проектирование несколькими людьми одновременно</div>
+        </div>
     </div>
-    <h3>Экспериментальное прототипирование</h3>
-    <div class="tip">
-        Написание прототипа для проверки, который потом будет выкидываться
-    </div>
-    <h3>Совместное проектирование</h3>
-    <div class="tip">Проектирование несколькими людьми одновременно</div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -475,13 +490,13 @@
         <div class="full danger">Простое, но неверное решение сложной проблемы</div>
         <div class="full danger">Неадекватное сложное решение сложной проблемы</div>
     </div>
+    <br>
     <h3>Подходы к управлению сложностью:</h3>
     <div class="column">
         <div class="full tip">Старайтесь свести к минимуму объем существенной сложности, с которым придется работать в
             каждый конкретный момент времени
         </div>
         <div class="full tip">Сдерживайте необязательный рост несущественный сложности</div>
-    </div>
     </div>
 </section>
 <section class="slide">
@@ -575,7 +590,7 @@
 </section>
 
 <section class="slide">
-    <h2>Семантическое сопряжение</h2>
+    hn <h2>Семантическое сопряжение</h2>
     <div class="code">
         <img src="./pictures/semantic-coupling-3.svg" alt="">
     </div>
@@ -598,13 +613,13 @@
         операции.
     </div>
     <h3>Преимущества использования АТД</h3>
-    <div class="column">
-        <div class="full border">Возможность сокрытия деталей реализации</div>
-        <div class="full border">Ограничение области изменений</div>
-        <div class="full border">Легкость оптимизации и проверки кода</div>
-        <div class="full border">Удобочитаемость и понятность кода</div>
-        <div class="full border">Ограничение области использования данных</div>
-        <div class="full border">Возможность работы абстракцией, а реализацией</div>
+    <div class="row start">
+        <div class="border">Легкость оптимизации и проверки кода</div>
+        <div class="border">Удобочитаемость и понятность кода</div>
+        <div class="border">Ограничение области изменений</div>
+        <div class="border">Возможность сокрытия деталей реализации</div>
+        <div class="border">Ограничение области использования данных</div>
+        <div class="border">Возможность работы абстракцией, а реализацией</div>
     </div>
 </section>
 
@@ -635,17 +650,17 @@
 
 <section class="slide">
     <h2>Разумные причины создания классов</h2>
-    <div class="row">
-        <div class="half border">Моделирование объектов реального мира и абстрактных объектов</div>
-        <div class="half border">Снижение и изоляция сложности</div>
-        <div class="half border">Сокрытие деталей реализации</div>
-        <div class="half border">Ограничение влияния изменений</div>
-        <div class="half border">Упрощение передачи параметров в методы</div>
-        <div class="half border">Создание центральных точек управления</div>
-        <div class="half border">Облегчение повторного использования кода</div>
-        <div class="half border">Планирование создания семейств</div>
-        <div class="half border">Упаковка родственных операций / команд</div>
-        <div class="half border">Выполнение специфического вида рефакторинга</div>
+    <div class="row start">
+        <div class="border">Моделирование объектов реального мира и абстрактных объектов</div>
+        <div class="border">Снижение и изоляция сложности</div>
+        <div class="border">Сокрытие деталей реализации</div>
+        <div class="border">Ограничение влияния изменений</div>
+        <div class="border">Создание семейств</div>
+        <div class="border">Упрощение передачи параметров в методы</div>
+        <div class="border">Создание центральных точек управления</div>
+        <div class="border">Облегчение повторного использования кода</div>
+        <div class="border">Упаковка родственных операций / команд</div>
+        <div class="border">Выполнение специфического вида рефакторинга</div>
     </div>
 </section>
 
@@ -655,18 +670,18 @@
 
 <section class="slide">
     <h2>Разумные причины создания методов</h2>
-    <div class="row">
-        <div class="half border">Снижение сложности</div>
-        <div class="half border">Формирование понятной промежуточной абстракции</div>
-        <div class="half border">Предотвращение дублирования кода</div>
-        <div class="half border">Поддержка наследования</div>
-        <div class="half border">Сокрытие очередности действий</div>
-        <div class="half border">Упрощение сложных булевых проверок</div>
-        <div class="half border">Изоляция сложности</div>
-        <div class="half border">Сокрытие деталей реализации</div>
-        <div class="half border">Ограничение влияния изменений</div>
-        <div class="half border">Создание центральных точек управления</div>
-        <div class="half border">Выполнение специфического рефакторинга</div>
+    <div class="row start">
+        <div class="border">Снижение сложности</div>
+        <div class="border">Поддержка наследования</div>
+        <div class="border">Изоляция сложности</div>
+        <div class="border">Сокрытие очередности действий</div>
+        <div class="border">Предотвращение дублирования кода</div>
+        <div class="border">Упрощение сложных булевых проверок</div>
+        <div class="border">Сокрытие деталей реализации</div>
+        <div class="border">Ограничение влияния изменений</div>
+        <div class="border">Создание центральных точек управления</div>
+        <div class="border">Выполнение специфического рефакторинга</div>
+        <div class="border">Формирование понятной промежуточной абстракции</div>
     </div>
 </section>
 
@@ -688,14 +703,11 @@
     <h2>Советы по использованию аргументов</h2>
     <div class="column">
         <div class="full border">Если несколько методов используют одинаковые аргументы, то необходимо передавать их в
-            одинаковом /
-            согласованном порядке
+            одинаковом / согласованном порядке
         </div>
         <div class="full border">Не передавать не используемые аргументы</div>
         <div class="full border">Переменные статуса или ошибки передавать последними, так как они второстепенны по
-            отношению к
-            главной цели
-            метода
+            отношению к главной цели метода
         </div>
         <div class="full border">Не изменять входные параметры и не переприсваивать</div>
         <div class="full border">Ограничивать число аргументов не более 7, иначе следует передавать их как объект</div>
@@ -715,12 +727,9 @@
     <h3>Общие принципы использования утверждений</h3>
     <div class="row">
         <div class="half tip">Используйте процедуры обработки ошибок для ожидаемых событий и утверждения для событий,
-            которые
-            происходить
-            не должны
+            которые происходить не должны
         </div>
-        <div class="half tip">Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте
-            ошибки
+        <div class="half tip">Для большей устойчивости проверяйте утверждения, а затем все равно обрабатывайте ошибки
         </div>
         <div class="half warning">Старайтесь не помещать выполняемый код в утверждения</div>
         <div class="half tip">Используйте утверждения для документирования пред- и постусловий</div>
@@ -733,21 +742,18 @@
         Выбор того или иного способа обработки ошибок зависит от того что важнее, Корректность или Устойчивость
     </div>
     <h3>Способы</h3>
-    <div class="columns two">
-        <div class="column">
-            <div class="full border">Вернуть нейтральное значение</div>
-            <div class="full border">Заменить следующий корректным блоком данных</div>
-            <div class="full border">Вернуть последний успешный результат</div>
-            <div class="full border">Подставить ближайшее допустимое значение</div>
-            <div class="full border">Записать лог ошибки</div>
-        </div>
-        <div class="column">
-            <div class="full border">Вернуть код ошибки</div>
-            <div class="full border">Вызвать обработчик ошибок</div>
-            <div class="full border">Показать сообщение об ошибке</div>
-            <div class="full border">Обработать ошибку в месте возникновения</div>
-            <div class="full border">Прекратить выполнение программы</div>
-        </div>
+    <div class="row start">
+        <div class="border">Записать лог ошибки</div>
+        <div class="border">Вернуть код ошибки</div>
+        <div class="border">Заменить следующий корректным блоком данных</div>
+        <div class="border">Вернуть нейтральное значение</div>
+        <div class="border">Вызвать обработчик ошибок</div>
+        <div class="border">Показать сообщение об ошибке</div>
+        <div class="border">Вернуть последний успешный результат</div>
+        <div class="border">Подставить ближайшее допустимое значение</div>
+        <div class="border">Обработать ошибку в месте возникновения</div>
+        <div class="border">Прекратить выполнение программы</div>
+    </div>
     </div>
 
 </section>
@@ -757,12 +763,11 @@
     <div class="column">
         <div class="full tip">Используйте исключения для оповещения других частей программы об ошибках</div>
         <div class="full tip">Генерируйте исключения для действительно исключительных ситуаций и не используйте
-            исключения по
-            мелочам
+            исключения по мелочам
         </div>
         <div class="full tip">Избегайте выкидывание исключение в конструкторах</div>
-        <div class="full tip">Исключение должно содержать все необходимую информацию о причинах исключения</div>
-        <div class="full tip">Избегать пустых блоков catch</div>
+        <div class="full tip">Включайте в исключение всю необходимую информацию о причинах исключения</div>
+        <div class="full tip">Избегайте пустых блоков catch</div>
         <div class="full tip">Стандартизируйте работу с исключениями на проекте</div>
     </div>
 </section>
@@ -770,19 +775,11 @@
 <section class="slide">
     <h2>Изоляция повреждений / баррикада</h2>
     <h3>Публичные методы</h3>
-    <div><span class="def">Публичные методы</span> предполагают что получаемые данные небезопасны и отвечают за их
-        проверку и исправление.
-    </div>
-    <div class="tip">Здесь
-        используются обработчики ошибок.
-    </div>
+    <div>Публичные методы предполагают что получаемые данные небезопасны и отвечают за их проверку и исправление.</div>
+    <div class="tip">Здесь используются обработчики ошибок.</div>
     <h3>Приватные методы</h3>
-    <div><span class="def">Приватные методы</span> предполагают что полученные данные прошли проверку в публичном методе
-        и безопасны.
-    </div>
-    <div class="tip">Здесь
-        используются утверждения
-    </div>
+    <div>Приватные методы предполагают что полученные данные прошли проверку в публичном методе и безопасны.</div>
+    <div class="tip">Здесь используются утверждения</div>
 </section>
 
 <section class="slide">
@@ -862,29 +859,16 @@
 
 <section class="slide">
     <h2>Сокращение имен переменных</h2>
-    <table>
-
-        <tr>
-            <td>Используйте стандартные аббревиатуры</td>
-            <td>Удаляйте все гласные, не являющиеся первыми буквами имен</td>
-        </tr>
-        <tr>
-            <td>Обрезайте слова согласованно: после первой, второй или третьей буквы</td>
-            <td>Проверяйте что бы в ходе сокращения смысл имени переменной не искажался</td>
-        </tr>
-        <tr>
-            <td>Сохраняйте первую и последнюю букву каждого слова</td>
-            <td>Используйте словарь для разрешения конфликтных имен и поиска синонимов</td>
-        </tr>
-        <tr>
-            <td>Не сокращайте слова только на один символ</td>
-            <td>Сокращайте имена согласованно</td>
-        </tr>
-        <tr>
-            <td>Сокращайте имена так что бы их можно было произнести</td>
-            <td>Избегайте комбинаций допускающих неверное прочтение</td>
-        </tr>
-    </table>
+    <div class="column">
+        <div class="border full">Используйте стандартные аббревиатуры</div>
+        <div class="border full">Удаляйте все гласные, не являющиеся первыми буквами имен</div>
+        <div class="border full">Обрезайте слова согласованно: после первой, второй или третьей буквы</div>
+        <div class="border full">Проверяйте что бы в ходе сокращения смысл имени переменной не искажался</div>
+        <div class="border full">Сохраняйте первую и последнюю букву каждого слова</div>
+        <div class="border full">Используйте словарь для разрешения конфликтных имен и поиска синонимов</div>
+        <div class="border full">Не сокращайте слова только на один символ</div>
+        <div class="border full">Сокращайте имена согласованно</div>
+    </div>
 </section>
 
 <section class="slide chapter-wrapper">
@@ -1103,75 +1087,44 @@
 
 <section class="slide">
     <h2>Характеристики качества ПО</h2>
-
-
-    <table>
-        <tr>
-            <td><h3>Внешние характеристики</h3></td>
-            <td><h3>Внутренние характеристики</h3></td>
-
-        <tr>
-            <td>Корректность</td>
-            <td>Удобство сопровождения</td>
-        </tr>
-        <tr>
-            <td>Практичность</td>
-            <td>Гибкость</td>
-        </tr>
-        <tr>
-            <td>Эффективность</td>
-            <td>Портируемость</td>
-        </tr>
-        <tr>
-            <td>Надежность</td>
-            <td>Возможность повторного использования</td>
-        </tr>
-        <tr>
-            <td>Целостность</td>
-            <td>Удобочитаемость</td>
-        </tr>
-        <tr>
-            <td>Адаптируемость</td>
-            <td>Тестируемость</td>
-        </tr>
-        <tr>
-            <td>Правильность</td>
-            <td>Понятность</td>
-        </tr>
-        <tr>
-            <td>Живучесть</td>
-            <td></td>
-        </tr>
-    </table>
-    <div class="columns two">
-        <div>
-            <div class="column">
-            </div>
-        </div>
-        <div>
-            <div class="column">
-            </div>
-        </div>
+    <br>
+    <h3>Внешние характеристики</h3>
+    <div class="row start">
+        <div class="border">Корректность</div>
+        <div class="border">Практичность</div>
+        <div class="border">Эффективность</div>
+        <div class="border">Надежность</div>
+        <div class="border">Целостность</div>
+        <div class="border">Адаптируемость</div>
+        <div class="border">Правильность</div>
+        <div class="border">Живучесть</div>
+    </div>
+    <br>
+    <h3>Внутренние характеристики</h3>
+    <div class="row start">
+        <div class="border">Удобство сопровождения</div>
+        <div class="border">Гибкость</div>
+        <div class="border">Возможность повторного использования</div>
+        <div class="border">Удобочитаемость</div>
+        <div class="border">Тестируемость</div>
+        <div class="border">Понятность</div>
     </div>
 </section>
 
 <section class="slide">
     <h2>Методики повышения качества ПО</h2>
-    <div class="columns two">
-        <div class="column">
-            <div class="full border">Целевые характеристики</div>
-            <div class="full border">Явный контроль качества</div>
-            <div class="full border">Стратегия тестирования</div>
-            <div class="full border">Принципы разработки ПО</div>
-            <div class="full border">Неформальные технические обзоры</div>
-        </div>
-        <div class="column">
-            <div class="full border">Формальные технические обзоры</div>
-            <div class="full border">Внешний аудит</div>
-            <div class="full border">Процедуры контроля изменений требований</div>
-            <div class="full border">Оценка результатов</div>
-            <div class="full border">Прототипирование</div>
-        </div>
+    <div class="row start">
+        <div class="border">Целевые характеристики</div>
+        <div class="border">Явный контроль качества</div>
+        <div class="border">Стратегия тестирования</div>
+        <div class="border">Внешний аудит</div>
+        <div class="border">Принципы разработки ПО</div>
+        <div class="border">Неформальные технические обзоры</div>
+        <div class="border">Формальные технические обзоры</div>
+        <div class="border">Процедуры контроля изменений требований</div>
+        <div class="border">Оценка результатов</div>
+        <div class="border">Прототипирование</div>
+    </div>
     </div>
 </section>
 
@@ -1226,21 +1179,16 @@
 
 <section class="slide">
     <h2>Советы по поиску причин багов</h2>
-    <div class="columns two">
-        <div class="column">
-            <div class="full border">Формулируя гипотезу используйте все имеющиеся данные</div>
-            <div class="full border">Воспроизведите ошибку несколькими способами</div>
-            <div class="full border">Используйте результаты отрицательных тестов для отсеивания гипотез</div>
-            <div class="full border">Используйте мозговой штурм</div>
-            <div class="full border">Сократите подозрительную область, где может быть баг</div>
-        </div>
-        <div class="column">
-            <div class="full border">Поищите баг в функционале в котором уже встречались баги</div>
-            <div class="full border">Проверьте код который был изменен недавно</div>
-            <div class="full border">Расширьте подозрительный фрагмент кода</div>
-            <div class="full border">Обсудите баг с кем то</div>
-            <div class="full border">Установите лимит времени для быстрой и грязной отладки.</div>
-        </div>
+    <div class="row start">
+        <div class="border">Обсудите баг с кем то</div>
+        <div class="border">Используйте мозговой штурм</div>
+        <div class="border">Расширьте подозрительный фрагмент кода</div>
+        <div class="border">Воспроизведите ошибку несколькими способами</div>
+        <div class="border">Проверьте код который был изменен недавно</div>
+        <div class="border">Ограничьте время для быстрой и грязной отладки.</div>
+        <div class="border">Сократите потенциальную область источника бага</div>
+        <div class="border">Поищите баг в функционале в котором уже встречались баги</div>
+        <div class="border">Используйте результаты отрицательных тестов для отсеивания гипотез</div>
     </div>
 </section>
 
@@ -1250,50 +1198,47 @@
 
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга: Общее</h2>
-    <div class="column">
-        <div class="full border">Код повторяется</div>
-        <div class="full border">Цикл слишком велик или имеет глубокую вложенность</div>
-        <div class="full border">Приходится менять параллельно несколько блоков case</div>
-        <div class="full border">Элементарный тип данных перегружен</div>
-        <div class="full border">Прокси-объект ничего не делает</div>
-        <div class="full border">Сложный код объясняется с помощью комментариев</div>
-        <div class="full border">Код содержит глобальные переменные</div>
-        <div class="full border">Программа содержит код который когда-нибудь может понадобиться</div>
+    <div class="row start">
+        <div class="border">Код повторяется</div>
+        <div class="border">Прокси-объект ничего не делает</div>
+        <div class="border">Элементарный тип данных перегружен</div>
+        <div class="border">Сложный код объясняется с помощью комментариев</div>
+        <div class="border">Код содержит глобальные переменные</div>
+        <div class="border">Цикл слишком велик / имеет глубокую вложенность</div>
+        <div class="border">Приходится менять параллельно несколько блоков case</div>
     </div>
 </section>
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга: Методы</h2>
-    <div class="column">
-        <div class="full border">Метод слишком велик</div>
-        <div class="full border">Метод принимает слишком много параметров</div>
-        <div class="full border">По цепи методов передаются бродячие данные</div>
-        <div class="full border">Метод имеет не удачное имя</div>
-        <div class="full border">Лишние публичные методы и свойства</div>
-        <div class="full border">Перед вызовом метода выполняется подготовительный код</div>
-        <div class="full border">Подкласс использует мало методов или свойств от наследования</div>
-        <div class="full border">Метод использует больше параметра чужого класса, чем своего</div>
+    <div class="row start">
+        <div class="border">Метод слишком велик</div>
+        <div class="border">Метод принимает слишком много параметров</div>
+        <div class="border">Метод имеет не удачное имя</div>
+        <div class="border">По цепи методов передаются бродячие данные</div>
+        <div class="border">Лишние публичные методы и свойства</div>
+        <div class="border">Перед вызовом метода выполняется подготовительный код</div>
+        <div class="border">Подкласс не пользуется наследованием</div>
+        <div class="border">Метод использует больше параметра чужого класса, чем своего</div>
     </div>
 </section>
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга: Классы</h2>
-    <div class="column">
-        <div class="full border">Класс имеет плохую связность</div>
-        <div class="full border">Интерфейс класса не формирует согласованную абстракцию</div>
-        <div class="full border">Отдельные части класса меняет независимо от других частей</div>
-        <div class="full border">При изменении программы приходится параллельно менять несколько классов</div>
-        <div class="full border">Приходится менять параллельно несколько иерархий наследования</div>
-        <div class="full border">Родственные элементы данных, используемые вместе, не организован в классы</div>
-        <div class="full border">Класс имеет слишком ограниченную функциональность</div>
-        <div class="full border">Один класс слишком много знает о другом</div>
+    <div class="row start">
+        <div class="border">Класс имеет плохую связность</div>
+        <div class="border">Интерфейс класса не формирует согласованную абстракцию</div>
+        <div class="border">Отдельные части класса меняет независимо от других частей</div>
+        <div class="border">При изменении программы приходится параллельно менять несколько классов</div>
+        <div class="border">Приходится менять параллельно несколько иерархий наследования</div>
+        <div class="border">Родственные элементы данных, используемые вместе, не организован в классы</div>
+        <div class="border">Класс имеет слишком ограниченную функциональность</div>
+        <div class="border">Один класс слишком много знает о другом</div>
     </div>
 </section>
 <section class="slide">
     <h2>Плохие причины рефакторинга</h2>
     <div class="row h-center">
         <div class="danger full">Не рассматривайте рефакторинг как оправдание написание плохого кода с намерением
-            исправить
-            его
-            позднее
+            исправить его позднее
         </div>
         <div class="danger full">Не рассматривайте рефакторинг как способ избежать переписывание кода</div>
         <img src="./pictures/no.gif" alt="">
@@ -1302,34 +1247,36 @@
 
 <section class="slide">
     <h2>Безопасный рефакторинг</h2>
-    <div class="columns two">
-        <div class="column">
-            <div class="full border">Сохраняйте первоначальный код</div>
-            <div class="full border">Ограничивайте объем отдельных видов рефакторинга</div>
-            <div class="full border">Выполняйте отдельные виды рефакторинга по одному за раз</div>
-            <div class="full border">Составьте список действий которые хотите предпринять</div>
-            <div class="full border">Составьте список видов рефакторинга которые следует выполнить позже</div>
-        </div>
-        <div class="column">
-            <div class="full border">Часто создавайте контрольные точки</div>
-            <div class="full border">Выполняйте регрессивное-тестирование</div>
-            <div class="full border">Создавайте дополнительные тесты</div>
-            <div class="full border">Выполняйте обзоры измненеий</div>
-            <div class="full border">Изменяйте подход в зависимости от рискованности рефакторинга</div>
-        </div>
+    <div class="row start">
+        <div class="border">Сохраняйте первоначальный код</div>
+        <div class="border">Ограничивайте объем отдельных видов рефакторинга</div>
+        <div class="border">Часто создавайте контрольные точки</div>
+        <div class="border">Выполняйте регрессивное-тестирование</div>
+        <div class="border">Создавайте дополнительные тесты</div>
+        <div class="border">Выполняйте обзоры изменений</div>
+        <div class="border">Выполняйте отдельные виды рефакторинга по одному за раз</div>
+        <div class="border">Составьте список план рефакторинга</div>
+        <div class="border">Составьте список видов рефакторинга которые следует выполнить позже</div>
+        <div class="border">Изменяйте подход в зависимости от рискованности рефакторинга</div>
     </div>
-
 </section>
 
 <section class="slide">
     <h2>Стратегии рефакторинга</h2>
-    <div class="column">
-        <div class="tip">Выполняйте рефакторинг при создании новых методов</div>
-        <div class="tip">Выполняйте рефакторинг при создании новых классов</div>
-        <div class="tip">Выполняйте рефакторинг при исправлении дефектов</div>
-        <div class="tip">Выполняйте рефакторинг модулей подтверженных ошибках</div>
-        <div class="tip">Выполняйте рефакторинг сложных модулей</div>
+    <br>
+    <h3>Выполняйте рефакторинг:</h3>
+    <div class="row start">
+        <div class="border">сложных модулей</div>
+        <div class="border">модулей подверженных ошибках</div>
     </div>
+    <br>
+    <h3>а также при:</h3>
+    <div class="row start">
+        <div class="border">создании новых методов</div>
+        <div class="border">создании новых классов</div>
+        <div class="border">исправлении дефектов</div>
+    </div>
+
 </section>
 
 <section class="slide chapter-wrapper">
@@ -1338,16 +1285,17 @@
 
 <section class="slide">
     <h2>Производительность и оптимизация кода</h2>
-    <div class="column">
-        <div class="full border">Требования к программе</div>
-        <div class="full border">Проект программы</div>
-        <div class="full border">На этапе проектирование можно рассмотреть альтернативные варианты которые будут
-            производительнее изначально
-        </div>
-        <div class="full border">Проекты классов и методов</div>
-        <div class="full border">Взаимодействие программы с ОС</div>
-        <div class="full border">Оборудование</div>
-        <div class="full border">Оптимизация кода</div>
+    <div class="row start">
+        <div class="border">Требования к программе</div>
+        <div class="border">Проект программы</div>
+        <div class="border">Оборудование</div>
+        <div class="border">Оптимизация кода</div>
+        <div class="border">Проекты классов и методов</div>
+        <div class="border">Взаимодействие программы с ОС</div>
+    </div>
+    <br>
+    <div class="tip">На этапе проектирование можно рассмотреть альтернативные варианты которые будут
+        производительнее изначально
     </div>
 </section>
 
