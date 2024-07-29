@@ -39,7 +39,7 @@
     "path-exists-cli": "^2.0.0"
   },
   "scripts": {
-    "dev": "npx kill-port 3000 && bun run gulp -p 3000",
+    "dev": "npx kill-port 3000 && npx gulp -p 3000",
     "pdf": "shower pdf",
     "start": "shower serve",
     "bundle": "shower bundle --files '**' --files '!{docs,node_modules,bundled}{,/**}' --files '!*.{md,toml,json}'",
