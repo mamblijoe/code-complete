@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Shower Presentation Engine</title>
     <meta charset="utf-8">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <style>
     .shower {
         --slide-ratio: calc(16 / 9);
@@ -322,18 +325,19 @@
     }
 </style>
 </head>
+
 <body class="shower list">
-<header class="caption">
+    <header class="caption">
     <h1>Совершенный код C. Макконнела за 1 час</h1>
     <p>... или нимношко больше</p>
 </header>
 
-<section class="slide chapter-wrapper" id="cover">
+    <section class="slide chapter-wrapper" id="cover">
     <img class="chapter-cover" src="pictures/title-slide-bg.jpg">
     <div class="chapter-title">Совершенный код C. Макконнела за 1 час</div>
 </section>
 
-<section class="slide chapter-wrapper">
+    <section class="slide chapter-wrapper">
     <div class="chapter-title">Качество ПО</div>
 </section>
 
@@ -628,74 +632,17 @@
         </tr>
     </table>
 </section>
-<section class="slide chapter-wrapper">
-    <div class="chapter-title">Совместное конструирование</div>
-</section>
-<section class="slide">
-    <h2>Совместное конструирование дополняет
-        другие методики контроля качества</h2>
-    <div>Главной целью совместного конструирования является повышение качества ПО</h3>
-        <table class="characteristic">
-            <tr>
-                <td>Методика</td>
-                <td>Минимальная эффективность</td>
-                <td>Средняя эффективность</td>
-                <td>Максимальная эффективность</td>
-            </tr>
-            <tr>
-                <td>Unit-тестирование</td>
-                <td>15%</td>
-                <td>30%</td>
-                <td>50%</td>
-            </tr>
-            <tr>
-                <td>Интеграционное тестирование</td>
-                <td>25%</td>
-                <td>35%</td>
-                <td>40%</td>
-            </tr>
-            <tr>
-                <td>Регрессивное тестирование</td>
-                <td>15%</td>
-                <td>25%</td>
-                <td>30%</td>
-            </tr>
-            <tr>
-                <td>Системное тестирование</td>
-                <td>25%</td>
-                <td>40%</td>
-                <td>55%</td>
-            </tr>
-            <tr>
-                <td>Ограниченное бета-тестирование</td>
-                <td>25%</td>
-                <td>35%</td>
-                <td>40%</td>
-            </tr>
-            <tr>
-                <td>Крупномасштабное бета-тестирование</td>
-                <td>60%</td>
-                <td>75%</td>
-                <td>85%</td>
-            </tr>
-            <tr style="background-color: greenyellow;">
-                <td>Формальные инспекции кода</td>
-                <td>45%</td>
-                <td>60%</td>
-                <td>70%</td>
-            </tr>
-        </table>
-</section>
+
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Тестирование, выполняемое разработчиками</div>
 </section>
 <section class="slide">
     <h2>Тестирование</h2>
     <div class="column">
-        <div class="full">Цель тестирования противоположна целям других этапов разработки.</div>
-        <div class="full">Тестирование никогда не доказывает отсутствие ошибок</div>
-        <div class="full">Тестирование не повышает качество ПО</div>
-        <div class="full">Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</div>
+        <div class="full border">Цель тестирования противоположна целям других этапов разработки.</div>
+        <div class="full border">Тестирование никогда не доказывает отсутствие ошибок</div>
+        <div class="full border">Тестирование не повышает качество ПО</div>
+        <div class="full border">Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</div>
     </div>
 </section>
 <section class="slide">
@@ -916,21 +863,6 @@
     </div>
 </section>
 <section class="slide">
-    <h2>Совместное конструирование</h2>
-    <div class="column start">
-        <div class="full border">Как правило, методики совместной разработки позволяют находить больше дефектов, чем
-            тестирование, и делать это более эффективно.</div>
-        <div class="full border">Методики совместной разработки и тестирование приводят к обнаружению разных типов
-            ошибок, поэтому программа контроля качества ПО должна включать и обзоры, и тестирование.</div>
-        <div class="full border">Парное программирование и инспекции примерно эквивалентны по показателям расходов и
-            качества итогового кода.</div>
-        <div class="full border">Формальные инспекции можно использовать для проверки не только кода, но и других
-            результатов труда, таких как требования, проекты и тесты.</div>
-        <div class="full border">Анализ и чтение кода — альтернативы инспекциям. Чтение кода позволяет каждому участнику
-            более эффективно использовать свое время.</div>
-    </div>
-</section>
-<section class="slide">
     <h2>Тестирование</h2>
     <div class="column start">
         <div class="full border">Тестирование, выполняемое разработчиками, — один из важнейших элементов полной
@@ -974,9 +906,8 @@
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Джентельмены и Джентельвумены, спасибо за внимание!</div>
 </section>
-<div class="progress"></div>
-<script src="node_modules/@shower/core/dist/shower.js"></script>
+    <div class="progress"></div>
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
 </body>
+
 </html>
-
-
