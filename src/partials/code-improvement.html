@@ -27,7 +27,110 @@
         <div class="border">Понятность</div>
     </div>
 </section>
-
+<section class="slide">
+    <h2>Влияние характеристик друг на друга</h2>
+    <table class='characteristic'>
+        <tr class='tr-rotate'>
+            <td></td>
+            <td>Корректность</td>
+            <td>Практичность</td>
+            <td>Эффективность</td>
+            <td>Надежность</td>
+            <td>Целостность</td>
+            <td>Адаптируемость</td>
+            <td>Правильность</td>
+            <td>Живучесть</td>
+        </tr>
+        <tr>
+            <td>Корректность</td>
+            <td>+</td>
+            <td></td>
+            <td>+</td>
+            <td>+</td>
+            <td></td>
+            <td></td>
+            <td>+</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Практичность</td>
+            <td></td>
+            <td>+</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>+</td>
+            <td>+</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Эффективность</td>
+            <td>-</td>
+            <td></td>
+            <td>+</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Надежность</td>
+            <td>+</td>
+            <td></td>
+            <td></td>
+            <td>+</td>
+            <td>+</td>
+            <td></td>
+            <td>+</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Целостность</td>
+            <td></td>
+            <td></td>
+            <td>-</td>
+            <td>+</td>
+            <td>+</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Адаптируемость</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>-</td>
+            <td>+</td>
+            <td></td>
+            <td>+</td>
+        </tr>
+        <tr>
+            <td>Правильность</td>
+            <td>+</td>
+            <td></td>
+            <td>-</td>
+            <td>+</td>
+            <td></td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Живучесть</td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+            <td>+</td>
+        </tr>
+    </table>
+</section>
 <section class="slide">
     <h2>Методики повышения качества ПО</h2>
     <div class="row start">
@@ -43,21 +146,166 @@
         <div class="border">Прототипирование</div>
     </div>
 </section>
+<section class="slide">
+    <h2>Задание целей</h2>
+    <table class="characteristic">
+        <tr>
+            <td>Целевая характеристика</td>
+            <td>Объем памяти</td>
+            <td>Читабельность вывода</td>
+            <td>Читабельность кода</td>
+            <td>Компактность кода</td>
+            <td>Скорость разработки</td>
+        </tr>
+        <tr>
+            <td>Объем памяти</td>
+            <td style="background-color: greenyellow;">1</td>
+            <td>4</td>
+            <td>4</td>
+            <td>2</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Читабельность вывода</td>
+            <td>5</td>
+            <td style="background-color: greenyellow;">1</td>
+            <td style="background-color: greenyellow;">1</td>
+            <td>5</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Читабельность кода</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Компактность кода</td>
+            <td>2</td>
+            <td>5</td>
+            <td>3</td>
+            <td style="background-color: greenyellow;">1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Скорость разработки</td>
+            <td>4</td>
+            <td>3</td>
+            <td>5</td>
+            <td>4</td>
+            <td style="background-color: greenyellow;">1</td>
+        </tr>
+    </table>
+</section>
+<section class="slide">
+    <h2>Относительная эффективность методик повышения качества ПО</h2>
+    <table class="characteristic">
+        <tr>
+            <td>Методика</td>
+            <td>Минимальная эффективность</td>
+            <td>Средняя эффективность</td>
+            <td>Максимальная эффективность</td>
+        </tr>
+        <tr>
+            <td>Неформальные обзоры проекта</td>
+            <td>25%</td>
+            <td>35%</td>
+            <td>40%</td>
+        </tr>
+        <tr style="background-color: greenyellow;">
+            <td>Формальные инспекции проекта</td>
+            <td>45%</td>
+            <td>55%</td>
+            <td>65%</td>
+        </tr>
+        <tr>
+            <td>Не формальные обзоры кода</td>
+            <td>20%</td>
+            <td>25%</td>
+            <td>35%</td>
+        </tr>
+        <tr style="background-color: greenyellow;">
+            <td>Формальные инспекции кода</td>
+            <td>45%</td>
+            <td>60%</td>
+            <td>70%</td>
+        </tr>
+        <tr style="background-color: greenyellow;">
+            <td>Моделирование или прототипирование</td>
+            <td>35%</td>
+            <td>65%</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>Самостоятельная проверка кода</td>
+            <td>20%</td>
+            <td>40%</td>
+            <td>60%</td>
+        </tr>
+        <tr>
+            <td>Unit-тестирование</td>
+            <td>15%</td>
+            <td>30%</td>
+            <td>50%</td>
+        </tr>
+    </table>
+</section>
+<section class="slide">
+    <h2>Относительная эффективность методик повышения качества ПО</h2>
+    <table class="characteristic">
+        <tr>
+            <td>Методика</td>
+            <td>Минимальная эффективность</td>
+            <td>Средняя эффективность</td>
+            <td>Максимальная эффективность</td>
+        </tr>
+        <tr>
+            <td>Интеграционное тестирование</td>
+            <td>25%</td>
+            <td>35%</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <td>Регрессивное тестирование</td>
+            <td>15%</td>
+            <td>25%</td>
+            <td>30%</td>
+        </tr>
+        <tr>
+            <td>Системное тестирование</td>
+            <td>25%</td>
+            <td>40%</td>
+            <td>55%</td>
+        </tr>
+        <tr>
+            <td>Ограниченное бета-тестирование</td>
+            <td>25%</td>
+            <td>35%</td>
+            <td>40%</td>
+        </tr>
+        <tr style="background-color: greenyellow;">
+            <td>Крупномасштабное бета-тестирование</td>
+            <td>60%</td>
+            <td>75%</td>
+            <td>85%</td>
+        </tr>
+    </table>
+</section>
 
 <section class="slide chapter-wrapper">
     <div class="chapter-title">Тестирование, выполняемое разработчиками</div>
 </section>
-
 <section class="slide">
     <h2>Тестирование</h2>
     <div class="column">
-        <div class="warning">Цель тестирования противоположна целям других этапов разработки.</div>
-        <div class="warning">Тестирование никогда не доказывает отсутствие ошибок</div>
-        <div class="danger">Тестирование не повышает качество ПО</div>
-        <div class="tip">Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</div>
+        <div class="full border">Цель тестирования противоположна целям других этапов разработки.</div>
+        <div class="full border">Тестирование никогда не доказывает отсутствие ошибок</div>
+        <div class="full border">Тестирование не повышает качество ПО</div>
+        <div class="full border">Тестирование требует что бы вы рассчитывали найти ошибки в своем коде.</div>
     </div>
 </section>
-
 <section class="slide">
     <h2>Приемы тестирования</h2>
     <div class="column">
@@ -78,11 +326,13 @@
     <h2>Поиск дефектов</h2>
     <div class="column">
         <div class="full border">Стабилизация ошибки</div>
-        <div class="full border">Определение источника ошибки
+        <div class="full">
+            <div class="border">Определение источника ошибки</div>
             <div class="column">
-                <div class="full border">Сбор данных, приводящих к дефекту</div>
-                <div class="full border">Анализ собранных данных и формулирование гипотезы, объясняющей баг</div>
-                <div class="full border">Определение способа подтверждения или опровержения гипотезы, основанного на
+                <div class="full left-border">Сбор данных, приводящих к дефекту</div>
+                <div class="full left-border">Анализ собранных данных и формулирование гипотезы, объясняющей баг</div>
+                <div class="full left-border">Определение способа подтверждения или опровержения гипотезы, основанного
+                    на
                     тестировании или изучении программы
                 </div>
             </div>
@@ -95,16 +345,21 @@
 
 <section class="slide">
     <h2>Советы по поиску причин багов</h2>
-    <div class="row start">
-        <div class="border">Обсудите баг с кем то</div>
-        <div class="border">Используйте мозговой штурм</div>
-        <div class="border">Расширьте подозрительный фрагмент кода</div>
-        <div class="border">Воспроизведите ошибку несколькими способами</div>
-        <div class="border">Проверьте код который был изменен недавно</div>
-        <div class="border">Ограничьте время для быстрой и грязной отладки.</div>
-        <div class="border">Сократите потенциальную область источника бага</div>
-        <div class="border">Поищите баг в функционале в котором уже встречались баги</div>
-        <div class="border">Используйте результаты отрицательных тестов для отсеивания гипотез</div>
+    <div class="row">
+        <div class="column half">
+            <div class="full border">Обсудите баг с кем то</div>
+            <div class="full border">Используйте мозговой штурм</div>
+            <div class="full border">Расширьте подозрительный фрагмент кода</div>
+            <div class="full border">Воспроизведите ошибку несколькими способами</div>
+            <div class="full border">Проверьте код который был изменен недавно</div>
+            <div class="full border">Ограничьте время для быстрой и грязной отладки.</div>
+
+        </div>
+        <div class="column half">
+            <div class="full border">Сократите потенциальную область источника бага</div>
+            <div class="full border">Поищите баг в функционале в котором уже встречались баги</div>
+            <div class="full border">Используйте результаты отрицательных тестов для отсеивания гипотез</div>
+        </div>
     </div>
 </section>
 
@@ -114,40 +369,40 @@
 
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга: Общее</h2>
-    <div class="row start">
-        <div class="border">Код повторяется</div>
-        <div class="border">Прокси-объект ничего не делает</div>
-        <div class="border">Элементарный тип данных перегружен</div>
-        <div class="border">Сложный код объясняется с помощью комментариев</div>
-        <div class="border">Код содержит глобальные переменные</div>
-        <div class="border">Цикл слишком велик / имеет глубокую вложенность</div>
-        <div class="border">Приходится менять параллельно несколько блоков case</div>
+    <div class="column start">
+        <div class="full border">Код повторяется</div>
+        <div class="full border">Прокси-объект ничего не делает</div>
+        <div class="full border">Элементарный тип данных перегружен</div>
+        <div class="full border">Сложный код объясняется с помощью комментариев</div>
+        <div class="full border">Код содержит глобальные переменные</div>
+        <div class="full border">Цикл слишком велик / имеет глубокую вложенность</div>
+        <div class="full border">Приходится менять параллельно несколько блоков case</div>
     </div>
 </section>
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга: Методы</h2>
-    <div class="row start">
-        <div class="border">Метод слишком велик</div>
-        <div class="border">Метод принимает слишком много параметров</div>
-        <div class="border">Метод имеет не удачное имя</div>
-        <div class="border">По цепи методов передаются бродячие данные</div>
-        <div class="border">Лишние публичные методы и свойства</div>
-        <div class="border">Перед вызовом метода выполняется подготовительный код</div>
-        <div class="border">Подкласс не пользуется наследованием</div>
-        <div class="border">Метод использует больше параметра чужого класса, чем своего</div>
+    <div class="column start">
+        <div class="full border">Метод слишком велик</div>
+        <div class="full border">Метод принимает слишком много параметров</div>
+        <div class="full border">Метод имеет не удачное имя</div>
+        <div class="full border">По цепи методов передаются бродячие данные</div>
+        <div class="full border">Лишние публичные методы и свойства</div>
+        <div class="full border">Перед вызовом метода выполняется подготовительный код</div>
+        <div class="full border">Подкласс не пользуется наследованием</div>
+        <div class="full border">Метод использует больше параметра чужого класса, чем своего</div>
     </div>
 </section>
 <section class="slide">
     <h2>Разумные причины выполнения рефакторинга: Классы</h2>
-    <div class="row start">
-        <div class="border">Класс имеет плохую связность</div>
-        <div class="border">Интерфейс класса не формирует согласованную абстракцию</div>
-        <div class="border">Отдельные части класса меняет независимо от других частей</div>
-        <div class="border">При изменении программы приходится параллельно менять несколько классов</div>
-        <div class="border">Приходится менять параллельно несколько иерархий наследования</div>
-        <div class="border">Родственные элементы данных, используемые вместе, не организован в классы</div>
-        <div class="border">Класс имеет слишком ограниченную функциональность</div>
-        <div class="border">Один класс слишком много знает о другом</div>
+    <div class="column start">
+        <div class="full border">Класс имеет плохую связность</div>
+        <div class="full border">Интерфейс класса не формирует согласованную абстракцию</div>
+        <div class="full border">Отдельные части класса меняет независимо от других частей</div>
+        <div class="full border">При изменении программы приходится параллельно менять несколько классов</div>
+        <div class="full border">Приходится менять параллельно несколько иерархий наследования</div>
+        <div class="full border">Родственные элементы данных, используемые вместе, не организован в классы</div>
+        <div class="full border">Класс имеет слишком ограниченную функциональность</div>
+        <div class="full border">Один класс слишком много знает о другом</div>
     </div>
 </section>
 <section class="slide">
@@ -163,17 +418,14 @@
 
 <section class="slide">
     <h2>Безопасный рефакторинг</h2>
-    <div class="row start">
-        <div class="border">Сохраняйте первоначальный код</div>
-        <div class="border">Ограничивайте объем отдельных видов рефакторинга</div>
-        <div class="border">Часто создавайте контрольные точки</div>
-        <div class="border">Выполняйте регрессивное-тестирование</div>
-        <div class="border">Создавайте дополнительные тесты</div>
-        <div class="border">Выполняйте обзоры изменений</div>
-        <div class="border">Выполняйте отдельные виды рефакторинга по одному за раз</div>
-        <div class="border">Составьте список план рефакторинга</div>
-        <div class="border">Составьте список видов рефакторинга которые следует выполнить позже</div>
-        <div class="border">Изменяйте подход в зависимости от рискованности рефакторинга</div>
+    <div class="column start">
+        <div class="full border">Сохраняйте первоначальный код</div>
+        <div class="full border">Ограничивайте объем отдельных видов рефакторинга</div>
+        <div class="full border">Часто создавайте контрольные точки</div>
+        <div class="full border">Выполняйте регрессивное-тестирование</div>
+        <div class="full border">Выполняйте обзоры изменений</div>
+        <div class="full border">Выполняйте отдельные виды рефакторинга по одному за раз</div>
+        <div class="full border">Изменяйте подход в зависимости от рискованности рефакторинга</div>
     </div>
 </section>
 
@@ -201,13 +453,13 @@
 
 <section class="slide">
     <h2>Производительность и оптимизация кода</h2>
-    <div class="row start">
-        <div class="border">Требования к программе</div>
-        <div class="border">Проект программы</div>
-        <div class="border">Оборудование</div>
-        <div class="border">Оптимизация кода</div>
-        <div class="border">Проекты классов и методов</div>
-        <div class="border">Взаимодействие программы с ОС</div>
+    <div class="column start">
+        <div class="full border">Требования к программе</div>
+        <div class="full border">Проект программы</div>
+        <div class="full border">Оборудование</div>
+        <div class="full border">Оптимизация кода</div>
+        <div class="full border">Проекты классов и методов</div>
+        <div class="full border">Взаимодействие программы с ОС</div>
     </div>
     <br>
     <div class="tip">На этапе проектирование можно рассмотреть альтернативные варианты которые будут
@@ -240,13 +492,14 @@
     <h2>Алгоритм оптимизации</h2>
     <div class="column">
         <div class="full border">Напишите хороший и понятный код, поддающийся легкому изменению</div>
-        <div class="full border">Если производительность не устраивает
+        <div class="full">
+            <div class="border">Если производительность не устраивает</div>
             <div class="column">
-                <div class="full border">Закоммитьте рабочий код</div>
-                <div class="full border">Оцените производительность системы и найдите горячие точки</div>
-                <div class="full border">Определите чем обусловлена низкая производительность</div>
-                <div class="full border">Оптимизируйте проблемное место</div>
-                <div class="full border">Оцените каждую оптимизацию по одной за раз</div>
+                <div class="full left-border">Закоммитьте рабочий код</div>
+                <div class="full left-border">Оцените производительность системы и найдите горячие точки</div>
+                <div class="full left-border">Определите чем обусловлена низкая производительность</div>
+                <div class="full left-border">Оптимизируйте проблемное место</div>
+                <div class="full left-border">Оцените каждую оптимизацию по одной за раз</div>
             </div>
         </div>
         <div class="full border">Если оптимизация не привела к улучшению, повторите все заново</div>
@@ -254,145 +507,63 @@
 </section>
 
 <section class="slide chapter-wrapper">
-    <div class="chapter-title">Методики оптимизации кода: Логика</div>
+    <div class="chapter-title">Итоги</div>
 </section>
 
 <section class="slide">
-    <div class="code">
-        <h3>Прекращение проверки сразу после получения ответа</h3>
-        <img src="./pictures/control-3.svg" alt="">
-    </div>
-    <div class="code">
-        <h3>Упорядочивание if и case по частоте</h3>
-        <img src="./pictures/optimization-1.svg" alt="">
+    <h2>Качество ПО</h2>
+    <div class="column start">
+        <div class="full border">Высокого качества можно достичь без дополнительных затрат.</div>
+        <div class="full border">Стремление к одним характеристикам качества препятствует достижению других. </div>
+        <div class="full border">Никакая методика обнаружения дефектов не является достаточно эффективной. </div>
+        <div class="full border">
+            Чем раньше вы обнаружите дефект, тем слабее он переплетется с остальным кодом и тем меньше вреда
+            он успеет принести.
+        </div>
+        <div class="full border">В мире программирования контроль качества ориентирован на процесс. </div>
     </div>
 </section>
-
 <section class="slide">
-    <h2>Замена сложных выражений на обращение к таблице подстановки</h2>
-    <div class="code">
-        <h3>Плохо</h3>
-        <img src="./pictures/optimization-2.svg" alt="">
+    <h2>Тестирование</h2>
+    <div class="column start">
+        <div class="full border">Тестирование, выполняемое разработчиками, — один из важнейших элементов полной
+            стратегии тестирования.</div>
+        <div class="full border">Даже если учесть, что тестирование имеет массу разновидностей, его все равно следует
+            считать лишь одним из элементов хорошей программы контроля качества.</div>
+        <div class="full border">Обычно ошибки концентрируются в нескольких наиболее дефектных классах и методах.
+            Найдите такой код, перепроектируйте его и перепишите.</div>
+        <div class="full border">Чтобы процесс тестирования был максимально эффективным, сделайте его регулярным,
+            выполняйте его оценку и используйте получаемую информацию для его улучшения.</div>
     </div>
-    <div class="code">
-        <h3>Лучше</h3>
-        <img src="./pictures/optimization-3.svg" alt="">
+</section>
+<section class="slide">
+    <h2>Отладка</h2>
+    <div class="column start">
+        <div class="full border">Отладка — это тот этап разработки программы, от которого зависит возможность ее
+            выпуска. </div>
+        <div class="full border">Систематичный подход к поиску и исправлению ошибок — непременное условие успешности
+            отладки. </div>
+        <div class="full border">Прежде чем приступать к исправлению программы, поймите суть проблемы. </div>
+        <div class="full border">Установите в настройках компилятора самый строгий уровень диагностики и устраняйте
+            причины всех ошибок и предупреждений.</div>
+        <div class="full border">Инструменты отладки значительно облегчают разработку ПО. </div>
+    </div>
+</section>
+<section class="slide">
+    <h2>Рефакторинг</h2>
+    <div class="column start">
+        <div class="full border">Изменения программы неизбежны как во время первоначальной разработки, так и после
+            выпуска первой версии.</div>
+        <div class="full border">Изменения могут приводить как к улучшению, так и к ухудшению ПО. </div>
+        <div class="full border">Одним из условий успешности рефакторинга является пристальное внимание к многочисленным
+            предупреждающим знакам — «запахам», указывающим на необходимость рефакторинга.</div>
+        <div class="full border">Заключительным условием успешности рефакторинга является следование стратегии
+            безопасного рефакторинга. </div>
+        <div class="full border">Рефакторинг во время разработки — самая благоприятная возможность улучшения программы и
+            внесения в нее всех изменений, которые вам так или иначе захочется внести позднее.</div>
     </div>
 </section>
 
 <section class="slide chapter-wrapper">
-    <div class="chapter-title">Методики оптимизации кода: Циклы</div>
+    <div class="chapter-title">Джентельмены и Джентельвумены, спасибо за внимание!</div>
 </section>
-
-<section class="slide">
-    <h2>Размыкание (unswitch) цикла</h2>
-    <div class="code">
-        <h3>Плохо</h3>
-        <img src="./pictures/cycle-unswitch-1.svg" alt="">
-    </div>
-    <div class="code">
-        <h3>Лучше</h3>
-        <img src="./pictures/cycle-unswitch-2.svg" alt="">
-    </div>
-</section>
-
-<section class="slide">
-    <h2>Объединение (jamming) цикла</h2>
-    <div class="code">
-        <h3>Плохо</h3>
-        <img src="./pictures/cycle-jamming-1.svg" alt="">
-    </div>
-    <div class="code">
-        <h3>Лучше</h3>
-        <img src="./pictures/cycle-jamming-2.svg" alt="">
-    </div>
-</section>
-
-<section class="slide">
-    <h2>Развертывание (unrolling) цикла</h2>
-    <div class="code">
-        <h3>Плохо</h3>
-        <img src="./pictures/cycle-unrolling-1.svg" alt="">
-    </div>
-    <div class="code">
-        <h3>Лучше</h3>
-        <img src="./pictures/cycle-unrolling-2.svg" alt="">
-    </div>
-</section>
-
-<section class="slide">
-    <h2>Минимизация объема работы, выполняемой в цикле</h2>
-    <div class="code">
-        <h3>Плохо</h3>
-        <img src="./pictures/cycle-min-work-1.svg" alt="">
-    </div>
-    <div class="code">
-        <h3>Лучше</h3>
-        <img src="./pictures/cycle-min-work-2.svg" alt="">
-    </div>
-</section>
-
-<section class="slide">
-    <h2>Вложение более ресурсоемкого цикла в менее ресурсоемкий</h2>
-    <div class="code">
-        <h3>Плохо (600 итераций)</h3>
-        <img src="./pictures/cycle-inner-1.svg" alt="">
-    </div>
-    <div class="code">
-        <h3>Лучше (505 итераций)</h3>
-        <img src="./pictures/cycle-inner-2.svg" alt="">
-    </div>
-</section>
-
-<section class="slide chapter-wrapper">
-    <div class="chapter-title">Методики оптимизации кода: Выражения</div>
-</section>
-
-
-<section class="slide">
-    <h2>Теорема Деморгана</h2>
-    <table>
-        <tr style="background: #f3f3f3">
-            <th>Исходное выражение</th>
-            <th>Эквивалентное выражение</th>
-        </tr>
-        <tr>
-            <td>!a && !b</td>
-            <td>!(a || b)</td>
-        </tr>
-        <tr>
-            <td>! a && b</td>
-            <td>!(a || !b)</td>
-        </tr>
-        <tr>
-            <td>a && !b</td>
-            <td>!(!a || b)</td>
-        </tr>
-        <tr>
-            <td>a && b</td>
-            <td>!(!a || !b)</td>
-        </tr>
-        <tr>
-            <td>!a || b</td>
-            <td>!(a && !b)</td>
-        </tr>
-        <tr>
-            <td>a || !b</td>
-            <td>!(!a && b)</td>
-        </tr>
-        <tr>
-            <td>a || b</td>
-            <td>!(!a && !b)</td>
-        </tr>
-    </table>
-</section>
-
-<section class="slide">
-    <h2>Остальные методы</h2>
-    <div class="column">
-        <div class="full border">Замена вызовов встроенных методов своими</div>
-        <div class="full border">Предварительное вычисление результатов</div>
-        <div class="full border">Вынесение часто используемых подвыражений</div>
-    </div>
-</section>
-

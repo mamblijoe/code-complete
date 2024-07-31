@@ -29,10 +29,12 @@
             justify-content: center;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             font: 800 30px/100% Roboto;
             position: relative;
             margin: 5px 0 15px 0;
+
             &:before {
                 content: '';
                 position: absolute;
@@ -92,6 +94,7 @@
         align-items: flex-start;
         justify-content: center;
         max-height: 100%;
+
         img {
             max-width: 100%;
             width: 100%;
@@ -114,7 +117,8 @@
         justify-content: space-between;
         gap: 10px;
         width: 100%;
-        & > div {
+
+        &>div {
             font-size: inherit;
         }
 
@@ -125,12 +129,15 @@
         &.center {
             align-items: center;
         }
+
         &.around {
             justify-content: space-around;
         }
+
         &.start {
             justify-content: flex-start;
         }
+
         &.h-center {
             justify-content: center;
         }
@@ -144,10 +151,11 @@
         width: 100%;
 
         & .column {
+            margin-top: 10px;
             padding-left: 50px;
         }
 
-        & > div {
+        &>div {
             font-size: inherit;
         }
 
@@ -166,6 +174,11 @@
         padding: 5px;
     }
 
+    .left-border {
+        border-left: 3px solid #BF3030;
+        padding-left: 10px;
+    }
+
     .filled {
         background-color: #BF3030;
         color: white;
@@ -174,6 +187,7 @@
     .border {
         position: relative;
         overflow: hidden;
+
         &:after {
             content: '';
             position: absolute;
@@ -192,6 +206,7 @@
         text-align: center;
         padding-top: 50px;
         position: relative;
+
         &:before {
             content: attr(data-number) " ";
             position: absolute;
@@ -225,9 +240,11 @@
         padding: 5px 5px 5px 10px;
         margin-bottom: 5px;
         position: relative;
+
         &:after {
             display: none;
         }
+
         &:before {
             position: absolute;
             content: '';
@@ -237,22 +254,23 @@
             height: 32px;
         }
     }
+
     .tip {
         background-color: #269926;
-        &:before {
-        }
+
+        &:before {}
     }
 
     .warning {
         background-color: rgb(230, 192, 0);
-        &:before {
-        }
+
+        &:before {}
     }
 
     .danger {
         background-color: #BF3030;
-        &:before {
-        }
+
+        &:before {}
     }
 
     td {
@@ -262,5 +280,34 @@
     .imp {
         font-weight: 600;
         text-decoration: underline;
+    }
+
+    .tr-rotate td {
+        writing-mode: vertical-lr;
+        rotate: -180deg;
+        vertical-align: middle;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid;
+    }
+
+    .characteristic {
+        margin-left: 0 !important;
+        max-width: 100%;
+
+        & td {
+            padding: 0 2.5px !important;
+            width: 50px;
+            max-width: 50px;
+
+            &:not(:first-child) {
+                text-align: center;
+                width: 25px;
+                max-width: 25px;
+            }
+        }
     }
 </style>
